@@ -19,11 +19,6 @@ public class UnitInformation : MonoBehaviour {
     {
 
 	}
-
-    public void minushp(byte healthdelete)
-    {
-        health -= healthdelete;
-    }
 	
     public void rest()
     {
@@ -42,41 +37,9 @@ public class UnitInformation : MonoBehaviour {
         return defense;
     }
 
-    public byte attackereturn()
-    {
-        switch (mygear)
-        {
-            case equipment.Longsword:
-                {
-                    return 3;
-                    
-                }
-            case equipment.Magicstaff:
-                {
-                    return 3;
-
-                }
-            case equipment.Bow:
-                {
-                    return 3;
-
-                }
-            default:
-                {
-                    return 1;
-                }
-        }
-
-    }
-
     public byte movereturn()
     {
         return movement;
-    }
-
-    public void rest()
-    {
-        health += (byte)Random.Range(1, 4);
     }
 
     public void setmove(Vector3 newlocation)
