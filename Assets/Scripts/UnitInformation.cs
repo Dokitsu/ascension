@@ -23,7 +23,7 @@ public class UnitInformation : MonoBehaviour {
     {
 
         // Current HP assignment for debug only
-        currHP = 5;
+        currHP = 15;
         UpdateHealth();
     }
 	
