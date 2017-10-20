@@ -1226,8 +1226,6 @@ MonoBehaviour:
   phasenumber: 0
   currentplayer: {fileID: 0}
   menu: {fileID: 1180562625}
-  HPvalue: {fileID: 1437381694}
-  currHP: 0
 --- !u!4 &644199464
 Transform:
   m_ObjectHideFlags: 0
@@ -1670,11 +1668,20 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4003331462662636, guid: 8b6a9add28960a045b9dbaeef0f6f8ab, type: 2}
       propertyPath: m_RootOrder
-      value: 15
+      value: 14
       objectReference: {fileID: 0}
     - target: {fileID: 1018763351717458, guid: 8b6a9add28960a045b9dbaeef0f6f8ab, type: 2}
       propertyPath: m_Name
       value: Player 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 114245221962095482, guid: 8b6a9add28960a045b9dbaeef0f6f8ab,
+        type: 2}
+      propertyPath: HPvalue
+      value: 
+      objectReference: {fileID: 1437381694}
+    - target: {fileID: 1018763351717458, guid: 8b6a9add28960a045b9dbaeef0f6f8ab, type: 2}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b6a9add28960a045b9dbaeef0f6f8ab, type: 2}
@@ -2092,6 +2099,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movement: 0
+  HPvalue: {fileID: 1437381694}
 --- !u!1 &1230537705
 GameObject:
   m_ObjectHideFlags: 0
@@ -3756,7 +3764,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4409825774979270, guid: 8e0fa8bb98845d14d99e69b1ea2d76c3, type: 2}
       propertyPath: m_RootOrder
-      value: 14
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 114137424845430332, guid: 8e0fa8bb98845d14d99e69b1ea2d76c3,
         type: 2}

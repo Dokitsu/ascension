@@ -59,7 +59,7 @@ public class Move : MonoBehaviour
             transform.position = new Vector3(targetpos.x, targetpos.y + 10, targetpos.z);
             currentpos = transform.position;
             currentmovement--;
-            print(currentmovement);
+            //print(currentmovement);
         }
         if (currentmovement == 0)
         {

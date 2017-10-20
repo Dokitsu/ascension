@@ -1,10 +1,11 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 using UnityEngine;
 
 public class UnitInformation : MonoBehaviour {
 
-    private byte health; //lose all your health, you're removed from the game
+    private byte currHP; //lose all your health, you're removed from the game
     private enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
     private equipment mygear; //ONLY ONE
     private byte defense; //Numbeer of die to roll
@@ -12,25 +13,32 @@ public class UnitInformation : MonoBehaviour {
     public byte movement;
                           // Use this for initialization
     private string myname = "This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES";
-    
-   //For methods to create: One method (e.g. void longsword) for a piece of equipment
 
-	void Start ()
+    public Text HPvalue;
+    //public int currHP;
+
+    //For methods to create: One method (e.g. void longsword) for a piece of equipment
+
+    void Start ()
     {
 
-	}
+        // Current HP assignment for debug only
+        currHP = 5;
+        UpdateHealth();
+    }
 	
     public void rest()
     {
-        health += (byte)Random.Range(1, 4);
+        currHP += (byte)Random.Range(1, 4);
+        UpdateHealth();
         
     }
 
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        //UpdateHealth();
+    }
 
     public byte defensereturn()
     {
@@ -46,5 +54,10 @@ public class UnitInformation : MonoBehaviour {
     {
         transform.position = newlocation;
         movement--;
+    }
+
+    void UpdateHealth()
+    {
+        HPvalue.text = "HP: " + currHP;
     }
 }

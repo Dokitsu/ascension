@@ -17,9 +17,6 @@ public class GameMaster : MonoBehaviour {
     private GameObject currentplayer;
     private Image[] die = new Image[5];
     public GameObject menu;
-
-    public Text HPvalue;
-    public int currHP;
     
 
 
@@ -96,10 +93,6 @@ public class GameMaster : MonoBehaviour {
         changephase();
     }
 
-    void UpdateHealth()
-    {
-        HPvalue.text = "HP: " + currHP;
-    }
 
 
 }
