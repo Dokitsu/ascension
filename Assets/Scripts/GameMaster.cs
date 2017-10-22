@@ -18,13 +18,21 @@ public class GameMaster : MonoBehaviour {
     private Image[] die = new Image[5];
     public GameObject menu;
     
-
+    
 
 	// Use this for initialization
 	void Start ()
     {
         currentplayer = players[0];
+        currentplayer.GetComponent<UnitInformation>().takedamage(0);
+        
 	}
+
+    public GameObject returnplayers()
+    {
+        return currentplayer;
+    }
+    
 	
 	// Update is called once per frame
 	void Update ()
@@ -47,12 +55,12 @@ public class GameMaster : MonoBehaviour {
             if (phasenumber < 4)
             {
                 currentplayer = players[phasenumber];
-
+                currentplayer.GetComponent<UnitInformation>().takedamage(0);
             }
             if (phasenumber >= 4)
             {
                 currentplayer = Enemies[phasenumber - 4];
-
+                currentplayer.GetComponent<UnitInformation>().takedamage(0);
             }
         }
         
