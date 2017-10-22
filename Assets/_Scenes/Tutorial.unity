@@ -1278,9 +1278,9 @@ MonoBehaviour:
   - {fileID: 1201893245}
   - {fileID: 1134579667}
   Enemies:
-  - {fileID: 1862694892}
+  - {fileID: 0}
   phasenumber: 0
-  currentplayer: {fileID: 1201893245}
+  currentplayer: {fileID: 0}
   menu: {fileID: 1180562625}
 --- !u!4 &644199464
 Transform:
@@ -1739,16 +1739,6 @@ Prefab:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
-    - target: {fileID: 114245221962095482, guid: 8b6a9add28960a045b9dbaeef0f6f8ab,
-        type: 2}
-      propertyPath: myname
-      value: Rick
-      objectReference: {fileID: 0}
-    - target: {fileID: 114245221962095482, guid: 8b6a9add28960a045b9dbaeef0f6f8ab,
-        type: 2}
-      propertyPath: currHP
-      value: 10
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8b6a9add28960a045b9dbaeef0f6f8ab, type: 2}
   m_IsPrefabParent: 0
@@ -2200,9 +2190,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81372ddb111fa554480126f8d018f650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 10
   movement: 0
-  myname: Jimmy
   HPvalue: {fileID: 1437381694}
 --- !u!108 &1201893249
 Light:
@@ -2775,8 +2763,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 160, y: -49.399994}
-  m_SizeDelta: {x: 160, y: 48.8}
+  m_AnchoredPosition: {x: 160, y: -40}
+  m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1437381694
 MonoBehaviour:
@@ -2799,12 +2787,12 @@ MonoBehaviour:
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 20
-    m_FontStyle: 1
+    m_FontSize: 14
+    m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 1
+    m_MinSize: 10
     m_MaxSize: 40
-    m_Alignment: 3
+    m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
@@ -3457,9 +3445,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81372ddb111fa554480126f8d018f650, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  currHP: 10
   movement: 0
-  myname: Aunt
   HPvalue: {fileID: 1437381694}
 --- !u!108 &1862694896
 Light:
@@ -3771,8 +3757,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 644199463}
-        m_MethodName: rest
+      - m_Target: {fileID: 1958623635}
+        m_MethodName: Roll
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

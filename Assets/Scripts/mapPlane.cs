@@ -30,10 +30,9 @@ public class mapPlane : MonoBehaviour {
     void OnMouseOver()
     {
         //Display tooltip
-       GameObject temp = GameObject.Find("GameMaster").GetComponent<GameMaster>().returnplayers();
-        Target = transform.position; //Target is now the tile.
-        distance = Vector3.Distance(transform.position, temp.transform.position); //Distance between this transform and a move class.
-        
+        Target = transform.position;
+        distance = Vector3.Distance(transform.position, Move.currentpos);
+
         //if (active)
         //{
             if (distance < 60)
