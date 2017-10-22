@@ -73,12 +73,6 @@ public class UnitInformation : MonoBehaviour {
     {
         return movement;
     }
-
-    public void rest()
-    {
-        health += (byte)Random.Range(1, 4);
-    }
-
     public void setmove(Vector3 newlocation)
     {
         transform.position = newlocation;
