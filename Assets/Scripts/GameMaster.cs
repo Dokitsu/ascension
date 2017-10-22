@@ -29,8 +29,9 @@ public class GameMaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-		
-	}
+        //currHP = currentplayer.
+        //UpdateHealth();
+    }
 
     public void endplayerturn()
     {
@@ -91,4 +92,7 @@ public class GameMaster : MonoBehaviour {
         currentplayer.GetComponent<UnitInformation>().rest();
         changephase();
     }
+
+
+
 }

@@ -7,6 +7,7 @@ public class mapPlane : MonoBehaviour {
     public Renderer rend;
     public static Vector3 Target;
     public static float distance;
+    public bool active;
 
     void Start()
     {
@@ -32,14 +33,17 @@ public class mapPlane : MonoBehaviour {
         Target = transform.position;
         distance = Vector3.Distance(transform.position, Move.currentpos);
 
-        if (distance < 60)
-        {
-            rend.material.color = Color.yellow;
-        }
-        else
-        {
-            rend.material.color = Color.red;
-        }
+        //if (active)
+        //{
+            if (distance < 60)
+            {
+                rend.material.color = Color.yellow;
+            }
+            else
+            {
+                rend.material.color = Color.red;
+            }
+        //}
     }
 
     //Reverts colour change when cursor leaves the tile
@@ -60,5 +64,6 @@ public class mapPlane : MonoBehaviour {
     {
 
     }
+
 
 }
