@@ -49,10 +49,9 @@ public class UnitInformation : MonoBehaviour {
     {
         return movement;
     }
-<<<<<<< HEAD
-=======
-
->>>>>>> origin/HEAD
+//<<<<<<< HEAD
+//=======
+//>>>>>>> origin/HEAD
     public void setmove(Vector3 newlocation)
     {
         transform.position = newlocation;

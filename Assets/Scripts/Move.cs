@@ -19,12 +19,13 @@ public class Move : MonoBehaviour
     // Use this for initialization
     void Start()
     {
-        currentpos = transform.position;
+        //currentpos = transform.position;
     }
 
     public void onactivate()
     {
         currentmovement = maxmovement;
+        currentpos = transform.position;
     }
 
     // Update is called once per frame
