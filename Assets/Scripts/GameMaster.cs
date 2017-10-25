@@ -37,21 +37,24 @@ public class GameMaster : MonoBehaviour {
     {
         turns = 2;
         phasenumber++;
-        if (phasenumber - 4 > Enemies.Capacity)
+        if (phasenumber > players.Capacity + Enemies.Capacity-1) 
         {
+            print("New rotation");
             phasenumber = 0;
             currentplayer = players[phasenumber];
         }
         else
         {
-            if (phasenumber < 4)
+            if (phasenumber < players.Capacity)
             {
+                print("Player's turn " + phasenumber);
                 currentplayer = players[phasenumber];
 
             }
-            if (phasenumber >= 4)
+            if (phasenumber >= players.Capacity)
             {
-                currentplayer = Enemies[phasenumber - 4];
+                print("Enemy's turn " + phasenumber);
+                currentplayer = Enemies[phasenumber - players.Capacity];
 
             }
         }

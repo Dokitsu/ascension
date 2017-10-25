@@ -1278,7 +1278,7 @@ MonoBehaviour:
   - {fileID: 1201893245}
   - {fileID: 1134579667}
   Enemies:
-  - {fileID: 0}
+  - {fileID: 1862694892}
   phasenumber: 0
   currentplayer: {fileID: 0}
   menu: {fileID: 1180562625}
