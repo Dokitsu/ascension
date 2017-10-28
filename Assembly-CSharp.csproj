@@ -49,6 +49,8 @@
      <Compile Include="Assets\Scripts\Amountofplayers.cs" />
      <Compile Include="Assets\Scripts\AttackScript.cs" />
      <Compile Include="Assets\Scripts\CameraPivot.cs" />
+     <Compile Include="Assets\Scripts\DiceKick.cs" />
+     <Compile Include="Assets\Scripts\DiceManager.cs" />
      <Compile Include="Assets\Scripts\Event.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
      <Compile Include="Assets\Scripts\LoadScene.cs" />
