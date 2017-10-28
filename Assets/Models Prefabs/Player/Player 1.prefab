@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 114137424845430332}
   - component: {fileID: 108216363056701116}
   - component: {fileID: 114766583748283318}
+  - component: {fileID: 114578062222371622}
   m_Layer: 0
   m_Name: Player 1
   m_TagString: Untagged
@@ -150,7 +151,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1154730167374394}
   m_LocalRotation: {x: 0.5040992, y: -0.11083473, z: -0.10457162, w: 0.85009676}
-  m_LocalPosition: {x: 0, y: 10, z: 0}
+  m_LocalPosition: {x: -200, y: 10, z: 0}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4764179096100428}
@@ -421,6 +422,22 @@ MonoBehaviour:
   p2pos: {x: 0, y: 0, z: 0}
   maxmovement: 2
   currentmovement: 0
+--- !u!114 &114578062222371622
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1154730167374394}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236ea0ce338aa0a49b9412f90cc7581f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  Attacker: {fileID: 0}
+  Target: {fileID: 0}
+  Atkcoor: {x: 0, y: 0, z: 0}
+  Tarcoor: {x: 0, y: 0, z: 0}
 --- !u!114 &114766583748283318
 MonoBehaviour:
   m_ObjectHideFlags: 1

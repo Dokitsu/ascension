@@ -88,14 +88,14 @@ public class GameMaster : MonoBehaviour {
     public void unitattack()
     {
         menu.SetActive(false);
-        //currentplayer.getcomponent<attack>().active = true;
+        currentplayer.GetComponent<AttackScript>().onactivate();
+        currentplayer.GetComponent<AttackScript>().active = true;
     }
     public void rest()
     {
         currentplayer.GetComponent<UnitInformation>().rest();
         changephase();
     }
-
 
 
 }

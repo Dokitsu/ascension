@@ -32,6 +32,7 @@ public class Move : MonoBehaviour
     {
         currentmovement = maxmovement;
         currentpos = transform.position;
+        mapPlane.currentpos = currentpos;
         p1pos = GameObject.Find("Player 1").transform.position;
         p2pos = GameObject.Find("Player 2").transform.position;
 
@@ -74,6 +75,7 @@ public class Move : MonoBehaviour
         {
             transform.position = new Vector3(targetpos.x, targetpos.y + 10, targetpos.z);
             currentpos = transform.position;
+            mapPlane.currentpos = currentpos;
             currentmovement--;
             //print(currentmovement);
         }

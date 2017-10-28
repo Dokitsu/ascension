@@ -74,6 +74,7 @@ GameObject:
   - component: {fileID: 114406236270048744}
   - component: {fileID: 108916305643534612}
   - component: {fileID: 114778207667990588}
+  - component: {fileID: 114241584128003136}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Untagged
@@ -213,7 +214,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc32f3d6edcbaa8429596258d83d315c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -245,7 +246,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc32f3d6edcbaa8429596258d83d315c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -277,7 +278,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc32f3d6edcbaa8429596258d83d315c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -309,7 +310,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: fc32f3d6edcbaa8429596258d83d315c, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -404,6 +405,22 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &114241584128003136
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1506182148728066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 236ea0ce338aa0a49b9412f90cc7581f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  active: 0
+  Attacker: {fileID: 0}
+  Target: {fileID: 0}
+  Atkcoor: {x: 0, y: 0, z: 0}
+  Tarcoor: {x: 0, y: 0, z: 0}
 --- !u!114 &114406236270048744
 MonoBehaviour:
   m_ObjectHideFlags: 1

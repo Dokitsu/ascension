@@ -7,6 +7,7 @@ public class mapPlane : MonoBehaviour {
     public Renderer rend;
     public static Vector3 Target;
     public static float distance;
+    public static Vector3 currentpos;
     public bool active;
 
     void Start()
@@ -31,7 +32,7 @@ public class mapPlane : MonoBehaviour {
     {
         //Display tooltip
         Target = transform.position;
-        distance = Vector3.Distance(transform.position, Move.currentpos);
+        distance = Vector3.Distance(transform.position, currentpos);
 
         //if (active)
         //{
