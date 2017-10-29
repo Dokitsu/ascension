@@ -9,7 +9,7 @@ public class DiceKick : MonoBehaviour {
     public ForceMode forceMode;
     public float angforce;
 
-    //public GameObject die;
+    //Kicks the dice
 
 	// Use this for initialization
 	void Start ()

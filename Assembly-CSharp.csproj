@@ -51,6 +51,7 @@
      <Compile Include="Assets\Scripts\CameraPivot.cs" />
      <Compile Include="Assets\Scripts\DiceKick.cs" />
      <Compile Include="Assets\Scripts\DiceManager.cs" />
+     <Compile Include="Assets\Scripts\DiceNum.cs" />
      <Compile Include="Assets\Scripts\DiceVal.cs" />
      <Compile Include="Assets\Scripts\Event.cs" />
      <Compile Include="Assets\Scripts\GameMaster.cs" />
