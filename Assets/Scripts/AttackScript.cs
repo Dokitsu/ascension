@@ -19,12 +19,32 @@ public class AttackScript : MonoBehaviour {
     {
 		
 	}
-	
-	void Update ()
+
+    private void OnMouseDown()
     {
-        if(Input.GetMouseButtonDown(0) && active == true)
+        
+    }
+
+    void Update ()
+    {
+        if (active == true)
         {
-            
+            if (Input.GetKeyDown(KeyCode.DownArrow))
+            {
+                AttackerRange("dwn");
+            }
+            else if (Input.GetKeyDown(KeyCode.UpArrow))
+            {
+                AttackerRange("fwd");
+            }
+            else if (Input.GetKeyDown(KeyCode.RightArrow))
+            {
+                AttackerRange("rht");
+            }
+            else if (Input.GetKeyDown(KeyCode.LeftArrow))
+            {
+                AttackerRange("lft");
+            }
         }
 
     }
@@ -36,32 +56,79 @@ public class AttackScript : MonoBehaviour {
         Debug.Log(currentpos);
     }
 
-    void AttackerRange()
-    {
-        Vector3 fwd = transform.TransformDirection(Vector3.forward);
-        Vector3 bck = transform.TransformDirection(Vector3.back);
-        Vector3 lft = transform.TransformDirection(Vector3.left);
-        Vector3 rht = transform.TransformDirection(Vector3.right);
 
-        if (Physics.Raycast(transform.position, fwd, 10))
+
+    void AttackerRange(string direction)
+    {
+        Vector3 fwd = Vector3.forward;
+        Vector3 dwn = Vector3.back;
+        Vector3 lft = Vector3.left;
+        Vector3 rht = Vector3.right;
+        RaycastHit hit;
+        switch (direction)
         {
-            Debug.Log("fwd");
-        }
-        if (Physics.Raycast(transform.position, bck, 10))
-        {
-            Debug.Log("bck");
-        }
-        if (Physics.Raycast(transform.position, lft, 10))
-        {
-            Debug.Log("lft");
-        }
-        if (Physics.Raycast(transform.position, rht, 10))
-        {
-            Debug.Log("rht");
+            case ("fwd"):
+                {
+                    if (Physics.Raycast(transform.position, fwd, out hit, 50f))
+                    {
+                        print(hit.transform.gameObject.name);
+                       
+                        active = false;
+                    }
+                    else
+                    {
+                        Debug.DrawRay(transform.position, fwd * 50f, Color.red, 1f);
+                        print("Sorry no hit up");
+                    }
+                    return;
+                }
+            case ("dwn"):
+                {
+                    if (Physics.Raycast(transform.position, dwn, out hit,50f))
+                    {
+                        print(hit.transform.gameObject.name);
+                        
+                        active = false;
+                    }
+                    else
+                    {
+                        Debug.DrawRay(transform.position, dwn * 50f, Color.red, 1f);
+                        print("Sorry no hit down");
+                    }
+                    return;
+                }
+            case ("lft"):
+                {
+                    if (Physics.Raycast(transform.position, lft, out hit,50f))
+                    {
+                        print(hit.transform.gameObject.name);
+                        active = false;
+                    }
+                    else
+                    {
+                        Debug.DrawRay(transform.position, lft * 50f, Color.red, 1f);
+                        print("Sorry no hit left");
+                    }
+                    return;
+                }
+            case ("rht"):
+                {
+                    if (Physics.Raycast(transform.position, rht, out hit,50f))
+                    {
+                        print(hit.transform.gameObject.name);
+                        active = false;
+                    }
+                    else
+                    {
+                        Debug.DrawRay(transform.position, rht * 50f, Color.red, 1f);
+                        print("Sorry no hit right OR ALL AROUND");
+                    }
+                    return;
+                }
         }
     }
 
-    void AttackerDam()
+    void AttackerDam(UnitInformation enemy)
     {
 
     }

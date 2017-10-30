@@ -85,6 +85,11 @@ public class GameMaster : MonoBehaviour {
         currentplayer.GetComponent<Move>().active = true;
     }
 
+    public void settingupattack()
+    {
+
+    }
+
     public void unitattack()
     {
         menu.SetActive(false);

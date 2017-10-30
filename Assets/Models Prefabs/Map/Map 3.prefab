@@ -38,7 +38,7 @@ GameObject:
   - component: {fileID: 64013740340817632}
   - component: {fileID: 23870061807461912}
   - component: {fileID: 114325482520477544}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (1)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -57,7 +57,7 @@ GameObject:
   - component: {fileID: 64931334508406128}
   - component: {fileID: 23704078648692476}
   - component: {fileID: 114285322146334830}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Plane (2)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -223,6 +223,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
 --- !u!114 &114325482520477544
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -235,3 +236,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0

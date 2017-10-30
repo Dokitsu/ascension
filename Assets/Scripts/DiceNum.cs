@@ -19,8 +19,11 @@ public class DiceNum : MonoBehaviour {
         if (Physics.Raycast(transform.position, Vector3.up, out hit, Mathf.Infinity, diecoll))
         {
             value = hit.collider.GetComponent<DiceVal>().value;
+           
         }
     }
+
+
 
     void OnGUI()
     {
