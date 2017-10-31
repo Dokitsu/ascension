@@ -8,8 +8,6 @@ public class Move : MonoBehaviour
     public bool active;
     public Vector3 targetpos;
     public static Vector3 currentpos;
-    public Vector3 p1pos;
-    public Vector3 p2pos;
 
     public int maxmovement;
     [SerializeField]
@@ -33,14 +31,6 @@ public class Move : MonoBehaviour
         currentmovement = maxmovement;
         currentpos = transform.position;
         mapPlane.currentpos = currentpos;
-        p1pos = GameObject.Find("Player 1").transform.position;
-        p2pos = GameObject.Find("Player 2").transform.position;
-
-        Debug.Log("player1");
-        Debug.Log(p1pos);
-        Debug.Log("player2");
-        Debug.Log(p2pos);
-
 
 }
 
@@ -90,11 +80,6 @@ public class Move : MonoBehaviour
         GameObject.FindObjectOfType<GameMaster>().changephase();
         GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
         active = false;
-
-        Debug.Log("player1");
-        Debug.Log(p1pos);
-        Debug.Log("player2");
-        Debug.Log(p2pos);
 
         //Debug.Log("moved");
     }
