@@ -12,6 +12,7 @@ public class DiceManager : MonoBehaviour {
     public string buttonName = "Fire1";
 
     public Vector3 Blkpoint;
+    public Vector3 Redpoint;
 
     public bool cankick = false;
 
@@ -57,16 +58,28 @@ public class DiceManager : MonoBehaviour {
         if (cankick == true)
         {
             BlkDie.transform.position = (Blkpoint);
+            Kick = BlkDie.GetComponent<DiceKick>();
             Kick.KickDie();
         }
 
         
         BlkDie.transform.position = (Blkpoint);
+        Kick = BlkDie.GetComponent<DiceKick>();
         Kick.KickDie();
     }
 
     void rollRed()
     {
+        if (cankick == true)
+        {
+            RedDie.transform.position = (Redpoint);
+            Kick = RedDie.GetComponent<DiceKick>();
+            Kick.KickDie();
+        }
 
+
+        RedDie.transform.position = (Redpoint);
+        Kick = RedDie.GetComponent<DiceKick>();
+        Kick.KickDie();
     }
 }
