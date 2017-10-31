@@ -32,8 +32,8 @@ public class DiceKick : MonoBehaviour {
 
     public void KickDie()
     {
-            Rigidbody die = GetComponent<Rigidbody>();
-            die.AddForce(Random.onUnitSphere * force, forceMode);
-            die.AddTorque(Random.onUnitSphere * angforce, forceMode);
+        Rigidbody die = GetComponent<Rigidbody>();
+        die.AddForce(Random.onUnitSphere * force, forceMode);
+        die.AddTorque(Random.onUnitSphere * angforce, forceMode);
     }
 }

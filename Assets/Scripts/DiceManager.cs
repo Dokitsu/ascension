@@ -30,7 +30,7 @@ public class DiceManager : MonoBehaviour {
         redval = RedDie.GetComponent<DiceNum>().value;
 
 
-        //For Debug purpose
+        //For Debug purpose "b"
         if (Input.GetButtonDown("RollBlk"))
         {
             rollBlk();
@@ -42,11 +42,11 @@ public class DiceManager : MonoBehaviour {
             Kick.KickDie();
         }
 
-        if (GetComponent<Rigidbody>().velocity == new Vector3(0, 0, 0) && cankick == false)
-        {
-            //If it's already kicked
-            cankick = true;
-        }
+        //if (GetComponent<Rigidbody>().velocity == new Vector3(0, 0, 0) && cankick == false)
+        //{
+        //    //If it's already kicked
+        //    cankick = true;
+        //}
 
     }
 
@@ -56,9 +56,13 @@ public class DiceManager : MonoBehaviour {
     {
         if (cankick == true)
         {
-            Kick.KickDie();
             BlkDie.transform.position = (Blkpoint);
+            Kick.KickDie();
         }
+
+        
+        BlkDie.transform.position = (Blkpoint);
+        Kick.KickDie();
     }
 
     void rollRed()
