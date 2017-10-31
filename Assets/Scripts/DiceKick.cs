@@ -4,14 +4,15 @@ using UnityEngine;
 
 public class DiceKick : MonoBehaviour {
 
-    public string buttonName = "Fire1";
     public float force = 10.0f;
     public ForceMode forceMode;
     public float angforce;
-    public bool cankick = false;
 
     //Kicks the dice
 
+    //Dice kick checks now handled by DiceManager
+        
+        
     // Use this for initialization
     void Start ()
     {
@@ -20,26 +21,19 @@ public class DiceKick : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        if (Input.GetButtonDown(buttonName) && cankick == true)
+
+        //For Debug perpose "k" to kick the dice
+        if (Input.GetButtonDown("Kick"))
         {
             KickDie();
         }
 
-        if (GetComponent<Rigidbody>().velocity == new Vector3(0,0,0) && cankick == false)
-        {
-            //If it's already kicked
-            cankick = true;
-        }
-	}
+    }
 
-    void KickDie()
+    public void KickDie()
     {
-        if (cankick == true)
-        {
             Rigidbody die = GetComponent<Rigidbody>();
             die.AddForce(Random.onUnitSphere * force, forceMode);
             die.AddTorque(Random.onUnitSphere * angforce, forceMode);
-            cankick = false;
-        } 
     }
 }
