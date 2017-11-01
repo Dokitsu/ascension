@@ -681,15 +681,15 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
-    - target: {fileID: 1154730167374394, guid: 8e0fa8bb98845d14d99e69b1ea2d76c3, type: 2}
-      propertyPath: m_Name
-      value: Player 2
-      objectReference: {fileID: 0}
     - target: {fileID: 114766583748283318, guid: 8e0fa8bb98845d14d99e69b1ea2d76c3,
         type: 2}
       propertyPath: HPvalue
       value: 
       objectReference: {fileID: 1437381694}
+    - target: {fileID: 1154730167374394, guid: 8e0fa8bb98845d14d99e69b1ea2d76c3, type: 2}
+      propertyPath: m_Name
+      value: Player 2
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8e0fa8bb98845d14d99e69b1ea2d76c3, type: 2}
   m_IsPrefabParent: 0
