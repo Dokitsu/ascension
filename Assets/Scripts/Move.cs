@@ -63,7 +63,7 @@ public class Move : MonoBehaviour
     {
         if (currentmovement > 0)
         {
-            transform.position = new Vector3(targetpos.x, targetpos.y + 10, targetpos.z);
+            transform.position = new Vector3(targetpos.x, targetpos.y + 15, targetpos.z);
             currentpos = transform.position;
             mapPlane.currentpos = currentpos;
             currentmovement--;
