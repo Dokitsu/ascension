@@ -6,6 +6,7 @@ public class AttackScript : MonoBehaviour {
 
     public bool active;
 
+    public UnitInformation Unit;
     //public GameObject Attacker;
     public GameObject Target;
     //public Vector3 Atkcoor;
@@ -72,7 +73,6 @@ public class AttackScript : MonoBehaviour {
                     if (Physics.Raycast(transform.position, fwd, out hit, 50f))
                     {
                         print(hit.transform.gameObject.name);
-                       
                         active = false;
                     }
                     else
@@ -132,6 +132,9 @@ public class AttackScript : MonoBehaviour {
     public void Attack()
     {
         Debug.Log(Target);
+        Unit = GetComponent<UnitInformation>();
+        Unit.HitTaken();
+
     }
 
     void DefRoll()

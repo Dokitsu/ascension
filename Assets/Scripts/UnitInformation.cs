@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class UnitInformation : MonoBehaviour {
 
-    private byte currHP; //lose all your health, you're removed from the game
+    private int currHP; //lose all your health, you're removed from the game
     private enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
     private equipment mygear; //ONLY ONE
     private byte defense; //Numbeer of die to roll
@@ -24,13 +24,13 @@ public class UnitInformation : MonoBehaviour {
 
         // Current HP assignment for debug only
         currHP = 15;
-        UpdateHealth();
+        UpdateHealthGUI();
     }
 	
     public void rest()
     {
         currHP += (byte)Random.Range(1, 4);
-        UpdateHealth();
+        UpdateHealthGUI();
         
     }
 
@@ -57,8 +57,13 @@ public class UnitInformation : MonoBehaviour {
         transform.position = newlocation;
         movement--;
     }
-
-    void UpdateHealth()
+    public void HitTaken()
+    {
+        currHP = currHP - 3;
+        Debug.Log(currHP);
+        UpdateHealthGUI();
+    }
+    void UpdateHealthGUI()
     {
         HPvalue.text = "HP: " + currHP;
     }
