@@ -6,14 +6,14 @@ public class AttackScript : MonoBehaviour {
 
     public bool active;
 
-    public GameObject Attacker;
+    //public GameObject Attacker;
     public GameObject Target;
-    public Vector3 Atkcoor;
-    public Vector3 Tarcoor;
-    public Vector3 targetpos;
+    //public Vector3 Atkcoor;
+    //public Vector3 Tarcoor;
+    //public Vector3 targetpos;
     public static Vector3 currentpos;
 
-
+    int damage;
 
     void Start ()
     {
@@ -87,7 +87,6 @@ public class AttackScript : MonoBehaviour {
                     if (Physics.Raycast(transform.position, dwn, out hit,50f))
                     {
                         print(hit.transform.gameObject.name);
-                        
                         active = false;
                     }
                     else
@@ -102,6 +101,8 @@ public class AttackScript : MonoBehaviour {
                     if (Physics.Raycast(transform.position, lft, out hit,50f))
                     {
                         print(hit.transform.gameObject.name);
+                        Target = hit.transform.gameObject;
+                        Attack();
                         active = false;
                     }
                     else
@@ -128,9 +129,9 @@ public class AttackScript : MonoBehaviour {
         }
     }
 
-    void AttackerDam(UnitInformation enemy)
+    public void Attack()
     {
-
+        Debug.Log(Target);
     }
 
     void DefRoll()
