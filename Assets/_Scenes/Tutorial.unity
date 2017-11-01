@@ -333,6 +333,16 @@ Prefab:
       propertyPath: HPvalue
       value: 
       objectReference: {fileID: 1437381694}
+    - target: {fileID: 136283636734787460, guid: 90b122db807becb4785f52f1123ba538,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 136892732379802012, guid: 90b122db807becb4785f52f1123ba538,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 90b122db807becb4785f52f1123ba538, type: 2}
   m_IsPrefabParent: 0
