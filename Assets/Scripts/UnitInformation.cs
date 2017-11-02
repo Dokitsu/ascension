@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class UnitInformation : MonoBehaviour {
 
+    public DiceManager Dice;
+    public static int blkval;
+
     private int currHP; //lose all your health, you're removed from the game
     private enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
     private equipment mygear; //ONLY ONE
@@ -21,7 +24,7 @@ public class UnitInformation : MonoBehaviour {
 
     void Start ()
     {
-
+        //StartCoroutine(HitTaken);
         // Current HP assignment for debug only
         currHP = 15;
         UpdateHealthGUI();
@@ -49,20 +52,31 @@ public class UnitInformation : MonoBehaviour {
     {
         return movement;
     }
+
 //<<<<<<< HEAD
 //=======
 //>>>>>>> origin/HEAD
+
+
     public void setmove(Vector3 newlocation)
     {
         transform.position = newlocation;
         movement--;
     }
-    public void HitTaken()
+
+
+    public IEnumerator HitTaken()
     {
-        currHP = currHP - 3;
+        Dice.rollBlk();
+        yield return new WaitForSeconds(8f);
+        blkval = DiceManager.blkval;
+        Debug.Log(blkval);
+        currHP = currHP - blkval;
         Debug.Log(currHP);
         UpdateHealthGUI();
     }
+
+
     void UpdateHealthGUI()
     {
         HPvalue.text = "HP: " + currHP;

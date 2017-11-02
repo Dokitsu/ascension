@@ -73,6 +73,8 @@ public class AttackScript : MonoBehaviour {
                     if (Physics.Raycast(transform.position, fwd, out hit, 50f))
                     {
                         print(hit.transform.gameObject.name);
+                        Target = hit.transform.gameObject;
+                        Attack();
                         active = false;
                     }
                     else
@@ -87,6 +89,8 @@ public class AttackScript : MonoBehaviour {
                     if (Physics.Raycast(transform.position, dwn, out hit,50f))
                     {
                         print(hit.transform.gameObject.name);
+                        Target = hit.transform.gameObject;
+                        Attack();
                         active = false;
                     }
                     else
@@ -117,6 +121,8 @@ public class AttackScript : MonoBehaviour {
                     if (Physics.Raycast(transform.position, rht, out hit,50f))
                     {
                         print(hit.transform.gameObject.name);
+                        Target = hit.transform.gameObject;
+                        Attack();
                         active = false;
                     }
                     else
@@ -133,7 +139,7 @@ public class AttackScript : MonoBehaviour {
     {
         Debug.Log(Target);
         Unit = GetComponent<UnitInformation>();
-        Unit.HitTaken();
+        StartCoroutine(Unit.HitTaken());
 
     }
 

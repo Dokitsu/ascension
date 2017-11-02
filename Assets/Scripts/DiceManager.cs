@@ -16,7 +16,7 @@ public class DiceManager : MonoBehaviour {
 
     public bool cankick = false;
 
-    public int blkval;
+    public static int blkval;
     public int redval;
 
 
@@ -53,19 +53,18 @@ public class DiceManager : MonoBehaviour {
 
 
 
-    void rollBlk()
+    public void rollBlk()
     {
-        if (cankick == true)
-        {
-            BlkDie.transform.position = (Blkpoint);
-            Kick = BlkDie.GetComponent<DiceKick>();
-            Kick.KickDie();
-        }
-
-        
+        //if (cankick == true)
+        //{
+        //    BlkDie.transform.position = (Blkpoint);
+        //    Kick = BlkDie.GetComponent<DiceKick>();
+        //    Kick.KickDie();
+        //}
         BlkDie.transform.position = (Blkpoint);
         Kick = BlkDie.GetComponent<DiceKick>();
         Kick.KickDie();
+
     }
 
     void rollRed()
