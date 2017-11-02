@@ -61,18 +61,19 @@ public class AttackScript : MonoBehaviour {
                 {
                     Target = hit.transform.gameObject;
                     //Debug.Log(hit.transform.gameObject.name);
-                    if (Target.tag == "Player")
+                    if (Target != gameObject)
                     {
-                        Debug.Log("Enemy detected");
-                        DistanceCheck();
+                        if (Target.tag == "Player")
+                        {
+                            Debug.Log("Enemy detected");
+                            DistanceCheck();
+                        }
                     }
-
+                    else
+                    {
+                        Debug.Log("Target invalid or out of bounds");
+                    }
                 }
-                else
-                {
-                    Debug.Log("Target invalid or out of bounds");
-                } 
-                
             }
         }
     }
