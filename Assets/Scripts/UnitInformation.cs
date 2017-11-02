@@ -8,7 +8,7 @@ public class UnitInformation : MonoBehaviour {
     public DiceManager Dice;
     public static int blkval;
 
-    private int currHP; //lose all your health, you're removed from the game
+    private int currHP;//lose all your health, you're removed from the game
     private enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
     private equipment mygear; //ONLY ONE
     private byte defense; //Numbeer of die to roll
@@ -18,6 +18,7 @@ public class UnitInformation : MonoBehaviour {
     private string myname = "This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES";
 
     public Text HPvalue;
+    public Text EHPvalue;
     //public int currHP;
 
     //For methods to create: One method (e.g. void longsword) for a piece of equipment
@@ -80,5 +81,6 @@ public class UnitInformation : MonoBehaviour {
     void UpdateHealthGUI()
     {
         HPvalue.text = "HP: " + currHP;
+        EHPvalue.text = "Enemy HP: " + currHP;
     }
 }

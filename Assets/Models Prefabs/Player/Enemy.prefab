@@ -62,7 +62,7 @@ GameObject:
   - component: {fileID: 136917274707050580}
   m_Layer: 0
   m_Name: Enemy
-  m_TagString: Player
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -549,6 +549,7 @@ MonoBehaviour:
   Dice: {fileID: 0}
   movement: 0
   HPvalue: {fileID: 0}
+  EHPvalue: {fileID: 0}
 --- !u!135 &135113564129265634
 SphereCollider:
   m_ObjectHideFlags: 1

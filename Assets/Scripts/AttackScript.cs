@@ -63,7 +63,7 @@ public class AttackScript : MonoBehaviour {
                     //Debug.Log(hit.transform.gameObject.name);
                     if (Target != gameObject)
                     {
-                        if (Target.tag == "Player")
+                        if (Target.tag == "Player" || Target.tag == "Enemy")
                         {
                             Debug.Log("Enemy detected");
                             DistanceCheck();
