@@ -65,6 +65,7 @@ public class AttackScript : MonoBehaviour {
                     {
                         if (Target.tag == "Player" || Target.tag == "Enemy")
                         {
+                            active = false;
                             Debug.Log("Enemy detected");
                             DistanceCheck();
                         }
@@ -72,6 +73,9 @@ public class AttackScript : MonoBehaviour {
                     else
                     {
                         Debug.Log("Target invalid or out of bounds");
+                        active = false;
+                        GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
+
                     }
                 }
             }
@@ -85,6 +89,14 @@ public class AttackScript : MonoBehaviour {
         Debug.Log(currentpos);
     }
 
+    void endmove()
+    {
+        GameObject.FindObjectOfType<GameMaster>().changephase();
+        GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
+        active = false;
+
+        //Debug.Log("moved");
+    }
 
 
     //void AttackerRange(string direction)
@@ -170,7 +182,7 @@ public class AttackScript : MonoBehaviour {
         Targetdis = Vector3.Distance(currentpos,Targetpos);
         if (Targetdis < 60)
         {
-            Attack();
+            StartCoroutine(Attack());
         }
         else
         {
@@ -178,13 +190,14 @@ public class AttackScript : MonoBehaviour {
         }
     }
 
-    public void Attack()
+    IEnumerator Attack()
     {
 
         Debug.Log(Target);
         Unit = GetComponent<UnitInformation>();
-        StartCoroutine(Unit.HitTaken());
-
+        StartCoroutine(Unit.HitTaken(Target.GetComponent<UnitInformation>()));
+        yield return new WaitForSeconds(8);
+        endmove();
     }
 
     void DefRoll()

@@ -61,6 +61,21 @@ public class GameMaster : MonoBehaviour {
         
     }
     
+    public void removingenemy(UnitInformation me)
+    {
+
+        foreach(GameObject enemy in Enemies)
+        {
+            if (enemy.name == me.gameObject.name)
+            {
+                Enemies.Remove(enemy);
+            }
+        }
+        
+
+    }
+
+
 
     public void changephase()
     {
