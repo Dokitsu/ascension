@@ -36,7 +36,7 @@ public class GameMaster : MonoBehaviour {
 
         currentplayer.GetComponent<Light>().enabled = true;
         playerpos = currentplayer.transform.position;
-        Playercam.transform.position = new Vector3(playerpos.x, 250, playerpos.z);
+        Playercam.transform.position = new Vector3(playerpos.x, 60, playerpos.z-50);
     }
 
     public void endplayerturn()
