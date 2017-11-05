@@ -13,6 +13,11 @@ public class Move : MonoBehaviour
     [SerializeField]
     private int currentmovement;
 
+    Vector3 Raycheck;
+
+    public GameObject Target;
+    
+
     private void OnEnable()
     {
         currentmovement = maxmovement;
@@ -37,22 +42,37 @@ public class Move : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        Raycheck = mapPlane.Target - currentpos;
         // Activates the player move script on LMB
         if (Input.GetMouseButtonDown(0) && active == true)
+        {
             SetTarget();
+        }
     }
 
     void SetTarget()
     {
         //Sets the target to the selected plane
         targetpos = mapPlane.Target;
+        RaycastHit hit;
         // Checks if the player is currently active and if the move was valid
         if (active)
         {
-            if (mapPlane.distance < 60)
+            if (Physics.Raycast(currentpos, Raycheck, out hit))
             {
-                MovePlayer();
+                Target = hit.transform.gameObject;
+                Debug.Log(Target);
+                if (Target.tag == "Player" || Target.tag == "Enemy")
+                {
+                    Debug.Log("hitmebby");
+                }
+                else
+                {
+                    if (mapPlane.distance < 60)
+                    {
+                        MovePlayer();
+                    }
+                }
             }
         }
     }
