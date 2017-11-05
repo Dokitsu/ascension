@@ -63,7 +63,7 @@ public class AttackScript : MonoBehaviour {
                     //Debug.Log(hit.transform.gameObject.name);
                     if (Target != gameObject)
                     {
-                        if (Target.tag == "Player" || Target.tag == "Enemy")
+                        if (Target.tag.Contains ("Player") || Target.tag == "Enemy")
                         {
                             active = false;
                             Debug.Log("Enemy detected");

@@ -5,7 +5,9 @@ TagManager:
   serializedVersion: 2
   tags:
   - Enemy
-  - Tank
+  - Player-Range
+  - Player-Heal
+  - Player-Tank
   layers:
   - Default
   - TransparentFX
