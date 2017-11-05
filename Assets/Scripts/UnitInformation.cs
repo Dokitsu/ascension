@@ -29,7 +29,26 @@ public class UnitInformation : MonoBehaviour {
     {
         //StartCoroutine(HitTaken);
         // Current HP assignment for debug only
-        currHP = 6;
+
+        //Pulls HP stat from assigned class
+        //Player-Tank ,Player-Range, Player-Healer
+
+        if (gameObject.tag.Contains("Tank"))
+        {
+            currHP = 15;
+        }
+        if (gameObject.tag.Contains("Range"))
+        {
+            currHP = 8;
+        }
+        if (gameObject.tag.Contains("Healer"))
+        {
+            currHP = 10;
+        }
+        else
+        {
+            currHP = 6;
+        }
         UpdatePlayerHealthGUI();
     }
 	
