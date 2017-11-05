@@ -17,7 +17,9 @@ public class GameMaster : MonoBehaviour {
     private GameObject currentplayer;
     private Image[] die = new Image[5];
     public GameObject menu;
-    
+
+    public GameObject Playercam;
+    public Vector3 playerpos;
 
 
 	// Use this for initialization
@@ -33,6 +35,8 @@ public class GameMaster : MonoBehaviour {
         //UpdateHealth();
 
         currentplayer.GetComponent<Light>().enabled = true;
+        playerpos = currentplayer.transform.position;
+        Playercam.transform.position = new Vector3(playerpos.x, 250, playerpos.z);
     }
 
     public void endplayerturn()
