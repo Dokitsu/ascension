@@ -1,14 +1,14 @@
 fileFormatVersion: 2
-guid: 2c37bc2e9287923409a2fbbab473e95d
-timeCreated: 1509896639
+guid: 501030a6cf8e90a47b30a368eead5f2b
+timeCreated: 1509897089
 licenseType: Free
 ModelImporter:
   serializedVersion: 19
   fileIDToRecycleName:
-    100000: group
-    100002: group1
-    100004: group2
-    100006: //RootNode
+    100000: //RootNode
+    100002: group
+    100004: group1
+    100006: group2
     100008: pasted__pCube2
     100010: pasted__pCube6
     100012: pasted__pSphere2
@@ -28,10 +28,10 @@ ModelImporter:
     100040: transform3
     100042: transform4
     100044: transform5
-    400000: group
-    400002: group1
-    400004: group2
-    400006: //RootNode
+    400000: //RootNode
+    400002: group
+    400004: group1
+    400006: group2
     400008: pasted__pCube2
     400010: pasted__pCube6
     400012: pasted__pSphere2
