@@ -8,11 +8,19 @@ public class DiceManager : MonoBehaviour {
 
     public GameObject BlkDie;
     public GameObject RedDie;
+    public GameObject BluDie;
+    public GameObject BrwnDie;
+    public GameObject YlwDie;
+    public GameObject GryDie;
 
     public string buttonName = "Fire1";
 
     public Vector3 Blkpoint;
     public Vector3 Redpoint;
+    public Vector3 Blupoint;
+    public Vector3 Brwnpoint;
+    public Vector3 Ylwpoint;
+    public Vector3 Grypoint;
 
     public bool cankick = false;
 

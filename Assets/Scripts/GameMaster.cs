@@ -31,12 +31,15 @@ public class GameMaster : MonoBehaviour {
     {
         //currHP = currentplayer.
         //UpdateHealth();
+
+        currentplayer.GetComponent<Light>().enabled = true;
     }
 
     public void endplayerturn()
     {
         turns = 2;
         phasenumber++;
+        currentplayer.GetComponent<Light>().enabled = false;
         if (phasenumber > players.Capacity + Enemies.Capacity-1) 
         {
             print("New rotation");
