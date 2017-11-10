@@ -65,7 +65,6 @@ public class AttackScript : MonoBehaviour {
                     {
                         if (Target.tag.Contains ("Player") || Target.tag == "Enemy")
                         {
-                            active = false;
                             Debug.Log("Enemy detected");
                             DistanceCheck();
                         }
@@ -187,6 +186,7 @@ public class AttackScript : MonoBehaviour {
         else
         {
             StartCoroutine(Attack());
+            active = false;
         }
     }
 
