@@ -23,6 +23,7 @@ public class GameMaster : MonoBehaviour {
     public Vector3 playerpos;
 
     public GameObject Boss;
+    public static bool Key;
 
     // Is boss alive?
     // no (Unlock Gate)
@@ -30,8 +31,8 @@ public class GameMaster : MonoBehaviour {
     // auto win
 
 
-	// Use this for initialization
-	void Start ()
+    // Use this for initialization
+    void Start ()
     {
         currentplayer = players[0];
 	}
@@ -47,6 +48,7 @@ public class GameMaster : MonoBehaviour {
         if (Boss == null)
         {
             Debug.Log("boss ded");
+            Key = true;
         }
     }
 
@@ -82,14 +84,14 @@ public class GameMaster : MonoBehaviour {
     public void removingenemy(UnitInformation me)
     {
 
-        foreach(GameObject enemy in Enemies)
-        {
-            if (enemy.name == me.gameObject.name)
-            {
-                Enemies.Remove(enemy);
-            }
-        }
-        
+        //foreach (GameObject enemy in Enemies)
+        //{
+        //    if (enemy.name == me.gameObject.name)
+        //    {
+        //        Enemies.Remove(enemy);
+        //    }
+        //}
+
 
     }
 

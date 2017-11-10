@@ -57,7 +57,7 @@ public class AttackScript : MonoBehaviour {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, 2000))
+                if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
                     Target = hit.transform.gameObject;
                     //Debug.Log(hit.transform.gameObject.name);

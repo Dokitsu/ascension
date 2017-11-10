@@ -195,6 +195,7 @@ GameObject:
   - component: {fileID: 114271667539929608}
   - component: {fileID: 108663534583924608}
   - component: {fileID: 136219350014858712}
+  - component: {fileID: 54698178690908684}
   m_Layer: 0
   m_Name: Tank
   m_TagString: Player
@@ -327,7 +328,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1764482462511020}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150, y: 15, z: 200}
+  m_LocalPosition: {x: -450, y: 15, z: 350}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4176494250777128}
@@ -986,6 +987,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1548127561977576}
   m_Mesh: {fileID: 4300020, guid: 4c9785d4a7c3f064fbd296866cb01c84, type: 3}
+--- !u!54 &54698178690908684
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1764482462511020}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!95 &95178455042321002
 Animator:
   serializedVersion: 3

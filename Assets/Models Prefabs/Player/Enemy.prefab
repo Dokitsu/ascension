@@ -129,6 +129,7 @@ GameObject:
   - component: {fileID: 114778207667990588}
   - component: {fileID: 114241584128003136}
   - component: {fileID: 136917274707050580}
+  - component: {fileID: 54303688208718540}
   m_Layer: 0
   m_Name: Enemy
   m_TagString: Enemy
@@ -392,7 +393,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1506182148728066}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -50, y: 15, z: -50}
+  m_LocalPosition: {x: -200, y: 15, z: 250}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4335419461909182}
@@ -837,6 +838,21 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1555072143442158}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!54 &54303688208718540
+Rigidbody:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1506182148728066}
+  serializedVersion: 2
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0
+  m_UseGravity: 0
+  m_IsKinematic: 1
+  m_Interpolate: 0
+  m_Constraints: 116
+  m_CollisionDetection: 0
 --- !u!95 &95694223853613892
 Animator:
   serializedVersion: 3
@@ -932,7 +948,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dice: {fileID: 0}
-  currHP: 6
+  currHP: 2
   movement: 0
   alive: 0
   HPvalue: {fileID: 0}
