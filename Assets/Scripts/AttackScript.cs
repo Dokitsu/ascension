@@ -192,7 +192,6 @@ public class AttackScript : MonoBehaviour {
 
     IEnumerator Attack()
     {
-
         Debug.Log(Target);
         Unit = GetComponent<UnitInformation>();
         StartCoroutine(Unit.HitTaken(Target.GetComponent<UnitInformation>()));

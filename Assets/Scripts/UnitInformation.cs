@@ -153,6 +153,7 @@ public class UnitInformation : MonoBehaviour {
         UpdateEnemyHealthGUI(enemyunit);
 
         yield return null;
+
     }
 
 

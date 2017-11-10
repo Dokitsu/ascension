@@ -120,6 +120,11 @@ public class DiceManager : MonoBehaviour {
 
         // single red and blue
         // http://puu.sh/yj0Ce/baeb673c0b.jpg
+
+        if (bluval < 0)
+        {
+            // attack failed
+        }
     }
 
     public void rollranged()
