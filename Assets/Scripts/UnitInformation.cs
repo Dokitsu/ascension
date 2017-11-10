@@ -6,7 +6,16 @@ using UnityEngine;
 public class UnitInformation : MonoBehaviour {
 
     public DiceManager Dice;
+
     public static int blkval;
+    public static int redval;
+    public static int redval2;
+    public static int bluval;
+    public static int brwnval;
+    public static int ylwval;
+    public static int ylwval2;
+    public static int gryval;
+    public static int gryval2;
 
     public int currHP;//lose all your health, you're removed from the game
     private enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
@@ -21,7 +30,8 @@ public class UnitInformation : MonoBehaviour {
 
     public Text HPvalue;
     public Text EHPvalue;
-    //public int currHP;
+
+    public int maxHP;
 
     //For methods to create: One method (e.g. void longsword) for a piece of equipment
 
@@ -58,12 +68,24 @@ public class UnitInformation : MonoBehaviour {
             UpdatePlayerHealthGUI();
         //}
     }
-	
-    public void rest()
+
+    public IEnumerator rest()
     {
-        currHP += (byte)Random.Range(1, 4);
+        Debug.Log("rest");
+        Dice.rollrest();
+        yield return new WaitForSeconds(8f);
+        redval = DiceManager.redval;
+        Debug.Log(redval);
+
+        heal(redval);
+
         UpdatePlayerHealthGUI();
-        
+    }
+
+    public void heal(int forcedvalue)
+    {
+        Debug.Log("resting");
+        currHP += forcedvalue;
     }
 
     public void healthchange(int forcedvalue)
@@ -100,9 +122,7 @@ public class UnitInformation : MonoBehaviour {
         return movement;
     }
 
-//<<<<<<< HEAD
-//=======
-//>>>>>>> origin/HEAD
+
     public int healthreturn()
     {
         return currHP;

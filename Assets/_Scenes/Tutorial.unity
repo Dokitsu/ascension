@@ -741,6 +741,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 251452472}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &280345787 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1233777784146730, guid: c4c4d932933c128419ca25ff7b457c9c,
+    type: 2}
+  m_PrefabInternal: {fileID: 248653503}
 --- !u!1 &307529521
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,19 +1255,23 @@ MonoBehaviour:
   Kick: {fileID: 0}
   BlkDie: {fileID: 1179435571}
   RedDie: {fileID: 810287983}
+  RedDie2: {fileID: 1914155163}
   BluDie: {fileID: 1716903995}
   BrwnDie: {fileID: 1470825305}
   YlwDie: {fileID: 470593176}
+  YlwDie2: {fileID: 2138681089}
   GryDie: {fileID: 712498019}
+  GryDie2: {fileID: 280345787}
   buttonName: Fire1
   Blkpoint: {x: 0, y: 0, z: 0}
   Redpoint: {x: 0, y: 0, z: 0}
+  Redpoint2: {x: 0, y: 0, z: 0}
   Blupoint: {x: 0, y: 0, z: 0}
   Brwnpoint: {x: 0, y: 0, z: 0}
   Ylwpoint: {x: 0, y: 0, z: 0}
+  Ylwpoint2: {x: 0, y: 0, z: 0}
   Grypoint: {x: 0, y: 0, z: 0}
-  cankick: 0
-  redval: 0
+  Grypoint2: {x: 0, y: 0, z: 0}
 --- !u!4 &598900096
 Transform:
   m_ObjectHideFlags: 0
@@ -3809,6 +3818,11 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1876243017}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1914155163 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1144864787164204, guid: 0ea6d65926adb91418410b407a69aef3,
+    type: 2}
+  m_PrefabInternal: {fileID: 2033950156}
 --- !u!1 &1943506568
 GameObject:
   m_ObjectHideFlags: 0
@@ -4217,6 +4231,16 @@ Prefab:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 644199463}
+    - target: {fileID: 114778125030710942, guid: 9a116efca2660434f823ea4ba468d386,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 644199463}
+    - target: {fileID: 114778125030710942, guid: 9a116efca2660434f823ea4ba468d386,
+        type: 2}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: rest
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a116efca2660434f823ea4ba468d386, type: 2}
   m_IsPrefabParent: 0
@@ -4329,3 +4353,8 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2080055464}
   m_Mesh: {fileID: 10209, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &2138681089 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1897455005704972, guid: db9bd57728711494a96f1dbae17ea447,
+    type: 2}
+  m_PrefabInternal: {fileID: 779615141}

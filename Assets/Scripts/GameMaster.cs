@@ -133,7 +133,8 @@ public class GameMaster : MonoBehaviour {
     }
     public void rest()
     {
-        currentplayer.GetComponent<UnitInformation>().rest();
+        menu.SetActive(false);
+        StartCoroutine(currentplayer.GetComponent<UnitInformation>().rest());
         changephase();
     }
 
