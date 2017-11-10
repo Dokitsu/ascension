@@ -140,7 +140,6 @@ public class GameMaster : MonoBehaviour {
         menu.SetActive(false);
         StartCoroutine(currentplayer.GetComponent<UnitInformation>().rest());
         currentplayer.GetComponent<UnitInformation>().active = true;
-        changephase();
     }
 
 
