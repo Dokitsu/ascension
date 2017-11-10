@@ -62,6 +62,8 @@ public class GameMaster : MonoBehaviour {
             print("New rotation");
             phasenumber = 0;
             currentplayer = players[phasenumber];
+
+            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
         }
         else
         {
@@ -70,12 +72,14 @@ public class GameMaster : MonoBehaviour {
                 print("Player's turn " + phasenumber);
                 currentplayer = players[phasenumber];
 
+                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
             }
             if (phasenumber >= players.Capacity)
             {
                 print("Enemy's turn " + phasenumber);
                 currentplayer = Enemies[phasenumber - players.Capacity];
 
+                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
             }
         }
         
@@ -135,6 +139,7 @@ public class GameMaster : MonoBehaviour {
     {
         menu.SetActive(false);
         StartCoroutine(currentplayer.GetComponent<UnitInformation>().rest());
+        currentplayer.GetComponent<UnitInformation>().active = true;
         changephase();
     }
 

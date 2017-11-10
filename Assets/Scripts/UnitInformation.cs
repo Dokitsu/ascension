@@ -33,6 +33,8 @@ public class UnitInformation : MonoBehaviour {
 
     public int maxHP;
 
+    public bool active;
+
     //For methods to create: One method (e.g. void longsword) for a piece of equipment
 
     void Start()
@@ -80,6 +82,8 @@ public class UnitInformation : MonoBehaviour {
         heal(redval);
 
         UpdatePlayerHealthGUI();
+
+        endmove();
     }
 
     public void heal(int forcedvalue)
@@ -160,5 +164,15 @@ public class UnitInformation : MonoBehaviour {
     public void UpdateEnemyHealthGUI(UnitInformation enemy)
     {
         EHPvalue.text = "Enemy HP: " + enemy.healthreturn();
+    }
+
+
+    void endmove()
+    {
+        GameObject.FindObjectOfType<GameMaster>().changephase();
+        GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
+        active = false;
+
+        //Debug.Log("moved");
     }
 }
