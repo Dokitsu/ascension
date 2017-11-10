@@ -68,7 +68,7 @@ public class Move : MonoBehaviour
                 }
                 else
                 {
-                    if (mapPlane.distance < 60)
+                    if (mapPlane.distance < 80)
                     {
                         MovePlayer();
                     }

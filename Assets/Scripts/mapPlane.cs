@@ -36,7 +36,7 @@ public class mapPlane : MonoBehaviour {
 
         //if (active)
         //{
-            if (distance < 60)
+            if (distance < 80)
             {
                 rend.material.color = Color.yellow;
             }

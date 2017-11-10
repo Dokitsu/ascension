@@ -33,30 +33,30 @@ public class UnitInformation : MonoBehaviour {
         //Pulls HP stat from assigned class
         //Player-Tank ,Player-Range, Player-Healer
 
-        if (gameObject.tag.Contains("Player-Tank"))
-        {
-            currHP = 15;
-        }
-        else
-        {
-            if (gameObject.tag.Contains("Player-Range"))
-            {
-                currHP = 8;
-            }
-            else
-            {
-                if (gameObject.tag.Contains("Player-Heal"))
-                {
-                    currHP = 10;
-                }
-                else
-                {
-                    currHP = 6;
-                }
-            }
+        //if (gameObject.tag.Contains("Player-Tank"))
+        //{
+        //    currHP = 15;
+        //}
+        //else
+        //{
+        //    if (gameObject.tag.Contains("Player-Range"))
+        //    {
+        //        currHP = 8;
+        //    }
+        //    else
+        //    {
+        //        if (gameObject.tag.Contains("Player-Heal"))
+        //        {
+        //            currHP = 10;
+        //        }
+        //        else
+        //        {
+        //            currHP = 6;
+        //        }
+        //    }
 
             UpdatePlayerHealthGUI();
-        }
+        //}
     }
 	
     public void rest()
