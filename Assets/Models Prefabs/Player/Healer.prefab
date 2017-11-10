@@ -77,7 +77,7 @@ GameObject:
   - component: {fileID: 136192377830349446}
   m_Layer: 0
   m_Name: Healer
-  m_TagString: Player-Heal
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -157,9 +157,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1510184856794658}
-  m_LocalRotation: {x: -0.48858044, y: 0.5199061, z: -0.16229716, w: 0.68164986}
-  m_LocalPosition: {x: 0.57354444, y: -0.9397953, z: 1.66968}
-  m_LocalScale: {x: 100, y: 100, z: 100.000015}
+  m_LocalRotation: {x: -0, y: 0.50000006, z: -0, w: 0.86602545}
+  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalScale: {x: 100.00006, y: 100, z: 100.00008}
   m_Children:
   - {fileID: 4565429243081324}
   - {fileID: 4674070696872196}
@@ -187,9 +187,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1833874303921766}
-  m_LocalRotation: {x: -0.5042716, y: 0.10942692, z: 0.10373676, w: 0.8502791}
-  m_LocalPosition: {x: 0.39694265, y: -0.6666393, z: 1.1174784}
-  m_LocalScale: {x: 3.5, y: 0.1, z: 3.4999995}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.010000611, y: -1.36, z: -0.03208008}
+  m_LocalScale: {x: 3.5, y: 0.1, z: 3.5}
   m_Children: []
   m_Father: {fileID: 4423927353435784}
   m_RootOrder: 2
@@ -200,8 +200,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1620534705828094}
-  m_LocalRotation: {x: 0.5042716, y: -0.10942692, z: -0.10373676, w: 0.8502791}
-  m_LocalPosition: {x: 0, y: 15, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -150, y: 15, z: 300}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children:
   - {fileID: 4169354743424786}
@@ -209,7 +209,7 @@ Transform:
   - {fileID: 4406070812416564}
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 56.599003, y: -31.877, z: -31.395002}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4555040242644992
 Transform:
   m_ObjectHideFlags: 1
@@ -255,8 +255,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1238203044418942}
-  m_LocalRotation: {x: -0.5042716, y: 0.10942692, z: 0.10373676, w: 0.8502791}
-  m_LocalPosition: {x: 0.34769377, y: -0.5859414, z: 0.9741069}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.010000611, y: -1.1882648, z: -0.03208008}
   m_LocalScale: {x: 3, y: 0.1, z: 3}
   m_Children: []
   m_Father: {fileID: 4423927353435784}
@@ -561,7 +561,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dice: {fileID: 0}
-  currHP: 0
+  currHP: 6
   movement: 0
   alive: 0
   HPvalue: {fileID: 0}
@@ -621,7 +621,7 @@ CapsuleCollider:
   m_Radius: 2
   m_Height: 1
   m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Center: {x: 0, y: -2, z: 0}
 --- !u!136 &136562644032681758
 CapsuleCollider:
   m_ObjectHideFlags: 1

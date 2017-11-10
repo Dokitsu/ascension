@@ -1,1 +1,2 @@
 X:\Unity Projects\Ascension\ascension\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache
+X:\Unity Projects\Ascension\ascension\Assets\obj\Debug\Assembly-CSharp.csprojResolveAssemblyReference.cache

@@ -11,6 +11,7 @@ public class GameMaster : MonoBehaviour {
     [SerializeField]
     private List<GameObject> Enemies;
     [SerializeField]
+
     private int phasenumber = 0;
     private int turns = 2;
     [SerializeField]
@@ -20,6 +21,13 @@ public class GameMaster : MonoBehaviour {
 
     public GameObject Playercam;
     public Vector3 playerpos;
+
+    public GameObject Boss;
+
+    // Is boss alive?
+    // no (Unlock Gate)
+    // all enemies dead?
+    // auto win
 
 
 	// Use this for initialization
@@ -31,12 +39,15 @@ public class GameMaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //currHP = currentplayer.
-        //UpdateHealth();
 
         currentplayer.GetComponent<Light>().enabled = true;
         playerpos = currentplayer.transform.position;
         Playercam.transform.position = new Vector3(playerpos.x, 60, playerpos.z-50);
+
+        if (Boss == null)
+        {
+            Debug.Log("boss ded");
+        }
     }
 
     public void endplayerturn()

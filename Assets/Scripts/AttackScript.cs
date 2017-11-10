@@ -57,7 +57,7 @@ public class AttackScript : MonoBehaviour {
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
-                if (Physics.Raycast(ray, out hit, 1000))
+                if (Physics.Raycast(ray, out hit, 2000))
                 {
                     Target = hit.transform.gameObject;
                     //Debug.Log(hit.transform.gameObject.name);
@@ -180,13 +180,13 @@ public class AttackScript : MonoBehaviour {
     {
         Targetpos = Target.transform.position;
         Targetdis = Vector3.Distance(currentpos,Targetpos);
-        if (Targetdis < 60)
+        if (Targetdis > 90)
         {
-            StartCoroutine(Attack());
+            Debug.Log("Target too far");
         }
         else
         {
-            Debug.Log("Target too far");
+            StartCoroutine(Attack());
         }
     }
 
