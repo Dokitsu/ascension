@@ -59,10 +59,16 @@ public class DiceManager : MonoBehaviour {
 
     }
 
+    void disabledie()
+    {
+        BlkDie.gameObject.SetActive(false);
+    }
+
 
 
     public void rollBlk()
     {
+        disabledie();
         //if (cankick == true)
         //{
         //    BlkDie.transform.position = (Blkpoint);
@@ -70,6 +76,7 @@ public class DiceManager : MonoBehaviour {
         //    Kick.KickDie();
         //}
         BlkDie.transform.position = (Blkpoint);
+        BlkDie.gameObject.SetActive(true);
         Kick = BlkDie.GetComponent<DiceKick>();
         Kick.KickDie();
 
