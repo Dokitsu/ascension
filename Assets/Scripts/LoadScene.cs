@@ -13,6 +13,11 @@ public class LoadScene : MonoBehaviour
     public Dropdown class3;
     public Dropdown class4;
 
+    public static int classval1;
+    public static int classval2;
+    public static int classval3;
+    public static int classval4;
+
 
     public static int players;
 
@@ -25,7 +30,11 @@ public class LoadScene : MonoBehaviour
 
 
     void Update()
-    { 
+    {
+        classval1 = class1.value;
+        Debug.Log(classval1);
+
+
         players = nplayers.value + 1;
         Debug.Log(players);
 

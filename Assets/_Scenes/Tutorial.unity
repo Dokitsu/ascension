@@ -1621,8 +1621,8 @@ MonoBehaviour:
   Key: {fileID: 0}
   Gate: {fileID: 1379545150}
   tank: {fileID: 1764482462511020, guid: c56e2c5bfd2bc9b4899cda8f28c8e875, type: 2}
-  ranger: {fileID: 54822564703378956, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
-  healer: {fileID: 54544313286661616, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
+  ranger: {fileID: 1408623756253622, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
+  healer: {fileID: 1620534705828094, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
 --- !u!4 &644199464
 Transform:
   m_ObjectHideFlags: 0

@@ -33,6 +33,7 @@ public class GameMaster : MonoBehaviour {
     public GameObject ranger;
     public GameObject healer;
 
+
     // Is boss alive?
     // no (Unlock Gate)
     // all enemies dead?
@@ -42,13 +43,27 @@ public class GameMaster : MonoBehaviour {
     // Use this for initialization
     void Start()
     {
+
         players.Capacity = LoadScene.players;
+
 
         for (int i = 0; i < LoadScene.players; i++)
         {
             Debug.Log("player in " + (i + 1));
             //players.Add(GameObject.Find("Player" + (i + 1)));
-            players.Add(Instantiate(tank));
+            if(LoadScene.classval1 == 0)
+            {
+                players.Add(Instantiate(tank));
+            }
+            if (LoadScene.classval1 == 1)
+            {
+                players.Add(Instantiate(ranger));
+            }
+            if (LoadScene.classval1 == 2)
+            {
+                players.Add(Instantiate(healer));
+            }
+
         }
 
         currentplayer = players[0];

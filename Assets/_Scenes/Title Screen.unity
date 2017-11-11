@@ -1037,7 +1037,7 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Healer
       m_Image: {fileID: 0}
-    - m_Text: 
+    - m_Text: Rogue
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
