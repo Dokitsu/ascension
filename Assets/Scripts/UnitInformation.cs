@@ -151,7 +151,6 @@ public class UnitInformation : MonoBehaviour {
         Debug.Log(enemyunit.healthreturn());
         UpdatePlayerHealthGUI();
         UpdateEnemyHealthGUI(enemyunit);
-
         yield return null;
 
     }

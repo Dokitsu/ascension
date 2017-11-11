@@ -1564,9 +1564,11 @@ MonoBehaviour:
   phasenumber: 0
   currentplayer: {fileID: 0}
   menu: {fileID: 1180562625}
+  playersturn: 0
   Playercam: {fileID: 695706225}
   playerpos: {x: 0, y: 0, z: 0}
-  Boss: {fileID: 317393906}
+  Key: {fileID: 0}
+  Gate: {fileID: 1379545150}
 --- !u!4 &644199464
 Transform:
   m_ObjectHideFlags: 0
@@ -2973,7 +2975,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4009910285244528, guid: 90b122db807becb4785f52f1123ba538, type: 2}
       propertyPath: m_LocalPosition.x
-      value: -50
+      value: -150
       objectReference: {fileID: 0}
     - target: {fileID: 4009910285244528, guid: 90b122db807becb4785f52f1123ba538, type: 2}
       propertyPath: m_LocalPosition.y
@@ -2981,7 +2983,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4009910285244528, guid: 90b122db807becb4785f52f1123ba538, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -50
+      value: 250
       objectReference: {fileID: 0}
     - target: {fileID: 4009910285244528, guid: 90b122db807becb4785f52f1123ba538, type: 2}
       propertyPath: m_LocalRotation.x
@@ -3020,7 +3022,7 @@ Prefab:
       objectReference: {fileID: 1729028195}
     - target: {fileID: 1506182148728066, guid: 90b122db807becb4785f52f1123ba538, type: 2}
       propertyPath: m_Name
-      value: Enemy 2
+      value: Enemy2
       objectReference: {fileID: 0}
     - target: {fileID: 54303688208718540, guid: 90b122db807becb4785f52f1123ba538,
         type: 2}
@@ -3716,6 +3718,41 @@ Prefab:
       propertyPath: currHP
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_Range
+      value: 100
+      objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_Intensity
+      value: 250
+      objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_BounceIntensity
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 0.06769778
+      objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 0.6544118
+      objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 108378556336886454, guid: 9cd20f1c624bec54aadd8c80a68c0837,
+        type: 2}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9cd20f1c624bec54aadd8c80a68c0837, type: 2}
   m_IsPrefabParent: 0
@@ -3937,7 +3974,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 1744684480629630, guid: 7faef135992d5bf45a048620554de51e, type: 2}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1162517207860280, guid: 7faef135992d5bf45a048620554de51e, type: 2}
       propertyPath: m_IsActive

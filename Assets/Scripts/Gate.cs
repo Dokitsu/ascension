@@ -7,9 +7,10 @@ public class Gate : MonoBehaviour {
     public static bool Key;
 
 	// Use this for initialization
-	void Start () {
-		
-	}
+	void Start ()
+    {
+ 
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -20,6 +21,10 @@ public class Gate : MonoBehaviour {
     // check to see if player is at gate
 
 
+    public void Opengate()
+    {
+        Key = true;
+    }
 
     void OnTriggerEnter(Collider other)
     {

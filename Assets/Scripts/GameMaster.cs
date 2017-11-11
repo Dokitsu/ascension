@@ -9,7 +9,7 @@ public class GameMaster : MonoBehaviour {
     private turn currentphase = turn.Start;
     public List<GameObject> players;
     [SerializeField]
-    private List<GameObject> Enemies;
+    public List<GameObject> Enemies;
     [SerializeField]
 
     private int phasenumber = 0;
@@ -19,11 +19,13 @@ public class GameMaster : MonoBehaviour {
     private Image[] die = new Image[5];
     public GameObject menu;
 
+    public bool playersturn;
+
     public GameObject Playercam;
     public Vector3 playerpos;
 
-    public GameObject Boss;
-    public static bool Key;
+    public Gate Key;
+    public GameObject Gate;
 
     // Is boss alive?
     // no (Unlock Gate)
@@ -35,6 +37,7 @@ public class GameMaster : MonoBehaviour {
     void Start ()
     {
         currentplayer = players[0];
+        playersturn = true;
 	}
 	
 	// Update is called once per frame
@@ -45,11 +48,6 @@ public class GameMaster : MonoBehaviour {
         playerpos = currentplayer.transform.position;
         Playercam.transform.position = new Vector3(playerpos.x, 60, playerpos.z-50);
 
-        if (Boss == null)
-        {
-            Debug.Log("boss ded");
-            Key = true;
-        }
     }
 
     public void endplayerturn()
@@ -57,46 +55,98 @@ public class GameMaster : MonoBehaviour {
         turns = 2;
         phasenumber++;
         currentplayer.GetComponent<Light>().enabled = false;
-        if (phasenumber > players.Capacity + Enemies.Capacity-1) 
-        {
-            print("New rotation");
-            phasenumber = 0;
-            currentplayer = players[phasenumber];
 
-            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-        }
-        else
+        if (playersturn == false)
         {
-            if (phasenumber < players.Capacity)
+            if (phasenumber >= Enemies.Capacity)
             {
-                print("Player's turn " + phasenumber);
-                currentplayer = players[phasenumber];
-
-                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+                playersturn = true;
+                phasenumber = 0;
             }
+        }
+
+        if (playersturn)
+        {
             if (phasenumber >= players.Capacity)
             {
-                print("Enemy's turn " + phasenumber);
-                currentplayer = Enemies[phasenumber - players.Capacity];
-
-                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+                playersturn = false;
+                phasenumber = 0;
             }
         }
-        
+
+
+        if (playersturn)
+        {
+            currentplayer = players[phasenumber];
+            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+        }
+
+        if (playersturn == false)
+        {
+            currentplayer = Enemies[phasenumber];
+            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+        }
+
     }
-    
+
+
+    //public void endplayerturn()
+    //{
+    //    turns = 2;
+    //    phasenumber++;
+    //    currentplayer.GetComponent<Light>().enabled = false;
+    //    if (phasenumber > players.Capacity + Enemies.Capacity-1) 
+    //    {
+    //        print("New rotation");
+    //        phasenumber = 0;
+    //        currentplayer = players[phasenumber];
+
+    //        currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+    //    }
+    //    else
+    //    {
+    //        if (phasenumber < players.Capacity)
+    //        {
+    //            print("Player's turn " + phasenumber);
+    //            currentplayer = players[phasenumber];
+
+    //            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+    //        }
+
+    //            if (phasenumber >= players.Capacity)
+    //            {
+    //                print("Enemy's turn " + phasenumber);
+    //                currentplayer = Enemies[phasenumber - players.Capacity];
+
+    //                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+    //            }
+
+    //    }
+
+    //}
+
     public void removingenemy(UnitInformation me)
     {
+        if (me.gameObject.name == "Boss")
+        {
+            Debug.Log("boss ded");
+            Key = Gate.GetComponent<Gate>();
+            Key.Opengate();
+        }
 
-        //foreach (GameObject enemy in Enemies)
-        //{
-        //    if (enemy.name == me.gameObject.name)
-        //    {
-        //        Enemies.Remove(enemy);
-        //    }
-        //}
+        foreach (GameObject enemy in Enemies)
+        {
+            if (enemy.name == me.gameObject.name)
+            {
+                Enemies.Remove(enemy);
+                Enemies.Capacity = Enemies.Capacity - 1;
+            }
+        }
 
-
+        if (Enemies.Capacity <= 0)
+        {
+            Debug.Log("win game");
+        }
     }
 
 
