@@ -40,12 +40,13 @@ public class GameMaster : MonoBehaviour {
     void Start()
     {
 
+        players.Capacity = LoadScene.players;
+
         for (int i = 0; i < LoadScene.players; i++)
         {
             //Object player = Instantiate(players[(i + 1)]);
             Debug.Log("player in " + (i + 1));
             players.Add(GameObject.Find("Player" + (i + 1)));
-            players.Capacity = players.Capacity + 1;
         }
 
         currentplayer = players[0];
