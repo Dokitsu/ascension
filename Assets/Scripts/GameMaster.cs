@@ -12,6 +12,8 @@ public class GameMaster : MonoBehaviour {
     public List<GameObject> Enemies;
     [SerializeField]
 
+    public int Capacity;
+
     private int phasenumber = 0;
     private int turns = 2;
     [SerializeField]
@@ -27,6 +29,7 @@ public class GameMaster : MonoBehaviour {
     public Gate Key;
     public GameObject Gate;
 
+
     // Is boss alive?
     // no (Unlock Gate)
     // all enemies dead?
@@ -34,11 +37,22 @@ public class GameMaster : MonoBehaviour {
 
 
     // Use this for initialization
-    void Start ()
+    void Start()
     {
+
+        for (int i = 0; i < LoadScene.players; i++)
+        {
+            //Object player = Instantiate(players[(i + 1)]);
+            Debug.Log("player in " + (i + 1));
+            players.Add(GameObject.Find("Player" + (i + 1)));
+            players.Capacity = players.Capacity + 1;
+        }
+
         currentplayer = players[0];
         playersturn = true;
-	}
+
+
+    }
 	
 	// Update is called once per frame
 	void Update ()
@@ -191,6 +205,5 @@ public class GameMaster : MonoBehaviour {
         StartCoroutine(currentplayer.GetComponent<UnitInformation>().rest());
         currentplayer.GetComponent<UnitInformation>().active = true;
     }
-
 
 }
