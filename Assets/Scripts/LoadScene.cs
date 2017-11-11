@@ -7,6 +7,13 @@ using UnityEngine.SceneManagement;
 public class LoadScene : MonoBehaviour
 {
     public Dropdown nplayers;
+
+    public Dropdown class1;
+    public Dropdown class2;
+    public Dropdown class3;
+    public Dropdown class4;
+
+
     public static int players;
 
     // Use this for initialization
@@ -21,6 +28,8 @@ public class LoadScene : MonoBehaviour
     { 
         players = nplayers.value + 1;
         Debug.Log(players);
+
+
     }
 
 
