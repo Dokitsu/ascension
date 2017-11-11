@@ -39,6 +39,10 @@ public class UnitInformation : MonoBehaviour {
 
     void Start()
     {
+
+        HPvalue = GameObject.Find("HPtxt").GetComponent<Text>();
+        EHPvalue = GameObject.Find("EHPtxt").GetComponent<Text>();
+
         //StartCoroutine(HitTaken);
         // Current HP assignment for debug only
 
@@ -67,7 +71,7 @@ public class UnitInformation : MonoBehaviour {
         //        }
         //    }
 
-            UpdatePlayerHealthGUI();
+        UpdatePlayerHealthGUI();
         //}
     }
 

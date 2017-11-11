@@ -416,16 +416,6 @@ Prefab:
       propertyPath: EHPvalue
       value: 
       objectReference: {fileID: 1729028195}
-    - target: {fileID: 54822564703378956, guid: 09828513c41fb06489469434aa98f5dc,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54822564703378956, guid: 09828513c41fb06489469434aa98f5dc,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1408623756253622, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -487,16 +477,6 @@ Prefab:
       propertyPath: EHPvalue
       value: 
       objectReference: {fileID: 1729028195}
-    - target: {fileID: 54544313286661616, guid: 7fc8c405c43d7f64186f5ec299f5f8d7,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54544313286661616, guid: 7fc8c405c43d7f64186f5ec299f5f8d7,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1620534705828094, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
       propertyPath: m_IsActive
       value: 0
@@ -3356,6 +3336,11 @@ Prefab:
       propertyPath: m_RootOrder
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 114271667539929608, guid: c56e2c5bfd2bc9b4899cda8f28c8e875,
+        type: 2}
+      propertyPath: Target
+      value: 
+      objectReference: {fileID: 2052277558}
     - target: {fileID: 114515912420972510, guid: c56e2c5bfd2bc9b4899cda8f28c8e875,
         type: 2}
       propertyPath: Dice
@@ -3371,21 +3356,6 @@ Prefab:
       propertyPath: EHPvalue
       value: 
       objectReference: {fileID: 1729028195}
-    - target: {fileID: 114271667539929608, guid: c56e2c5bfd2bc9b4899cda8f28c8e875,
-        type: 2}
-      propertyPath: Target
-      value: 
-      objectReference: {fileID: 2052277558}
-    - target: {fileID: 54698178690908684, guid: c56e2c5bfd2bc9b4899cda8f28c8e875,
-        type: 2}
-      propertyPath: m_Mass
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 54698178690908684, guid: c56e2c5bfd2bc9b4899cda8f28c8e875,
-        type: 2}
-      propertyPath: m_IsKinematic
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1764482462511020, guid: c56e2c5bfd2bc9b4899cda8f28c8e875, type: 2}
       propertyPath: m_IsActive
       value: 0
