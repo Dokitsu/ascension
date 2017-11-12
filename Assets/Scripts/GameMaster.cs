@@ -33,6 +33,8 @@ public class GameMaster : MonoBehaviour {
     public GameObject ranger;
     public GameObject healer;
 
+    public Vector3[] spawnlocation;
+
 
     // Is boss alive?
     // no (Unlock Gate)
@@ -49,19 +51,27 @@ public class GameMaster : MonoBehaviour {
 
         for (int i = 0; i < LoadScene.players; i++)
         {
+
+            GameObject playerset;
             Debug.Log("player in " + (i + 1));
             //players.Add(GameObject.Find("Player" + (i + 1)));
             if(LoadScene.classval1 == 0)
             {
-                players.Add(Instantiate(tank));
+                players.Add(playerset = Instantiate(tank,spawnlocation[i],Quaternion.identity));
+                playerset.GetComponent<UnitInformation>().maxHP = 15;
+                playerset.GetComponent<UnitInformation>().currHP = 15;
             }
             if (LoadScene.classval1 == 1)
             {
-                players.Add(Instantiate(ranger));
+                players.Add(playerset = Instantiate(ranger, spawnlocation[i], Quaternion.identity));
+                playerset.GetComponent<UnitInformation>().maxHP = 7;
+                playerset.GetComponent<UnitInformation>().currHP = 7;
             }
             if (LoadScene.classval1 == 2)
             {
-                players.Add(Instantiate(healer));
+                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+                playerset.GetComponent<UnitInformation>().maxHP = 10;
+                playerset.GetComponent<UnitInformation>().currHP = 10;
             }
 
         }

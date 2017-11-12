@@ -21,24 +21,73 @@ public class LoadScene : MonoBehaviour
 
     public static int players;
 
+    public bool setstats = true;
+    public bool inlevel = false;
     // Use this for initialization
     public void LoadByIndex(int sceneIndex)
     {
+        
         Time.timeScale = 1.0f;
+        inlevel = true;
         SceneManager.LoadScene(sceneIndex);     
     }
 
 
-    void Update()
+    public void uncheckplayers()
     {
-        classval1 = class1.value;
-        Debug.Log(classval1);
+        if (players < 2)
+        {
+            GameObject.Find("Player2").SetActive(false);
+        }
+        if (players < 3)
+        {
+            GameObject.Find("Player3").SetActive(false);
+        }
+        if (players < 4)
+        {
+            GameObject.Find("Player4").SetActive(false);
+        }
+
+        StartCoroutine(setplayers());
+
+    }
+    private void Start()
+    {
+        DontDestroyOnLoad(this.gameObject);
+    }
+    void LateUpdate()
+    {
+        if (inlevel == false)
+        {
+            classval1 = class1.value;
 
 
-        players = nplayers.value + 1;
-        Debug.Log(players);
+            players = nplayers.value + 1;
+
+        }
+        else
+        {
+            if (setstats == true)
+            {
+                Invoke("uncheckplayers", 2);
+            }
 
 
+        }
+
+
+    }
+
+    private IEnumerator setplayers()
+    {
+        print("players");
+        for (int i = 0; i < players; i++)
+        {
+            GameObject.Find("Player" + i).name = i.ToString();
+        }
+        setstats = false;
+        
+        return null;
     }
 
 

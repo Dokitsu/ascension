@@ -623,11 +623,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e2fc2a35a82fb3940926e1293093abaa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nplayers: {fileID: 0}
-  class1: {fileID: 0}
-  class2: {fileID: 0}
-  class3: {fileID: 0}
-  class4: {fileID: 0}
+  nplayers: {fileID: 1588732683}
+  class1: {fileID: 221075583}
+  class2: {fileID: 1169508609}
+  class3: {fileID: 1885481474}
+  class4: {fileID: 1479166190}
 --- !u!1 &68448344
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1237,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: Ranger
 --- !u!222 &266465065
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -4563,16 +4563,16 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 942832341}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 1
   m_Options:
     m_Options:
-    - m_Text: 2
+    - m_Text: Tank
       m_Image: {fileID: 0}
-    - m_Text: 3
+    - m_Text: Ranger
       m_Image: {fileID: 0}
-    - m_Text: 4
+    - m_Text: Healer
       m_Image: {fileID: 0}
-    - m_Text: 5
+    - m_Text: Rogue
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5059,16 +5059,16 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 1353952141}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 3
   m_Options:
     m_Options:
-    - m_Text: 2
+    - m_Text: Tank
       m_Image: {fileID: 0}
-    - m_Text: 3
+    - m_Text: Ranger
       m_Image: {fileID: 0}
-    - m_Text: 4
+    - m_Text: Healer
       m_Image: {fileID: 0}
-    - m_Text: 5
+    - m_Text: Rogue
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5923,7 +5923,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: Rogue
 --- !u!222 &1801275325
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -6078,16 +6078,16 @@ MonoBehaviour:
   m_CaptionImage: {fileID: 0}
   m_ItemText: {fileID: 816977733}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 2
   m_Options:
     m_Options:
-    - m_Text: 2
+    - m_Text: Tank
       m_Image: {fileID: 0}
-    - m_Text: 3
+    - m_Text: Ranger
       m_Image: {fileID: 0}
-    - m_Text: 4
+    - m_Text: Healer
       m_Image: {fileID: 0}
-    - m_Text: 5
+    - m_Text: Rogue
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6287,7 +6287,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 2
+  m_Text: Healer
 --- !u!222 &1945770626
 CanvasRenderer:
   m_ObjectHideFlags: 0
