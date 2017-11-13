@@ -1628,10 +1628,10 @@ MonoBehaviour:
   ranger: {fileID: 1408623756253622, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
   healer: {fileID: 1620534705828094, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
   spawnlocation:
-  - {x: -56.4, y: 18.4, z: -0.6}
-  - {x: -56.4, y: 18.4, z: -50.1}
-  - {x: 0.45, y: 18.4, z: -0.6}
-  - {x: 0.45, y: 18.4, z: -50.1}
+  - {x: -50, y: 15, z: 0}
+  - {x: -50, y: 15, z: -50}
+  - {x: 0, y: 15, z: 0}
+  - {x: 0, y: 15, z: -50}
 --- !u!4 &644199464
 Transform:
   m_ObjectHideFlags: 0
@@ -4563,7 +4563,7 @@ MeshRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878887570}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_MotionVectors: 1
@@ -4615,7 +4615,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1878887570}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.45, y: 18.4, z: -0.6}
+  m_LocalPosition: {x: 0.45, y: 15.6, z: -0.6}
   m_LocalScale: {x: 10, y: 10, z: 10}
   m_Children: []
   m_Father: {fileID: 0}
