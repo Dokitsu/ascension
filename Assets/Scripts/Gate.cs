@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Gate : MonoBehaviour {
 
@@ -34,6 +35,7 @@ public class Gate : MonoBehaviour {
             if (other.tag == "Player")
             {
                 Debug.Log("Win game");
+                SceneManager.LoadScene("GameOverWin");
             }
         }
         else

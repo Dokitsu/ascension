@@ -42,6 +42,7 @@ public class UnitInformation : MonoBehaviour {
 
         HPvalue = GameObject.Find("HPtxt").GetComponent<Text>();
         EHPvalue = GameObject.Find("EHPtxt").GetComponent<Text>();
+        Dice = GameObject.Find("Dieman").GetComponent<DiceManager>();
 
         //StartCoroutine(HitTaken);
         // Current HP assignment for debug only

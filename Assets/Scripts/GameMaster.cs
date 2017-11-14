@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameMaster : MonoBehaviour {
@@ -202,6 +203,7 @@ public class GameMaster : MonoBehaviour {
         if (Enemies.Capacity <= 0)
         {
             Debug.Log("win game");
+            SceneManager.LoadScene("GameOverWin");
         }
     }
 
