@@ -41,6 +41,7 @@ public class GameMaster : MonoBehaviour {
     public Vector3[] spawnlocation;
     public Vector3[] Espawnlocation;
 
+//gameflow
 
     // Is boss alive?
     // no (Unlock Gate)
