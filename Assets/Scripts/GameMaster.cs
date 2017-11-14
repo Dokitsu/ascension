@@ -204,7 +204,7 @@ public class GameMaster : MonoBehaviour {
         if (Enemies.Capacity <= 0)
         {
             Debug.Log("win game");
-            SceneManager.LoadScene("GameOverWin");
+            SceneManager.LoadScene("WinCondition");
         }
     }
 

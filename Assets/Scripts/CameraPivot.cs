@@ -8,7 +8,7 @@ public class CameraPivot : MonoBehaviour
 
     void Start()
     {
-        //StartCoroutine(speedswitch());
+        StartCoroutine(speedswitch());
     }
 
 	void Update ()
@@ -16,7 +16,6 @@ public class CameraPivot : MonoBehaviour
         transform.Rotate(0, SpeedOfCamera*Time.deltaTime, 0);
 	}
 
-    /*
     public IEnumerator speedswitch()
     {
         while (true)
@@ -27,5 +26,5 @@ public class CameraPivot : MonoBehaviour
             yield return new WaitForSeconds(5f);
         }
     }
-    */
+    
 }

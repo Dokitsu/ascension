@@ -35,7 +35,7 @@ public class Gate : MonoBehaviour {
             if (other.tag == "Player")
             {
                 Debug.Log("Win game");
-                SceneManager.LoadScene("GameOverWin");
+                SceneManager.LoadScene("WinCondition");
             }
         }
         else
