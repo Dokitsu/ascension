@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -20,7 +19,9 @@ public class GameMaster : MonoBehaviour {
     [SerializeField]
     private GameObject currentplayer;
     private Image[] die = new Image[5];
+
     public GameObject menu;
+    public GameObject emenu;
 
     public bool playersturn;
 
@@ -224,9 +225,19 @@ public class GameMaster : MonoBehaviour {
             endplayerturn();
         }
 
+        if (playersturn)
+        {
+            menu.SetActive(true);
+        }
+        else
+        {
+            emenu.SetActive(true);
+        }
+
     }
     public void moveunit()
     {
+        emenu.SetActive(false);
         menu.SetActive(false);
         currentplayer.GetComponent<Move>().onactivate();
         currentplayer.GetComponent<Move>().active = true;
@@ -239,12 +250,14 @@ public class GameMaster : MonoBehaviour {
 
     public void unitattack()
     {
+        emenu.SetActive(false);
         menu.SetActive(false);
         currentplayer.GetComponent<AttackScript>().onactivate();
         currentplayer.GetComponent<AttackScript>().active = true;
     }
     public void rest()
     {
+        emenu.SetActive(false);
         menu.SetActive(false);
         StartCoroutine(currentplayer.GetComponent<UnitInformation>().rest());
         currentplayer.GetComponent<UnitInformation>().active = true;

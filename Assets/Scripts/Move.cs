@@ -98,7 +98,7 @@ public class Move : MonoBehaviour
     void endmove()
     {
         GameObject.FindObjectOfType<GameMaster>().changephase();
-        GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
+        //GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
         active = false;
 
         //Debug.Log("moved");
