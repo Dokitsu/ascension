@@ -62,7 +62,7 @@ public class Move : MonoBehaviour
             {
                 Target = hit.transform.gameObject;
                 Debug.Log(Target);
-                if (Target.tag == "Player" || Target.tag == "Enemy")
+                if (Target.tag == "Player" || Target.tag == "Enemy" || Target.tag == "Block")
                 {
                     Debug.Log("hitmebby");
                 }
