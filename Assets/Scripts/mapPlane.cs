@@ -45,10 +45,10 @@ public class mapPlane : MonoBehaviour {
             if (Physics.Raycast(currentpos, Raycheck, out hit))
             {
                 thit = hit.transform.gameObject;
-                Debug.Log(Target);
+                //Debug.Log(Target);
                 if (distance > 80 || thit.tag == "Block")
                 {
-                    Debug.Log("hitmebby");
+                    //Debug.Log("hitmebby");
                     rend.material.color = Color.red;
                 }
                 else
