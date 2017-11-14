@@ -10,6 +10,10 @@ public class mapPlane : MonoBehaviour {
     public static Vector3 currentpos;
     public bool active;
 
+    public GameObject thit;
+
+    Vector3 Raycheck;
+
     void Start()
     {
         rend = GetComponent<Renderer>();
@@ -30,19 +34,27 @@ public class mapPlane : MonoBehaviour {
     //Calcs distance of current player position to highlighted tile
     void OnMouseOver()
     {
+
+        RaycastHit hit;
         //Display tooltip
         Target = transform.position;
         distance = Vector3.Distance(transform.position, currentpos);
 
         //if (active)
         //{
-            if (distance < 80)
+            if (Physics.Raycast(currentpos, Raycheck, out hit))
             {
-                rend.material.color = Color.yellow;
-            }
-            else
-            {
-                rend.material.color = Color.red;
+                thit = hit.transform.gameObject;
+                Debug.Log(Target);
+                if (distance > 80 || thit.tag == "Block")
+                {
+                    Debug.Log("hitmebby");
+                    rend.material.color = Color.red;
+                }
+                else
+                {
+                    rend.material.color = Color.yellow;
+                }
             }
         //}
     }
@@ -58,8 +70,8 @@ public class mapPlane : MonoBehaviour {
     // Update is called once per frame
     void Update ()
     {
-		
-	}
+        Raycheck = Target - currentpos;
+    }
 
     void Playertransform()
     {
