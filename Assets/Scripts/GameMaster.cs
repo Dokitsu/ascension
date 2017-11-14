@@ -12,7 +12,7 @@ public class GameMaster : MonoBehaviour {
     public List<GameObject> Enemies;
     [SerializeField]
 
-    public int Capacity;
+    //public int Capacity;
 
     private int phasenumber = 0;
     private int turns = 2;
@@ -29,11 +29,17 @@ public class GameMaster : MonoBehaviour {
     public Gate Key;
     public GameObject Gate;
 
+
+    //Game classes
     public GameObject tank;
     public GameObject ranger;
     public GameObject healer;
 
+    //Game Enemies
+    public GameObject Zomb;
+
     public Vector3[] spawnlocation;
+    public Vector3[] Espawnlocation;
 
 
     // Is boss alive?
@@ -47,13 +53,19 @@ public class GameMaster : MonoBehaviour {
     {
 
         players.Capacity = LoadScene.players;
+        Enemies.Capacity = LoadScene.players + 1;
 
 
         for (int i = 0; i < LoadScene.players; i++)
         {
 
             GameObject playerset;
+            GameObject Eset;
+
             Debug.Log("player in " + (i + 1));
+
+            Enemies.Add(Instantiate(Eset = Zomb,Espawnlocation[i],Quaternion.identity));
+
             //players.Add(GameObject.Find("Player" + (i + 1)));
             if(LoadScene.classval1 == 0)
             {
@@ -73,8 +85,9 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 10;
                 playerset.GetComponent<UnitInformation>().currHP = 10;
             }
-
         }
+
+        Enemies.Add(GameObject.Find("Boss"));
 
         currentplayer = players[0];
         playersturn = true;

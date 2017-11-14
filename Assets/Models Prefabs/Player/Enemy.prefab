@@ -953,6 +953,8 @@ MonoBehaviour:
   alive: 0
   HPvalue: {fileID: 0}
   EHPvalue: {fileID: 0}
+  maxHP: 0
+  active: 0
 --- !u!136 &136283636734787460
 CapsuleCollider:
   m_ObjectHideFlags: 1
