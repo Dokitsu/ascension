@@ -212,6 +212,9 @@ public class GameMaster : MonoBehaviour {
 
     public void changephase()
     {
+        emenu.SetActive(false);
+        menu.SetActive(false);
+
         if (turns > 0)
         {
             turns--;
@@ -229,7 +232,8 @@ public class GameMaster : MonoBehaviour {
         {
             menu.SetActive(true);
         }
-        else
+
+        if (playersturn == false)
         {
             emenu.SetActive(true);
         }
