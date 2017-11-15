@@ -107,7 +107,7 @@ public class GameMaster : MonoBehaviour {
         // checks if the enemy has been defeated and will skip thier turn
         if (currentplayer == null)
         {
-            phasenumber --;
+            phasenumber--;
             endplayerturn();
             Debug.Log("killed");
         }
@@ -180,7 +180,7 @@ public class GameMaster : MonoBehaviour {
 
         foreach (GameObject enemy in Enemies)
         {
-            if (enemy.name == me.gameObject.name)
+            if (enemy.gameObject == me.gameObject)
             {
                 Enemies.Remove(enemy);
                 Enemies.Capacity = Enemies.Capacity --;
