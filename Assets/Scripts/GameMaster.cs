@@ -59,7 +59,7 @@ public class GameMaster : MonoBehaviour {
         Enemies.Capacity = LoadScene.players + 1;
 
 
-        for (int i = 0; i < LoadScene.players; i++)
+        for (int i = 0; i < LoadScene.players; i ++)
         {
 
             GameObject playerset;
@@ -101,7 +101,12 @@ public class GameMaster : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-
+        if (currentplayer == null)
+        {
+            phasenumber --;
+            endplayerturn();
+            Debug.Log("killed");
+        }
         currentplayer.GetComponent<Light>().enabled = true;
         playerpos = currentplayer.transform.position;
         Playercam.transform.position = new Vector3(playerpos.x, 60, playerpos.z-50);
@@ -111,8 +116,15 @@ public class GameMaster : MonoBehaviour {
     public void endplayerturn()
     {
         turns = 2;
-        phasenumber++;
-        currentplayer.GetComponent<Light>().enabled = false;
+        phasenumber ++;
+        if (currentplayer == null)
+        {
+
+        }
+        else
+        {
+            currentplayer.GetComponent<Light>().enabled = false;
+        }
 
         if (playersturn == false)
         {
@@ -132,10 +144,14 @@ public class GameMaster : MonoBehaviour {
             }
         }
 
-
         if (playersturn)
         {
             currentplayer = players[phasenumber];
+            if (currentplayer.GetComponent<UnitInformation>().alive == false)
+            {
+                Debug.Log("player incapacitated");
+                endplayerturn();
+            }
             currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
         }
 
@@ -144,7 +160,6 @@ public class GameMaster : MonoBehaviour {
             currentplayer = Enemies[phasenumber];
             currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
         }
-
     }
 
 
@@ -197,7 +212,7 @@ public class GameMaster : MonoBehaviour {
             if (enemy.name == me.gameObject.name)
             {
                 Enemies.Remove(enemy);
-                Enemies.Capacity = Enemies.Capacity - 1;
+                Enemies.Capacity = Enemies.Capacity --;
             }
         }
 

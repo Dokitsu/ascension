@@ -105,12 +105,16 @@ public class UnitInformation : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
-        //UpdateHealth();
-        if (currHP <= 0)
+        if (currHP > 0)
+        {
+            alive = true;
+        }
+            //UpdateHealth();
+            if (currHP <= 0)
         {
             if (gameObject.tag == "Player")
             {
-
+                alive = false;
             }
             else
             {
