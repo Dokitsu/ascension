@@ -100,10 +100,6 @@ public class AttackScript : MonoBehaviour {
         endmove();
     }
 
-    void DefRoll()
-    {
-
-    }
 
     ///
     ///Unused code, Initial code for testing functionality

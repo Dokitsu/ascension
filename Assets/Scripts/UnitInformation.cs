@@ -150,13 +150,30 @@ public class UnitInformation : MonoBehaviour {
 
     public IEnumerator HitTaken(UnitInformation enemyunit)
     {
+        int def;
+        int dam;
+
         UpdatePlayerHealthGUI();
         UpdateEnemyHealthGUI(enemyunit);
         Dice.rollBlk();
+        StartCoroutine(Dice.rolldef(enemyunit));
         yield return new WaitForSeconds(8f);
         blkval = DiceManager.blkval;
-        Debug.Log(blkval);
-        enemyunit.healthchange(blkval);
+        def = DiceManager.defroll;
+
+        Debug.Log("dam" + blkval);
+        Debug.Log("def" + def);
+
+        if (blkval <= def)
+        {
+            dam = 0;
+        }
+        else
+        {
+            dam = blkval - def;
+        }
+
+        enemyunit.healthchange(dam);
         Debug.Log(enemyunit.healthreturn());
         UpdatePlayerHealthGUI();
         UpdateEnemyHealthGUI(enemyunit);

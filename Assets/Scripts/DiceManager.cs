@@ -40,6 +40,8 @@ public class DiceManager : MonoBehaviour {
     public static int gryval;
     public static int gryval2;
 
+    public static int defroll;
+
 
 
     void Start()
@@ -59,6 +61,8 @@ public class DiceManager : MonoBehaviour {
     {
         blkval = BlkDie.GetComponent<DiceNum>().value;
         redval = RedDie.GetComponent<DiceNum>().value;
+        gryval = GryDie.GetComponent<DiceNum>().value;
+        brwnval = BrwnDie.GetComponent<DiceNum>().value;
 
 
     }
@@ -117,22 +121,29 @@ public class DiceManager : MonoBehaviour {
         // http://puu.sh/yj0G5/b28c40e926.jpg
     }
 
-    public void rolldef()
+    public  IEnumerator rolldef(UnitInformation enemyunit)
     {
-        disabledie();
 
-        // usually single grey
+        if (enemyunit.tag == "Enemy")
+        {
+            BrwnDie.transform.position = (Brwnpoint);
+            BrwnDie.gameObject.SetActive(true);
+            Kick = BrwnDie.GetComponent<DiceKick>();
+            Kick.KickDie();
+            yield return new WaitForSeconds(8f);
+            defroll = brwnval;
+        }
+        if (enemyunit.tag == "Player")
+        {
+            GryDie.transform.position = (Grypoint);
+            GryDie.gameObject.SetActive(true);
+            Kick = GryDie.GetComponent<DiceKick>();
+            Kick.KickDie();
+            yield return new WaitForSeconds(8f);
+            defroll = gryval;
+        }
+
     }
-
-
-
-
-
-
-
-
-
-
 
 
 
