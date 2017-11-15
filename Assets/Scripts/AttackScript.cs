@@ -7,11 +7,7 @@ public class AttackScript : MonoBehaviour {
     public bool active;
 
     public UnitInformation Unit;
-    //public GameObject Attacker;
     public GameObject Target;
-    //public Vector3 Atkcoor;
-    //public Vector3 Tarcoor;
-    //public Vector3 targetpos;
     public static Vector3 currentpos;
     float Targetdis;
     Vector3 Targetpos;
@@ -23,37 +19,15 @@ public class AttackScript : MonoBehaviour {
 		
 	}
 
-    private void OnMouseDown()
-    {
-        
-    }
 
     void Update()
     {
-        //if (active == true)
-        //{
-        //    if (Input.GetKeyDown(KeyCode.DownArrow))
-        //    {
-        //        AttackerRange("dwn");
-        //    }
-        //    else if (Input.GetKeyDown(KeyCode.UpArrow))
-        //    {
-        //        AttackerRange("fwd");
-        //    }
-        //    else if (Input.GetKeyDown(KeyCode.RightArrow))
-        //    {
-        //        AttackerRange("rht");
-        //    }
-        //    else if (Input.GetKeyDown(KeyCode.LeftArrow))
-        //    {
-        //        AttackerRange("lft");
-        //    }
-        //}
-
+        // Checks if the player is active
         if (active == true)
         {
             if (Input.GetButtonDown("Fire1"))
             {
+                // Casts Raycast on mouse location to set target
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
@@ -61,20 +35,23 @@ public class AttackScript : MonoBehaviour {
                 {
                     Target = hit.transform.gameObject;
                     //Debug.Log(hit.transform.gameObject.name);
+                    // Prevents player attack themselves
                     if (Target != gameObject)
                     {
+                        // Check if its player or an enemy
                         if (Target.tag.Contains ("Player") || Target.tag == "Enemy")
                         {
-                            Debug.Log("Enemy detected");
+                            //Debug.Log("Enemy detected");
+                            // Check to see if target is within range (melee)
                             DistanceCheck();
                         }
                     }
                     else
                     {
+                        // Returns to the menu if the player clicks on an invalid target or themselves
                         Debug.Log("Target invalid or out of bounds");
                         active = false;
                         GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
-
                     }
                 }
             }
@@ -83,9 +60,10 @@ public class AttackScript : MonoBehaviour {
 
     public void onactivate()
     {
+        // updates current position vector from previous player
         currentpos = transform.position;
         mapPlane.currentpos = currentpos;
-        Debug.Log(currentpos);
+        //Debug.Log(currentpos);
     }
 
     void endmove()
@@ -97,7 +75,63 @@ public class AttackScript : MonoBehaviour {
         //Debug.Log("moved");
     }
 
+    void DistanceCheck()
+    {
+        //check from player location to target position
+        Targetpos = Target.transform.position;
+        Targetdis = Vector3.Distance(currentpos,Targetpos);
+        if (Targetdis > 90)
+        {
+            Debug.Log("Target too far");
+        }
+        else
+        {
+            StartCoroutine(Attack());
+            active = false;
+        }
+    }
 
+    IEnumerator Attack()
+    {
+        Debug.Log(Target);
+        Unit = GetComponent<UnitInformation>();
+        StartCoroutine(Unit.HitTaken(Target.GetComponent<UnitInformation>()));
+        yield return new WaitForSeconds(8);
+        endmove();
+    }
+
+    void DefRoll()
+    {
+
+    }
+
+
+
+    //
+    //  Unused code, Initial code for testing functionality
+    //
+    //void Update()
+    //{
+    //if (active == true)
+    //{
+    //    if (Input.GetKeyDown(KeyCode.DownArrow))
+    //    {
+    //        AttackerRange("dwn");
+    //    }
+    //    else if (Input.GetKeyDown(KeyCode.UpArrow))
+    //    {
+    //        AttackerRange("fwd");
+    //    }
+    //    else if (Input.GetKeyDown(KeyCode.RightArrow))
+    //    {
+    //        AttackerRange("rht");
+    //    }
+    //    else if (Input.GetKeyDown(KeyCode.LeftArrow))
+    //    {
+    //        AttackerRange("lft");
+    //    }
+    //}
+    //}
     //void AttackerRange(string direction)
     //{
     //    Vector3 fwd = Vector3.forward;
@@ -173,34 +207,4 @@ public class AttackScript : MonoBehaviour {
     //            }
     //    }
     //}
-
-
-    void DistanceCheck()
-    {
-        Targetpos = Target.transform.position;
-        Targetdis = Vector3.Distance(currentpos,Targetpos);
-        if (Targetdis > 90)
-        {
-            Debug.Log("Target too far");
-        }
-        else
-        {
-            StartCoroutine(Attack());
-            active = false;
-        }
-    }
-
-    IEnumerator Attack()
-    {
-        Debug.Log(Target);
-        Unit = GetComponent<UnitInformation>();
-        StartCoroutine(Unit.HitTaken(Target.GetComponent<UnitInformation>()));
-        yield return new WaitForSeconds(8);
-        endmove();
-    }
-
-    void DefRoll()
-    {
-
-    }
 }
