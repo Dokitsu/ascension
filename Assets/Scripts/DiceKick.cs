@@ -8,20 +8,14 @@ public class DiceKick : MonoBehaviour {
     public ForceMode forceMode;
     public float angforce;
 
-    //Kicks the dice
+    /// <summary>
+    /// Kicks the dice
+    /// Dice kick checks now handled by DiceManager
+    /// </summary>
 
-    //Dice kick checks now handled by DiceManager
-        
-        
-    // Use this for initialization
-    void Start ()
-    {
-    }
-	
-	// Update is called once per frame
+
 	void Update ()
     {
-
         //For Debug perpose "k" to kick the dice
         if (Input.GetButtonDown("Kick"))
         {
@@ -30,6 +24,9 @@ public class DiceKick : MonoBehaviour {
 
     }
 
+    /// <summary>
+    /// Adds random force to the dice
+    /// </summary>
     public void KickDie()
     {
         Rigidbody die = GetComponent<Rigidbody>();

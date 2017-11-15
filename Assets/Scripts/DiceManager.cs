@@ -61,24 +61,6 @@ public class DiceManager : MonoBehaviour {
         redval = RedDie.GetComponent<DiceNum>().value;
 
 
-        //For Debug purpose "b"
-        if (Input.GetButtonDown("RollBlk"))
-        {
-            rollBlk();
-            Debug.Log("Blk reset");
-        }
-
-        //if (Input.GetButtonDown(buttonName) && cankick == true)
-        //{
-        //    Kick.KickDie();
-        //}
-
-        //if (GetComponent<Rigidbody>().velocity == new Vector3(0, 0, 0) && cankick == false)
-        //{
-        //    //If it's already kicked
-        //    cankick = true;
-        //}
-
     }
 
     void disabledie()

@@ -4,15 +4,10 @@ using UnityEngine;
 
 public class DiceVal : MonoBehaviour {
 
+    /// <summary>
+    /// Used to store the value of the dice face
+    /// </summary>
+
     public int value = 1;
 
-	// Use this for initialization
-	void Start () {
-		
-	}
-	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }

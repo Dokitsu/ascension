@@ -14,11 +14,11 @@ public class AttackScript : MonoBehaviour {
 
     int damage;
 
-    void Start ()
-    {
-		
-	}
 
+    /// <summary>
+    /// Handles targeting and distance checks
+    /// </summary>
+    
 
     void Update()
     {
@@ -105,11 +105,10 @@ public class AttackScript : MonoBehaviour {
 
     }
 
+    ///
+    ///Unused code, Initial code for testing functionality
+    ///
 
-
-    //
-    //  Unused code, Initial code for testing functionality
-    //
     //void Update()
     //{
     //if (active == true)

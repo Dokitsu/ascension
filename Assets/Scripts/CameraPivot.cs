@@ -16,6 +16,7 @@ public class CameraPivot : MonoBehaviour
         transform.Rotate(0, SpeedOfCamera*Time.deltaTime, 0);
 	}
 
+    // To vary the speed of the camera
     public IEnumerator speedswitch()
     {
         while (true)

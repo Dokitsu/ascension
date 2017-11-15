@@ -7,12 +7,11 @@ public class DiceNum : MonoBehaviour {
     public LayerMask diecoll = -1;
     public int value = 1;
 
-    // Use this for initialization
-    void Start () {
-		
-	}
 
-    // Update is called once per frame
+    /// <summary>
+    /// Finds the upward facing die face
+    /// </summary>
+
     void Update()
     {
         RaycastHit hit;
@@ -27,6 +26,6 @@ public class DiceNum : MonoBehaviour {
 
     void OnGUI()
     {
-        GUILayout.Label(value.ToString());
+        //GUILayout.Label(value.ToString());
     }
 }

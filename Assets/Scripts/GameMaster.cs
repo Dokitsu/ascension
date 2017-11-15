@@ -12,8 +12,6 @@ public class GameMaster : MonoBehaviour {
     public List<GameObject> Enemies;
     [SerializeField]
 
-    //public int Capacity;
-
     private int phasenumber = 0;
     private int turns = 2;
     [SerializeField]
@@ -43,34 +41,39 @@ public class GameMaster : MonoBehaviour {
     public Vector3[] spawnlocation;
     public Vector3[] Espawnlocation;
 
-//gameflow
-
-    // Is boss alive?
-    // no (Unlock Gate)
-    // all enemies dead?
-    // auto win
 
 
-    // Use this for initialization
+    /// <summary>
+    /// Used to handle the games turn system
+    /// Is boss alive?
+    /// no (Unlock Gate)
+    /// all enemies dead?
+    /// auto win
+    /// </summary>
+
+
     void Start()
     {
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
 
-
+        ///Spawns players and enemies based on selections on the title scene
         for (int i = 0; i < LoadScene.players; i ++)
         {
-
             GameObject playerset;
             GameObject Eset;
 
             Debug.Log("player in " + (i + 1));
 
-            Enemies.Add(Instantiate(Eset = Zomb,Espawnlocation[i],Quaternion.identity));
+            // 
+            // GM sets spawn point for enemies
+            //
+            Enemies.Add(Instantiate(Eset = Zomb, Espawnlocation[i], Quaternion.identity));
+
 
             //players.Add(GameObject.Find("Player" + (i + 1)));
-            if(LoadScene.classval1 == 0)
+            if (LoadScene.classval1 == 0)
             {
                 players.Add(playerset = Instantiate(tank,spawnlocation[i],Quaternion.identity));
                 playerset.GetComponent<UnitInformation>().maxHP = 15;
@@ -98,17 +101,21 @@ public class GameMaster : MonoBehaviour {
 
     }
 	
-	// Update is called once per frame
+
 	void Update ()
     {
+        // checks if the enemy has been defeated and will skip thier turn
         if (currentplayer == null)
         {
             phasenumber --;
             endplayerturn();
             Debug.Log("killed");
         }
+
         currentplayer.GetComponent<Light>().enabled = true;
         playerpos = currentplayer.transform.position;
+
+        // player cam veiws the player on HUD
         Playercam.transform.position = new Vector3(playerpos.x, 60, playerpos.z-50);
 
     }
@@ -161,42 +168,6 @@ public class GameMaster : MonoBehaviour {
             currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
         }
     }
-
-
-    //public void endplayerturn()
-    //{
-    //    turns = 2;
-    //    phasenumber++;
-    //    currentplayer.GetComponent<Light>().enabled = false;
-    //    if (phasenumber > players.Capacity + Enemies.Capacity-1) 
-    //    {
-    //        print("New rotation");
-    //        phasenumber = 0;
-    //        currentplayer = players[phasenumber];
-
-    //        currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-    //    }
-    //    else
-    //    {
-    //        if (phasenumber < players.Capacity)
-    //        {
-    //            print("Player's turn " + phasenumber);
-    //            currentplayer = players[phasenumber];
-
-    //            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-    //        }
-
-    //            if (phasenumber >= players.Capacity)
-    //            {
-    //                print("Enemy's turn " + phasenumber);
-    //                currentplayer = Enemies[phasenumber - players.Capacity];
-
-    //                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-    //            }
-
-    //    }
-
-    //}
 
     public void removingenemy(UnitInformation me)
     {
@@ -281,5 +252,46 @@ public class GameMaster : MonoBehaviour {
         StartCoroutine(currentplayer.GetComponent<UnitInformation>().rest());
         currentplayer.GetComponent<UnitInformation>().active = true;
     }
+
+
+
+
+
+    ///Early build of turn progression
+
+    //public void endplayerturn()
+    //{
+    //    turns = 2;
+    //    phasenumber++;
+    //    currentplayer.GetComponent<Light>().enabled = false;
+    //    if (phasenumber > players.Capacity + Enemies.Capacity-1) 
+    //    {
+    //        print("New rotation");
+    //        phasenumber = 0;
+    //        currentplayer = players[phasenumber];
+
+    //        currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+    //    }
+    //    else
+    //    {
+    //        if (phasenumber < players.Capacity)
+    //        {
+    //            print("Player's turn " + phasenumber);
+    //            currentplayer = players[phasenumber];
+
+    //            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+    //        }
+
+    //            if (phasenumber >= players.Capacity)
+    //            {
+    //                print("Enemy's turn " + phasenumber);
+    //                currentplayer = Enemies[phasenumber - players.Capacity];
+
+    //                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
+    //            }
+
+    //    }
+
+    //}
 
 }

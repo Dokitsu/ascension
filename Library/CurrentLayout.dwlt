@@ -367,7 +367,7 @@ MonoBehaviour:
     height: 1009
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: ce060000
+    m_SelectedIDs: 48060000
     m_LastClickedID: 0
     m_ExpandedIDs: e8fbffff00000000
     m_RenameOverlay:
@@ -500,9 +500,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: -0.55546933, y: 0.003772579, z: -0.0024501414, w: -0.83158934}
   m_Size:
-    m_Target: 772.5276
+    m_Target: 807.2913
     speed: 2
-    m_Value: 772.5276
+    m_Value: 807.2913
   m_Ortho:
     m_Target: 1
     speed: 2
@@ -612,24 +612,24 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_AssetTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 120}
     m_SelectedIDs: 
     m_LastClickedID: 0
     m_ExpandedIDs: 00000000e62400006a2500008c2500001c260000362800008e2900000c2a0000062f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
-      m_Name: 
-      m_OriginalName: 
+      m_Name: GameMaster
+      m_OriginalName: GameMaster
       m_EditFieldRect:
         serializedVersion: 2
         x: 0
         y: 0
         width: 0
         height: 0
-      m_UserData: 0
+      m_UserData: 1608
       m_IsWaitingForDelay: 0
       m_IsRenaming: 0
-      m_OriginalEventType: 11
+      m_OriginalEventType: 0
       m_IsRenamingFilename: 1
       m_ClientGUIView: {fileID: 10}
     m_SearchString: 
