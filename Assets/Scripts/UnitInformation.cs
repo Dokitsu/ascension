@@ -151,26 +151,27 @@ public class UnitInformation : MonoBehaviour {
     public IEnumerator HitTaken(UnitInformation enemyunit)
     {
         int def;
+        int damroll;
         int dam;
 
         UpdatePlayerHealthGUI();
         UpdateEnemyHealthGUI(enemyunit);
-        Dice.rollBlk();
+        StartCoroutine(Dice.rollmelee(enemyunit));
         StartCoroutine(Dice.rolldef(enemyunit));
         yield return new WaitForSeconds(8f);
-        blkval = DiceManager.blkval;
+        damroll = DiceManager.damroll;
         def = DiceManager.defroll;
 
-        Debug.Log("dam" + blkval);
+        Debug.Log("dam" + damroll);
         Debug.Log("def" + def);
 
-        if (blkval <= def)
+        if (damroll <= def || damroll < 0)
         {
             dam = 0;
         }
         else
         {
-            dam = blkval - def;
+            dam = damroll - def;
         }
 
         enemyunit.healthchange(dam);

@@ -41,6 +41,7 @@ public class DiceManager : MonoBehaviour {
     public static int gryval2;
 
     public static int defroll;
+    public static int damroll;
 
 
 
@@ -60,6 +61,7 @@ public class DiceManager : MonoBehaviour {
     void Update()
     {
         blkval = BlkDie.GetComponent<DiceNum>().value;
+        bluval = BluDie.GetComponent<DiceNum>().value;
         redval = RedDie.GetComponent<DiceNum>().value;
         gryval = GryDie.GetComponent<DiceNum>().value;
         brwnval = BrwnDie.GetComponent<DiceNum>().value;
@@ -100,17 +102,25 @@ public class DiceManager : MonoBehaviour {
         // two reds
     }
 
-    public void rollmelee()
+    public IEnumerator rollmelee(UnitInformation enemyunit)
     {
         disabledie();
 
         // single red and blue
         // http://puu.sh/yj0Ce/baeb673c0b.jpg
 
-        if (bluval < 0)
-        {
-            // attack failed
-        }
+        RedDie.transform.position = (Redpoint);
+        RedDie.gameObject.SetActive(true);
+        Kick = RedDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+        BluDie.transform.position = (Blupoint);
+        BluDie.gameObject.SetActive(true);
+        Kick = BluDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+        yield return new WaitForSeconds(7f);
+        damroll = redval + bluval;
+        failcheck();
+
     }
 
     public void rollranged()
@@ -119,6 +129,15 @@ public class DiceManager : MonoBehaviour {
 
         // single blue and 2 yellows
         // http://puu.sh/yj0G5/b28c40e926.jpg
+    }
+
+    public void failcheck()
+    {
+        if (bluval == 0)
+        {
+            // attack failed
+            damroll = -999;
+        }
     }
 
     public  IEnumerator rolldef(UnitInformation enemyunit)
