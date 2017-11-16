@@ -84,7 +84,6 @@
     <Compile Include="Assets\Scripts\DiceManager.cs" />
     <Compile Include="Assets\Scripts\DiceNum.cs" />
     <Compile Include="Assets\Scripts\DiceVal.cs" />
-    <Compile Include="Assets\Scripts\Event.cs" />
     <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
@@ -92,6 +91,7 @@
     <Compile Include="Assets\Scripts\QuitGame.cs" />
     <Compile Include="Assets\Scripts\TestDice.cs" />
     <Compile Include="Assets\Scripts\UnitInformation.cs" />
+    <Compile Include="Assets\Scripts\Unitrevive.cs" />
     <Compile Include="Assets\Scripts\mapPlane.cs" />
     <Compile Include="Assets\Standard Assets (Environment)\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
     <Compile Include="Assets\Standard Assets (Environment)\Environment\Water\Water\Scripts\Displace.cs" />
