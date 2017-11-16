@@ -147,6 +147,19 @@ public class UnitInformation : MonoBehaviour {
         movement--;
     }
 
+    public IEnumerator revivePlayer(UnitInformation playerunit)
+    {
+        int healroll;
+        UpdatePlayerHealthGUI();
+        UpdateEnemyHealthGUI(playerunit);
+        Dice.rollrevive();
+        yield return new WaitForSeconds(8);
+        healroll = DiceManager.damroll;
+        print(healroll);
+        playerunit.healthchange(-healroll);
+
+        yield return null;
+    }
 
     public IEnumerator HitTaken(UnitInformation enemyunit)
     {

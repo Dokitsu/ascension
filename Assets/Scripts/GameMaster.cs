@@ -238,6 +238,14 @@ public class GameMaster : MonoBehaviour {
 
     }
 
+
+    public void unitrevive()
+    {
+        emenu.SetActive(false);
+        menu.SetActive(false);
+        currentplayer.GetComponent<Unitrevive>().onactivate();
+        currentplayer.GetComponent<Unitrevive>().active = true;
+    }
     public void unitattack()
     {
         emenu.SetActive(false);

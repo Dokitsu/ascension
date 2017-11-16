@@ -63,8 +63,12 @@ public class DiceManager : MonoBehaviour {
         blkval = BlkDie.GetComponent<DiceNum>().value;
         bluval = BluDie.GetComponent<DiceNum>().value;
         redval = RedDie.GetComponent<DiceNum>().value;
+        redval2 = RedDie2.GetComponent<DiceNum>().value;
         gryval = GryDie.GetComponent<DiceNum>().value;
+        gryval2 = GryDie2.GetComponent<DiceNum>().value;
         brwnval = BrwnDie.GetComponent<DiceNum>().value;
+        ylwval = YlwDie.GetComponent<DiceNum>().value;
+        ylwval2 = YlwDie2.GetComponent<DiceNum>().value;
 
 
     }
@@ -99,6 +103,17 @@ public class DiceManager : MonoBehaviour {
     {
         disabledie();
 
+        RedDie.gameObject.SetActive(true);
+        RedDie2.gameObject.SetActive(true);
+
+        Kick = RedDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+        Kick = RedDie2.GetComponent<DiceKick>();
+        Kick.KickDie();
+        
+        damroll = redval + redval2;
+        print(redval + " / " + redval2);
+
         // two reds
     }
 
@@ -118,6 +133,7 @@ public class DiceManager : MonoBehaviour {
         Kick = BluDie.GetComponent<DiceKick>();
         Kick.KickDie();
         yield return new WaitForSeconds(7f);
+        
         damroll = redval + bluval;
         failcheck();
 
