@@ -42,6 +42,7 @@ public class DiceManager : MonoBehaviour {
 
     public static int defroll;
     public static int damroll;
+    public static int rangeroll;
 
 
 
@@ -139,12 +140,33 @@ public class DiceManager : MonoBehaviour {
 
     }
 
-    public void rollranged()
+    public IEnumerator rollranged(UnitInformation enemyunit)
     {
         disabledie();
 
         // single blue and 2 yellows
         // http://puu.sh/yj0G5/b28c40e926.jpg
+
+        YlwDie.transform.position = (Ylwpoint);
+        YlwDie.gameObject.SetActive(true);
+        Kick = YlwDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+
+        YlwDie2.transform.position = (Ylwpoint2);
+        YlwDie2.gameObject.SetActive(true);
+        Kick = YlwDie2.GetComponent<DiceKick>();
+        Kick.KickDie();
+
+        BluDie.transform.position = (Blupoint);
+        BluDie.gameObject.SetActive(true);
+        Kick = BluDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+        yield return new WaitForSeconds(7f);
+
+        damroll = bluval + ylwval + ylwval2;
+        rangeroll = ylwval + ylwval2;
+        failcheck();
+
     }
 
     public void failcheck()

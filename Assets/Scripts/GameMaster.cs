@@ -79,7 +79,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 12;
                 playerset.GetComponent<UnitInformation>().currHP = 12;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = false;
                 playerset.GetComponent<UnitInformation>().truemovement = 4;
                 playerset.GetComponent<UnitInformation>().myname = "Syndrael";
             }
@@ -89,7 +89,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 8;
                 playerset.GetComponent<UnitInformation>().currHP = 8;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 5;
                 playerset.GetComponent<UnitInformation>().myname = "Jain Fairwood";
             }
@@ -99,7 +99,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 12;
                 playerset.GetComponent<UnitInformation>().currHP = 12;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 2;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 4;
                 playerset.GetComponent<UnitInformation>().myname = "Avril Albright";
             }
@@ -109,7 +109,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 8;
                 playerset.GetComponent<UnitInformation>().currHP = 8;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 4;
                 playerset.GetComponent<UnitInformation>().myname = "Tomble Burrowell";
             }
@@ -119,7 +119,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 14;
                 playerset.GetComponent<UnitInformation>().currHP = 14;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 3;
                 playerset.GetComponent<UnitInformation>().myname = "Grisban the Thirsty";
             }
@@ -129,7 +129,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 10;
                 playerset.GetComponent<UnitInformation>().currHP = 10;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 4;
                 playerset.GetComponent<UnitInformation>().myname = "Widow Tarha";
 
@@ -140,7 +140,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 8;
                 playerset.GetComponent<UnitInformation>().currHP = 8;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 4;
                 playerset.GetComponent<UnitInformation>().myname = "Leoric of the Book";
             }
@@ -150,7 +150,7 @@ public class GameMaster : MonoBehaviour {
                 playerset.GetComponent<UnitInformation>().maxHP = 10;
                 playerset.GetComponent<UnitInformation>().currHP = 10;
                 playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = 1;
+                playerset.GetComponent<UnitInformation>().range = true;
                 playerset.GetComponent<UnitInformation>().truemovement = 5;
                 playerset.GetComponent<UnitInformation>().myname = "Ashrian";
             }

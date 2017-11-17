@@ -23,7 +23,7 @@ public class UnitInformation : MonoBehaviour {
     public byte defense; //Number of die to roll
     public byte truemovement;
     public byte movement;
-    public int range;
+    public bool range;
                           // Use this for initialization
     public string myname = "This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES";
 
@@ -40,7 +40,6 @@ public class UnitInformation : MonoBehaviour {
 
     void Start()
     {
-        GetComponent<AttackScript>().range = range;
         HPvalue = GameObject.Find("HPtxt").GetComponent<Text>();
         EHPvalue = GameObject.Find("EHPtxt").GetComponent<Text>();
         Dice = GameObject.Find("Dieman").GetComponent<DiceManager>();
@@ -180,6 +179,46 @@ public class UnitInformation : MonoBehaviour {
         Debug.Log("def" + def);
 
         if (damroll <= def || damroll < 0)
+        {
+            dam = 0;
+        }
+        else
+        {
+            dam = damroll - def;
+        }
+
+        enemyunit.healthchange(dam);
+        Debug.Log(enemyunit.healthreturn());
+        UpdatePlayerHealthGUI();
+        UpdateEnemyHealthGUI(enemyunit);
+        yield return null;
+
+    }
+
+    public IEnumerator rHitTaken(UnitInformation enemyunit)
+    {
+        int def;
+        int rangeroll;
+        int damroll;
+        int dam;
+        int range;
+
+        UpdatePlayerHealthGUI();
+        UpdateEnemyHealthGUI(enemyunit);
+        StartCoroutine(Dice.rollranged(enemyunit));
+        StartCoroutine(Dice.rolldef(enemyunit));
+        yield return new WaitForSeconds(8f);
+        damroll = DiceManager.damroll;
+        def = DiceManager.defroll;
+        rangeroll = DiceManager.rangeroll;
+        range = rangeroll * 90;
+
+        Debug.Log("dam" + damroll);
+        Debug.Log("def" + def);
+        Debug.Log("range" + range);
+        Debug.Log("target distance" + AttackScript.Targetdis);
+
+        if (damroll <= def || damroll < 0 || AttackScript.Targetdis > range)
         {
             dam = 0;
         }

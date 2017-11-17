@@ -59,6 +59,7 @@
      <Compile Include="Assets\Scripts\QuitGame.cs" />
      <Compile Include="Assets\Scripts\TestDice.cs" />
      <Compile Include="Assets\Scripts\UnitInformation.cs" />
+     <Compile Include="Assets\Scripts\Unitrevive.cs" />
      <Compile Include="Assets\Scripts\mapPlane.cs" />
      <Compile Include="Assets\Standard Assets (Environment)\Environment\Water (Basic)\Scripts\WaterBasic.cs" />
      <Compile Include="Assets\Standard Assets (Environment)\Environment\Water\Water\Scripts\Displace.cs" />

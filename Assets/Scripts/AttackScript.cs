@@ -6,20 +6,26 @@ public class AttackScript : MonoBehaviour {
 
     public bool active;
 
-    public int range;
     public UnitInformation Unit;
     public GameObject Target;
     public static Vector3 currentpos;
-    float Targetdis;
+    public static float Targetdis;
     Vector3 Targetpos;
+
+    public bool inrange;
     
     int damage;
+    bool range;
 
 
     /// <summary>
     /// Handles targeting and distance checks
     /// </summary>
     
+    void Start()
+    {
+        Unit = GetComponent<UnitInformation>();
+    }
 
     void Update()
     {
@@ -81,11 +87,26 @@ public class AttackScript : MonoBehaviour {
         //check from player location to target position
         Targetpos = Target.transform.position;
         Targetdis = Vector3.Distance(currentpos,Targetpos);
-        if (Targetdis > 90*range)
+        if (Unit.GetComponent<UnitInformation>().range)
         {
-            Debug.Log("Target too far");
+            Debug.Log("range attack");
+            // calculation to see if the angle is valid
+            inrange = true;
         }
         else
+        {
+            if (Targetdis > 90)
+            {
+                Debug.Log("Target too far");
+                inrange = false;
+            }
+            else
+            {
+                inrange = true;
+            }
+        }
+
+        if (inrange == true)
         {
             StartCoroutine(Attack());
             active = false;
@@ -96,7 +117,14 @@ public class AttackScript : MonoBehaviour {
     {
         Debug.Log(Target);
         Unit = GetComponent<UnitInformation>();
-        StartCoroutine(Unit.HitTaken(Target.GetComponent<UnitInformation>()));
+        if (Unit.GetComponent<UnitInformation>().range)
+        {
+            StartCoroutine(Unit.rHitTaken(Target.GetComponent<UnitInformation>()));
+        }
+        else
+        {
+            StartCoroutine(Unit.HitTaken(Target.GetComponent<UnitInformation>()));
+        }
         yield return new WaitForSeconds(8);
         endmove();
     }
