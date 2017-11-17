@@ -1,0 +1,10 @@
+DROP TABLE IF EXISTS "Class";
+CREATE TABLE "Class" ("Name" TEXT, "Health" INTEGER, "Range" BOOL, "Movement" INTEGER);
+INSERT INTO "Class" VALUES('Syndrael',15,'false',4);
+INSERT INTO "Class" VALUES('Jain Fairwood',7,'true',5);
+INSERT INTO "Class" VALUES('Avril Albright',12,'true',4);
+INSERT INTO "Class" VALUES('Tomble Burrowell',8,'false',4);
+INSERT INTO "Class" VALUES('Grisban the Thirsty',14,'false',3);
+INSERT INTO "Class" VALUES('Widow Tarha',10,'false',4);
+INSERT INTO "Class" VALUES('Leoric of the Book',8,'false',4);
+INSERT INTO "Class" VALUES('Ashrian',10,'false',5);
