@@ -2,6 +2,9 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using Mono.Data.Sqlite;
+using System.Data;
+using System;
 
 public class GameMaster : MonoBehaviour {
     private enum turn {Start,Movement,Action,End}
@@ -41,6 +44,8 @@ public class GameMaster : MonoBehaviour {
     public Vector3[] spawnlocation;
     public Vector3[] Espawnlocation;
 
+    //for SQL
+    private string link;
 
 
     /// <summary>
@@ -54,6 +59,11 @@ public class GameMaster : MonoBehaviour {
 
     void Start()
     {
+        link = "URI=file" + Application.dataPath + "/Plugins/Descent.s3db";
+        Debug.Log(link);
+        IDbConnection database;
+        database = (IDbConnection)new SqliteConnection(link);
+        database.Open();
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
@@ -75,7 +85,20 @@ public class GameMaster : MonoBehaviour {
             //players.Add(GameObject.Find("Player" + (i + 1)));
             if (LoadScene.classval1 == 0)
             {
-                players.Add(playerset = Instantiate(tank,spawnlocation[i],Quaternion.identity));
+                using (IDbCommand read = database.CreateCommand())
+                {
+                    using (IDataReader reader = read.ExecuteReader())
+                    {
+                        while (reader.Read())
+                        {
+                            Debug.Log(reader.GetString(1));
+                        }
+                        database.Close();
+                        reader.Close();
+                    }
+                }
+
+                players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
                 playerset.GetComponent<UnitInformation>().maxHP = 12;
                 playerset.GetComponent<UnitInformation>().currHP = 12;
                 playerset.GetComponent<UnitInformation>().defense = 1;
