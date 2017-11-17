@@ -94,24 +94,16 @@ public class DiceManager : MonoBehaviour {
         disabledie();
 
         // single red
-        RedDie.transform.position = (Redpoint);
-        RedDie.gameObject.SetActive(true);
-        Kick = RedDie.GetComponent<DiceKick>();
-        Kick.KickDie();
+        rollRED();
     }
 
     public void rollrevive()
     {
         disabledie();
 
-        RedDie.gameObject.SetActive(true);
-        RedDie2.gameObject.SetActive(true);
+        rollRED();
+        rollRED2();
 
-        Kick = RedDie.GetComponent<DiceKick>();
-        Kick.KickDie();
-        Kick = RedDie2.GetComponent<DiceKick>();
-        Kick.KickDie();
-        
         damroll = redval + redval2;
         print(redval + " / " + redval2);
 
@@ -125,14 +117,9 @@ public class DiceManager : MonoBehaviour {
         // single red and blue
         // http://puu.sh/yj0Ce/baeb673c0b.jpg
 
-        RedDie.transform.position = (Redpoint);
-        RedDie.gameObject.SetActive(true);
-        Kick = RedDie.GetComponent<DiceKick>();
-        Kick.KickDie();
-        BluDie.transform.position = (Blupoint);
-        BluDie.gameObject.SetActive(true);
-        Kick = BluDie.GetComponent<DiceKick>();
-        Kick.KickDie();
+        rollRED();
+        rollBLU();
+
         yield return new WaitForSeconds(7f);
         
         damroll = redval + bluval;
@@ -147,20 +134,10 @@ public class DiceManager : MonoBehaviour {
         // single blue and 2 yellows
         // http://puu.sh/yj0G5/b28c40e926.jpg
 
-        YlwDie.transform.position = (Ylwpoint);
-        YlwDie.gameObject.SetActive(true);
-        Kick = YlwDie.GetComponent<DiceKick>();
-        Kick.KickDie();
+        rollYLW();
+        rollYLW2();
+        rollBLU();
 
-        YlwDie2.transform.position = (Ylwpoint2);
-        YlwDie2.gameObject.SetActive(true);
-        Kick = YlwDie2.GetComponent<DiceKick>();
-        Kick.KickDie();
-
-        BluDie.transform.position = (Blupoint);
-        BluDie.gameObject.SetActive(true);
-        Kick = BluDie.GetComponent<DiceKick>();
-        Kick.KickDie();
         yield return new WaitForSeconds(7f);
 
         damroll = bluval + ylwval + ylwval2;
@@ -183,54 +160,76 @@ public class DiceManager : MonoBehaviour {
 
         if (enemyunit.tag == "Enemy")
         {
-            BrwnDie.transform.position = (Brwnpoint);
-            BrwnDie.gameObject.SetActive(true);
-            Kick = BrwnDie.GetComponent<DiceKick>();
-            Kick.KickDie();
+            rollBRWN();
             yield return new WaitForSeconds(8f);
             defroll = brwnval;
         }
         if (enemyunit.tag == "Player")
         {
-            GryDie.transform.position = (Grypoint);
-            GryDie.gameObject.SetActive(true);
-            Kick = GryDie.GetComponent<DiceKick>();
-            Kick.KickDie();
+            rollGRY();
             yield return new WaitForSeconds(8f);
             defroll = gryval;
         }
 
     }
 
+    /// <summary>
+    /// Dice rolls
+    /// </summary>
 
-
-    public void rollBlk()
+    void rollRED()
     {
-        disabledie();
-        //if (cankick == true)
-        //{
-        //    BlkDie.transform.position = (Blkpoint);
-        //    Kick = BlkDie.GetComponent<DiceKick>();
-        //    Kick.KickDie();
-        //}
-        BlkDie.transform.position = (Blkpoint);
-        BlkDie.gameObject.SetActive(true);
-        Kick = BlkDie.GetComponent<DiceKick>();
+        RedDie.transform.position = (Redpoint);
+        RedDie.gameObject.SetActive(true);
+        Kick = RedDie.GetComponent<DiceKick>();
         Kick.KickDie();
-
     }
 
-    public void rollRed()
+    void rollRED2()
     {
-        //if (cankick == true)
-        //{
-        //    RedDie.transform.position = (Redpoint);
-        //    Kick = RedDie.GetComponent<DiceKick>();
-        //    Kick.KickDie();
-        //}
+        RedDie2.transform.position = (Redpoint2);
+        RedDie2.gameObject.SetActive(true);
+        Kick = RedDie2.GetComponent<DiceKick>();
+        Kick.KickDie();
+    }
 
-        RedDie.transform.position = (Redpoint);
-        Kick = RedDie.GetComponent<DiceKick>();
+    void rollBLU()
+    {
+        BluDie.transform.position = (Blupoint);
+        BluDie.gameObject.SetActive(true);
+        Kick = BluDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+    }
+
+    void rollYLW()
+    {
+        YlwDie.transform.position = (Ylwpoint);
+        YlwDie.gameObject.SetActive(true);
+        Kick = YlwDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+    }
+
+    void rollYLW2()
+    {
+        YlwDie2.transform.position = (Ylwpoint2);
+        YlwDie2.gameObject.SetActive(true);
+        Kick = YlwDie2.GetComponent<DiceKick>();
+        Kick.KickDie();
+    }
+
+    void rollBRWN()
+    {
+        BrwnDie.transform.position = (Brwnpoint);
+        BrwnDie.gameObject.SetActive(true);
+        Kick = BrwnDie.GetComponent<DiceKick>();
+        Kick.KickDie();
+    }
+
+    void rollGRY()
+    {
+        GryDie.transform.position = (Grypoint);
+        GryDie.gameObject.SetActive(true);
+        Kick = GryDie.GetComponent<DiceKick>();
         Kick.KickDie();
     }
 }
