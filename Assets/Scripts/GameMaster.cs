@@ -59,7 +59,7 @@ public class GameMaster : MonoBehaviour {
 
     void Start()
     {
-        link = "URI=file" + Application.dataPath + "/Plugins/Descent.s3db";
+        link = "URI=file:" + Application.dataPath + "/Plugins/Descent.sqlite";
         Debug.Log(link);
         IDbConnection database;
         database = (IDbConnection)new SqliteConnection(link);

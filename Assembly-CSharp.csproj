@@ -75,7 +75,6 @@
      <None Include="Assets\Standard Assets (Environment)\Environment\Water\Water\Shaders\FXWaterPro.shader" />
      <None Include="Assets\Standard Assets (Environment)\Environment\Water\Water4\Shaders\WaterInclude.cginc" />
      <None Include="Assets\Standard Assets (Environment)\Environment\Water\Water4\Shaders\FXWater4Advanced.shader" />
-     <None Include="Assets\Plugins\sqliteadmin\changelog.txt" />
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>
  </Reference>
