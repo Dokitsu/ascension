@@ -1041,6 +1041,14 @@ MonoBehaviour:
       m_Image: {fileID: 0}
     - m_Text: Rogue
       m_Image: {fileID: 0}
+    - m_Text: Berserker
+      m_Image: {fileID: 0}
+    - m_Text: Necromancer
+      m_Image: {fileID: 0}
+    - m_Text: Runemaster
+      m_Image: {fileID: 0}
+    - m_Text: Spiritspeaker
+      m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
@@ -4500,13 +4508,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1169508610}
-  m_Template: {fileID: 1555860174}
-  m_CaptionText: {fileID: 266465064}
+  m_TargetGraphic: {fileID: 221075584}
+  m_Template: {fileID: 20856610}
+  m_CaptionText: {fileID: 710824388}
   m_CaptionImage: {fileID: 0}
-  m_ItemText: {fileID: 942832341}
+  m_ItemText: {fileID: 1386349492}
   m_ItemImage: {fileID: 0}
-  m_Value: 1
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Tank
@@ -4516,6 +4524,14 @@ MonoBehaviour:
     - m_Text: Healer
       m_Image: {fileID: 0}
     - m_Text: Rogue
+      m_Image: {fileID: 0}
+    - m_Text: Berserker
+      m_Image: {fileID: 0}
+    - m_Text: Necromancer
+      m_Image: {fileID: 0}
+    - m_Text: Runemaster
+      m_Image: {fileID: 0}
+    - m_Text: Spiritspeaker
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5061,13 +5077,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1479166191}
-  m_Template: {fileID: 921522657}
-  m_CaptionText: {fileID: 1801275324}
+  m_TargetGraphic: {fileID: 221075584}
+  m_Template: {fileID: 20856610}
+  m_CaptionText: {fileID: 710824388}
   m_CaptionImage: {fileID: 0}
-  m_ItemText: {fileID: 1353952141}
+  m_ItemText: {fileID: 1386349492}
   m_ItemImage: {fileID: 0}
-  m_Value: 3
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Tank
@@ -5077,6 +5093,14 @@ MonoBehaviour:
     - m_Text: Healer
       m_Image: {fileID: 0}
     - m_Text: Rogue
+      m_Image: {fileID: 0}
+    - m_Text: Berserker
+      m_Image: {fileID: 0}
+    - m_Text: Necromancer
+      m_Image: {fileID: 0}
+    - m_Text: Runemaster
+      m_Image: {fileID: 0}
+    - m_Text: Spiritspeaker
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6080,13 +6104,13 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 1885481475}
-  m_Template: {fileID: 319918286}
-  m_CaptionText: {fileID: 1945770625}
+  m_TargetGraphic: {fileID: 221075584}
+  m_Template: {fileID: 20856610}
+  m_CaptionText: {fileID: 710824388}
   m_CaptionImage: {fileID: 0}
-  m_ItemText: {fileID: 816977733}
+  m_ItemText: {fileID: 1386349492}
   m_ItemImage: {fileID: 0}
-  m_Value: 2
+  m_Value: 0
   m_Options:
     m_Options:
     - m_Text: Tank
@@ -6096,6 +6120,14 @@ MonoBehaviour:
     - m_Text: Healer
       m_Image: {fileID: 0}
     - m_Text: Rogue
+      m_Image: {fileID: 0}
+    - m_Text: Berserker
+      m_Image: {fileID: 0}
+    - m_Text: Necromancer
+      m_Image: {fileID: 0}
+    - m_Text: Runemaster
+      m_Image: {fileID: 0}
+    - m_Text: Spiritspeaker
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:

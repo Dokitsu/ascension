@@ -18,13 +18,14 @@ public class UnitInformation : MonoBehaviour {
     public static int gryval2;
 
     public int currHP;//lose all your health, you're removed from the game
-    private enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
-    private equipment mygear; //ONLY ONE
-    private byte defense; //Numbeer of die to roll
-    private byte truemovement;
+    public enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
+    public equipment mygear; //ONLY ONE
+    public byte defense; //Number of die to roll
+    public byte truemovement;
     public byte movement;
+    public int range;
                           // Use this for initialization
-    private string myname = "This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES";
+    public string myname = "This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES";
 
     public bool alive;
 
@@ -39,7 +40,7 @@ public class UnitInformation : MonoBehaviour {
 
     void Start()
     {
-
+        GetComponent<AttackScript>().range = range;
         HPvalue = GameObject.Find("HPtxt").GetComponent<Text>();
         EHPvalue = GameObject.Find("EHPtxt").GetComponent<Text>();
         Dice = GameObject.Find("Dieman").GetComponent<DiceManager>();

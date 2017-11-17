@@ -6,12 +6,13 @@ public class AttackScript : MonoBehaviour {
 
     public bool active;
 
+    public int range;
     public UnitInformation Unit;
     public GameObject Target;
     public static Vector3 currentpos;
     float Targetdis;
     Vector3 Targetpos;
-
+    
     int damage;
 
 
@@ -80,7 +81,7 @@ public class AttackScript : MonoBehaviour {
         //check from player location to target position
         Targetpos = Target.transform.position;
         Targetdis = Vector3.Distance(currentpos,Targetpos);
-        if (Targetdis > 90)
+        if (Targetdis > 90*range)
         {
             Debug.Log("Target too far");
         }
