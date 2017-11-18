@@ -56,6 +56,8 @@ public class GameMaster : MonoBehaviour {
     /// auto win
     /// </summary>
 
+        //this will pull the first class
+    //SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0;
 
     void Start()
     {
@@ -64,6 +66,21 @@ public class GameMaster : MonoBehaviour {
         IDbConnection database;
         database = (IDbConnection)new SqliteConnection(link);
         database.Open();
+
+        //using (IDbCommand read = database.CreateCommand())
+        //{
+        //    string sqlque = "SELECT * FROM Class";
+        //    read.CommandText = sqlque;
+        //    using (IDataReader reader = read.ExecuteReader())
+        //    {
+        //        while (reader.Read())
+        //        {
+        //            //Debug.Log(reader.GetString(0));
+        //        }
+        //        database.Close();
+        //        reader.Close();
+        //    }
+        //}
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
@@ -85,26 +102,25 @@ public class GameMaster : MonoBehaviour {
             //players.Add(GameObject.Find("Player" + (i + 1)));
             if (LoadScene.classval1 == 0)
             {
+                players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
                 using (IDbCommand read = database.CreateCommand())
                 {
+                    string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0";
+                    read.CommandText = sqlque;
                     using (IDataReader reader = read.ExecuteReader())
                     {
                         while (reader.Read())
                         {
-                            Debug.Log(reader.GetString(1));
+                            playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
+                            playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
+                            playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
+                            playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
+                            playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
                         }
                         database.Close();
                         reader.Close();
                     }
                 }
-
-                players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 12;
-                playerset.GetComponent<UnitInformation>().currHP = 12;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = false;
-                playerset.GetComponent<UnitInformation>().truemovement = 4;
-                playerset.GetComponent<UnitInformation>().myname = "Syndrael";
             }
             if (LoadScene.classval1 == 1)
             {

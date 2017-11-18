@@ -21,7 +21,7 @@ public class UnitInformation : MonoBehaviour {
     public enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
     public equipment mygear; //ONLY ONE
     public byte defense; //Number of die to roll
-    public byte truemovement;
+    public int truemovement;
     public byte movement;
     public bool range;
                           // Use this for initialization
