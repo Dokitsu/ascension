@@ -103,9 +103,10 @@ public class GameMaster : MonoBehaviour {
             if (LoadScene.classval1 == 0)
             {
                 players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
+                //// copy this
                 using (IDbCommand read = database.CreateCommand())
                 {
-                    string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0";
+                    string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
                     read.CommandText = sqlque;
                     using (IDataReader reader = read.ExecuteReader())
                     {
@@ -121,6 +122,7 @@ public class GameMaster : MonoBehaviour {
                         reader.Close();
                     }
                 }
+                //// 
             }
             if (LoadScene.classval1 == 1)
             {
