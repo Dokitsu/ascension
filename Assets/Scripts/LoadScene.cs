@@ -13,6 +13,8 @@ public class LoadScene : MonoBehaviour
     public Dropdown class3;
     public Dropdown class4;
 
+
+
     public static int classval1;
     public static int classval2;
     public static int classval3;
@@ -32,6 +34,8 @@ public class LoadScene : MonoBehaviour
         SceneManager.LoadScene(sceneIndex);     
     }
 
+
+    
 
     public void uncheckplayers()
     {
@@ -60,7 +64,9 @@ public class LoadScene : MonoBehaviour
         if (inlevel == false)
         {
             classval1 = class1.value;
-
+            classval2 = class2.value;
+            classval3 = class3.value;
+            classval4 = class4.value;
 
             players = nplayers.value + 1;
 

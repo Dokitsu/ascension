@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
@@ -6,8 +7,9 @@ using Mono.Data.Sqlite;
 using System.Data;
 using System;
 
-public class GameMaster : MonoBehaviour {
-    private enum turn {Start,Movement,Action,End}
+public class GameMaster : MonoBehaviour
+{
+    private enum turn { Start, Movement, Action, End }
     [SerializeField]
     private turn currentphase = turn.Start;
     public List<GameObject> players;
@@ -56,8 +58,158 @@ public class GameMaster : MonoBehaviour {
     /// auto win
     /// </summary>
 
-        //this will pull the first class
+    //this will pull the first class
     //SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0;
+
+    private void settype(ref int valuetoset,int num)
+    {
+        
+        GameObject playerset;
+
+        switch (valuetoset)
+        {
+
+            case (0):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 12;
+                    playerset.GetComponent<UnitInformation>().currHP = 12;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = false;
+                    playerset.GetComponent<UnitInformation>().truemovement = 4;
+                    playerset.GetComponent<UnitInformation>().myname = "Syndrael";
+
+                    break;
+                }
+            case (1):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 8;
+                    playerset.GetComponent<UnitInformation>().currHP = 8;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 5;
+                    playerset.GetComponent<UnitInformation>().myname = "Jain Fairwood";
+
+                    break;
+                }
+            case (2):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 12;
+                    playerset.GetComponent<UnitInformation>().currHP = 12;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 4;
+                    playerset.GetComponent<UnitInformation>().myname = "Avril Albright";
+
+
+                    break;
+                }
+            case (3):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 8;
+                    playerset.GetComponent<UnitInformation>().currHP = 8;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 4;
+                    playerset.GetComponent<UnitInformation>().myname = "Tomble Burrowell";
+
+                    break;
+                }
+            case (4):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 14;
+                    playerset.GetComponent<UnitInformation>().currHP = 14;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 3;
+                    playerset.GetComponent<UnitInformation>().myname = "Grisban the Thirsty";
+
+                    break;
+                }
+            case (5):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 10;
+                    playerset.GetComponent<UnitInformation>().currHP = 10;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 4;
+                    playerset.GetComponent<UnitInformation>().myname = "Widow Tarha";
+
+                    break;
+                }
+            case (6):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 8;
+                    playerset.GetComponent<UnitInformation>().currHP = 8;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 4;
+                    playerset.GetComponent<UnitInformation>().myname = "Leoric of the Book";
+
+                    break;
+                }
+            case (7):
+                {
+                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    playerset.GetComponent<UnitInformation>().maxHP = 10;
+                    playerset.GetComponent<UnitInformation>().currHP = 10;
+                    playerset.GetComponent<UnitInformation>().defense = 1;
+                    playerset.GetComponent<UnitInformation>().range = true;
+                    playerset.GetComponent<UnitInformation>().truemovement = 5;
+                    playerset.GetComponent<UnitInformation>().myname = "Ashrian";
+
+                    break;
+                }
+        }
+    }
+
+     private IEnumerator setplayer()
+    {
+        for (int i = 0; i < LoadScene.players; i++)
+        {
+            Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
+            switch (i)
+            {
+                case (0):
+                    {
+                        print(LoadScene.classval1);
+                        settype(ref LoadScene.classval1,i);
+                        break;
+                    }
+                case (1):
+                    {
+                        print(LoadScene.classval2.ToString());
+                        settype(ref LoadScene.classval2,i);
+                        break;
+                    }
+                case (2):
+                    {
+                        print(LoadScene.classval3.ToString());
+                        settype(ref LoadScene.classval3,i);
+                        break;
+                    }
+                case (3):
+                    {
+                        print(LoadScene.classval4);
+                        settype(ref LoadScene.classval4,i);
+                        break;
+                    }
+            }
+
+            
+        }
+        Enemies.Add(GameObject.Find("Boss"));
+        currentplayer = players[0];
+        playersturn = true;
+        yield return null;
+    }
+
 
     void Start()
     {
@@ -65,7 +217,7 @@ public class GameMaster : MonoBehaviour {
         Debug.Log(link);
         IDbConnection database;
         database = (IDbConnection)new SqliteConnection(link);
-        database.Open();
+      //  database.Open();
 
         //using (IDbCommand read = database.CreateCommand())
         //{
@@ -84,126 +236,125 @@ public class GameMaster : MonoBehaviour {
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
+        StartCoroutine(setplayer());
 
         ///Spawns players and enemies based on selections on the title scene
-        for (int i = 0; i < LoadScene.players; i ++)
-        {
-            GameObject playerset;
-            GameObject Eset;
+        //for (int i = 0; i < LoadScene.players; i++)
+        //{
+        //    GameObject playerset;
+        //    GameObject Eset;
 
-            Debug.Log("player in " + (i + 1));
-
-            // 
-            // GM sets spawn point for enemies
-            //
-            Enemies.Add(Instantiate(Eset = Zomb, Espawnlocation[i], Quaternion.identity));
+        //    Debug.Log("player in " + (i + 1));
 
 
-            //players.Add(GameObject.Find("Player" + (i + 1)));
-            if (LoadScene.classval1 == 0)
-            {
-                players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
-                //// copy this
-                using (IDbCommand read = database.CreateCommand())
-                {
-                    string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
-                    read.CommandText = sqlque;
-                    using (IDataReader reader = read.ExecuteReader())
-                    {
-                        while (reader.Read())
-                        {
-                            playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                            playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                            playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                            playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                            playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
-                        }
-                        database.Close();
-                        reader.Close();
-                    }
-                }
-                //// 
-            }
-            if (LoadScene.classval1 == 1)
-            {
-                players.Add(playerset = Instantiate(ranger, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 8;
-                playerset.GetComponent<UnitInformation>().currHP = 8;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 5;
-                playerset.GetComponent<UnitInformation>().myname = "Jain Fairwood";
-            }
-            if (LoadScene.classval1 == 2)
-            {
-                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 12;
-                playerset.GetComponent<UnitInformation>().currHP = 12;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 4;
-                playerset.GetComponent<UnitInformation>().myname = "Avril Albright";
-            }
-            if (LoadScene.classval1 == 3)
-            {
-                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 8;
-                playerset.GetComponent<UnitInformation>().currHP = 8;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 4;
-                playerset.GetComponent<UnitInformation>().myname = "Tomble Burrowell";
-            }
-            if (LoadScene.classval1 == 4)
-            {
-                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 14;
-                playerset.GetComponent<UnitInformation>().currHP = 14;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 3;
-                playerset.GetComponent<UnitInformation>().myname = "Grisban the Thirsty";
-            }
-            if (LoadScene.classval1 == 5)
-            {
-                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 10;
-                playerset.GetComponent<UnitInformation>().currHP = 10;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 4;
-                playerset.GetComponent<UnitInformation>().myname = "Widow Tarha";
+        //    GM sets spawn point for enemies
 
-            }
-            if (LoadScene.classval1 == 6)
-            {
-                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 8;
-                playerset.GetComponent<UnitInformation>().currHP = 8;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 4;
-                playerset.GetComponent<UnitInformation>().myname = "Leoric of the Book";
-            }
-            if (LoadScene.classval1 == 7)
-            {
-                players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-                playerset.GetComponent<UnitInformation>().maxHP = 10;
-                playerset.GetComponent<UnitInformation>().currHP = 10;
-                playerset.GetComponent<UnitInformation>().defense = 1;
-                playerset.GetComponent<UnitInformation>().range = true;
-                playerset.GetComponent<UnitInformation>().truemovement = 5;
-                playerset.GetComponent<UnitInformation>().myname = "Ashrian";
-            }
-        }
 
-        Enemies.Add(GameObject.Find("Boss"));
+        //   Enemies.Add(Instantiate(Eset = Zomb, Espawnlocation[i], Quaternion.identity));
 
-        currentplayer = players[0];
-        playersturn = true;
+
+        //   players.Add(GameObject.Find("Player" + (i + 1)));
+        //    if (LoadScene.classval1 == 0)
+        //    {
+        //        players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
+        //        //// copy this
+        //        using (IDbCommand read = database.CreateCommand())
+        //        {
+        //            string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
+        //            read.CommandText = sqlque;
+        //            using (IDataReader reader = read.ExecuteReader())
+        //            {
+        //                while (reader.Read())
+        //                {
+        //                    playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
+        //                    playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
+        //                    playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
+        //                    playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
+        //                    playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+        //                }
+        //                database.Close();
+        //                reader.Close();
+        //            }
+        //        }
+        //        //// 
+        //    }
+        //    if (LoadScene.classval1 == 1)
+        //    {
+        //        players.Add(playerset = Instantiate(ranger, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 8;
+        //        playerset.GetComponent<UnitInformation>().currHP = 8;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 5;
+        //        playerset.GetComponent<UnitInformation>().myname = "Jain Fairwood";
+        //    }
+        //    if (LoadScene.classval1 == 2)
+        //    {
+        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 12;
+        //        playerset.GetComponent<UnitInformation>().currHP = 12;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
+        //        playerset.GetComponent<UnitInformation>().myname = "Avril Albright";
+        //    }
+        //    if (LoadScene.classval1 == 3)
+        //    {
+        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 8;
+        //        playerset.GetComponent<UnitInformation>().currHP = 8;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
+        //        playerset.GetComponent<UnitInformation>().myname = "Tomble Burrowell";
+        //    }
+        //    if (LoadScene.classval1 == 4)
+        //    {
+        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 14;
+        //        playerset.GetComponent<UnitInformation>().currHP = 14;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 3;
+        //        playerset.GetComponent<UnitInformation>().myname = "Grisban the Thirsty";
+        //    }
+        //    if (LoadScene.classval1 == 5)
+        //    {
+        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 10;
+        //        playerset.GetComponent<UnitInformation>().currHP = 10;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
+        //        playerset.GetComponent<UnitInformation>().myname = "Widow Tarha";
+
+        //    }
+        //    if (LoadScene.classval1 == 6)
+        //    {
+        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 8;
+        //        playerset.GetComponent<UnitInformation>().currHP = 8;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
+        //        playerset.GetComponent<UnitInformation>().myname = "Leoric of the Book";
+        //    }
+        //    if (LoadScene.classval1 == 7)
+        //    {
+        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
+        //        playerset.GetComponent<UnitInformation>().maxHP = 10;
+        //        playerset.GetComponent<UnitInformation>().currHP = 10;
+        //        playerset.GetComponent<UnitInformation>().defense = 1;
+        //        playerset.GetComponent<UnitInformation>().range = true;
+        //        playerset.GetComponent<UnitInformation>().truemovement = 5;
+        //        playerset.GetComponent<UnitInformation>().myname = "Ashrian";
+        //    }
+        // }
+
 
 
     }
+    
 	
 
 	void Update ()
