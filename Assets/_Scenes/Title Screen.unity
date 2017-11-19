@@ -1251,9 +1251,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nplayers: {fileID: 1588732683}
   class1: {fileID: 221075583}
-  class2: {fileID: 0}
-  class3: {fileID: 0}
-  class4: {fileID: 0}
+  class2: {fileID: 167764420}
+  class3: {fileID: 830306104}
+  class4: {fileID: 1608029690}
   setstats: 1
   inlevel: 0
 --- !u!4 &267594009
