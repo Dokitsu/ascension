@@ -90,6 +90,7 @@
     <Compile Include="Assets\Scripts\DiceManager.cs" />
     <Compile Include="Assets\Scripts\DiceNum.cs" />
     <Compile Include="Assets\Scripts\DiceVal.cs" />
+    <Compile Include="Assets\Scripts\DropdownController.cs" />
     <Compile Include="Assets\Scripts\GameMaster.cs" />
     <Compile Include="Assets\Scripts\Gate.cs" />
     <Compile Include="Assets\Scripts\LoadScene.cs" />
