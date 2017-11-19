@@ -6,6 +6,7 @@ public class DiceNum : MonoBehaviour {
 
     public LayerMask diecoll = -1;
     public int value = 1;
+    public int nvalue = 0;
 
 
     /// <summary>
@@ -18,7 +19,7 @@ public class DiceNum : MonoBehaviour {
         if (Physics.Raycast(transform.position, Vector3.up, out hit, Mathf.Infinity, diecoll))
         {
             value = hit.collider.GetComponent<DiceVal>().value;
-           
+            nvalue = hit.collider.GetComponent<DiceVal>().nvalue;
         }
     }
 
