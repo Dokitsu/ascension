@@ -215,6 +215,7 @@ public class UnitInformation : MonoBehaviour {
 
         Debug.Log("dam" + damroll);
         Debug.Log("def" + def);
+        Debug.Log("rangerol" + rangeroll);
         Debug.Log("range" + range);
         Debug.Log("target distance" + AttackScript.Targetdis);
 

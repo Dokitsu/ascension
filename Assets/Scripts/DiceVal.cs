@@ -9,5 +9,6 @@ public class DiceVal : MonoBehaviour {
     /// </summary>
 
     public int value = 1;
+    public int nvalue = 0;
 
 }

@@ -28,8 +28,6 @@ public class DiceManager : MonoBehaviour {
     public Vector3 Grypoint;
     public Vector3 Grypoint2;
 
-    //public bool cankick = false;
-
     public static int blkval;
     public static int redval;
     public static int redval2;
@@ -39,6 +37,14 @@ public class DiceManager : MonoBehaviour {
     public static int ylwval2;
     public static int gryval;
     public static int gryval2;
+
+
+    public static int nbluval;
+    public static int nylwval;
+    public static int nylwval2;
+
+
+
 
     public static int defroll;
     public static int damroll;
@@ -71,6 +77,9 @@ public class DiceManager : MonoBehaviour {
         ylwval = YlwDie.GetComponent<DiceNum>().value;
         ylwval2 = YlwDie2.GetComponent<DiceNum>().value;
 
+        nbluval = BluDie.GetComponent<DiceNum>().nvalue;
+        nylwval = YlwDie.GetComponent<DiceNum>().nvalue;
+        nylwval2 = YlwDie2.GetComponent<DiceNum>().nvalue;
 
     }
 
@@ -141,7 +150,7 @@ public class DiceManager : MonoBehaviour {
         yield return new WaitForSeconds(7f);
 
         damroll = bluval + ylwval + ylwval2;
-        rangeroll = ylwval + ylwval2;
+        rangeroll = nylwval + nylwval2 + nbluval;
         failcheck();
 
     }
