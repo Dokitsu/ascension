@@ -77,7 +77,7 @@ public class GameMaster : MonoBehaviour
 
             case (0):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(tank, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
@@ -143,7 +143,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (2):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(healer, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 2"; // change the offset for different characters
