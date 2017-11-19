@@ -23,8 +23,10 @@ public class LoadScene : MonoBehaviour
 
     public static int players;
 
-    public bool setstats = true;
-    public bool inlevel = false;
+    [SerializeField]
+    private bool setstats = true;
+    [SerializeField]
+    private bool inlevel = false;
     // Use this for initialization
     public void LoadByIndex(int sceneIndex)
     {
