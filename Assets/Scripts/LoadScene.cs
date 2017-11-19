@@ -13,13 +13,17 @@ public class LoadScene : MonoBehaviour
     public Dropdown class3;
     public Dropdown class4;
 
-
-
     public static int classval1;
     public static int classval2;
     public static int classval3;
     public static int classval4;
 
+    public Texture[] cam;
+
+    public RawImage player1;
+    public RawImage player2;
+    public RawImage player3;
+    public RawImage player4;
 
     public static int players;
 
@@ -37,7 +41,19 @@ public class LoadScene : MonoBehaviour
     }
 
 
-    
+    void Update()
+    {
+        int p1 = class1.value;
+        int p2 = class2.value;
+        int p3 = class3.value;
+        int p4 = class4.value;
+
+        player1.texture = cam[p1];
+        player2.texture = cam[p2];
+        player3.texture = cam[p3];
+        player4.texture = cam[p4];
+
+    }
 
     public void uncheckplayers()
     {
