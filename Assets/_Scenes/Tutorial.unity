@@ -2648,6 +2648,13 @@ MonoBehaviour:
   - {x: -200, y: 15, z: 150}
   - {x: -200, y: 15, z: 100}
   - {x: -200, y: 15, z: 50}
+  Restartbtn: {fileID: 1100298976}
+  Quitbtn: {fileID: 1409808244}
+  Menubtn: {fileID: 422945419}
+  GameOverText: {fileID: 2051349126}
+  Heroeswins: {fileID: 799247939}
+  Enemieswin: {fileID: 1611806341}
+  SideMenu: {fileID: 1180562625}
 --- !u!4 &644199464
 Transform:
   m_ObjectHideFlags: 0

@@ -49,6 +49,14 @@ public class GameMaster : MonoBehaviour
     //for SQL
     private string link;
 
+    //for wintext
+    public GameObject Restartbtn;
+    public GameObject Quitbtn;
+    public GameObject Menubtn;
+    public GameObject GameOverText;
+    public GameObject Heroeswins;
+    public GameObject Enemieswin;
+    public GameObject SideMenu;
 
     /// <summary>
     /// Used to handle the games turn system
@@ -616,7 +624,13 @@ public class GameMaster : MonoBehaviour
         if (Enemies.Capacity <= 0)
         {
             Debug.Log("win game");
-            SceneManager.LoadScene("WinCondition");
+            SideMenu.SetActive(false);
+            GameOverText.SetActive(true);
+            Quitbtn.SetActive(true);
+            Restartbtn.SetActive(true);
+            Menubtn.SetActive(true);
+            Heroeswins.SetActive(true);
+
         }
     }
 
