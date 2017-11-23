@@ -412,6 +412,8 @@ public class GameMaster : MonoBehaviour
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
         StartCoroutine(setplayer());
+        Debug.Log("cap");
+        Debug.Log(Enemies.Capacity);
 
         //database.Close();
         //reader.Close();
@@ -617,8 +619,10 @@ public class GameMaster : MonoBehaviour
             if (enemy.gameObject == me.gameObject)
             {
                 Enemies.Remove(enemy);
-                Enemies.Capacity = Enemies.Capacity --;
+                Enemies.Capacity = Enemies.Capacity -1;
             }
+            Debug.Log("cap");
+            Debug.Log(Enemies.Capacity);
         }
 
         if (Enemies.Capacity <= 0)

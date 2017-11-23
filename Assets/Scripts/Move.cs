@@ -68,6 +68,15 @@ public class Move : MonoBehaviour
                 }
                 else
                 {
+                    if (mapPlane.distance < 20)
+                    {
+                        if(currentmovement < maxmovement)
+                        {
+                            endmove();
+                        }
+                        active = false;
+                        GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
+                    }
                     if (mapPlane.distance < 80)
                     {
                         MovePlayer();
