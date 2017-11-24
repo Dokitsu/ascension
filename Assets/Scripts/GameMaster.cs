@@ -98,7 +98,8 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                print(reader.GetInt16(3));
                             }
                             database.Close();
                             reader.Close();
@@ -132,7 +133,9 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                print(reader.GetInt16(3));
+
                             }
                             database.Close();
                             reader.Close();
@@ -164,7 +167,8 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                print(reader.GetInt16(3));
                             }
                             database.Close();
                             reader.Close();
@@ -196,7 +200,7 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
@@ -228,7 +232,7 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
@@ -260,7 +264,7 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
@@ -292,7 +296,7 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
@@ -324,7 +328,7 @@ public class GameMaster : MonoBehaviour
                                 playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
                                 playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
@@ -353,25 +357,25 @@ public class GameMaster : MonoBehaviour
             {
                 case (0):
                     {
-                        print(LoadScene.classval1);
+
                         settype(ref LoadScene.classval1,i);
                         break;
                     }
                 case (1):
                     {
-                        print(LoadScene.classval2.ToString());
+
                         settype(ref LoadScene.classval2,i);
                         break;
                     }
                 case (2):
                     {
-                        print(LoadScene.classval3.ToString());
+
                         settype(ref LoadScene.classval3,i);
                         break;
                     }
                 case (3):
                     {
-                        print(LoadScene.classval4);
+
                         settype(ref LoadScene.classval4,i);
                         break;
                     }
@@ -412,8 +416,7 @@ public class GameMaster : MonoBehaviour
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
         StartCoroutine(setplayer());
-        Debug.Log("cap");
-        Debug.Log(Enemies.Capacity);
+
 
         //database.Close();
         //reader.Close();
@@ -451,7 +454,7 @@ public class GameMaster : MonoBehaviour
         //                    playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
         //                    playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
         //                    playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-        //                    playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt32(3);
+        //                    playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
         //                }
         //                database.Close();
         //                reader.Close();

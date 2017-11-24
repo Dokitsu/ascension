@@ -65,6 +65,11 @@ public class Move : MonoBehaviour
                 if (Target.tag == "Player" || Target.tag == "Enemy" || Target.tag == "Block")
                 {
                     Debug.Log("hitmebby");
+                    if (currentmovement == maxmovement)
+                    {
+
+                    }
+
                 }
                 else
                 {
