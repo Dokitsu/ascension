@@ -42,6 +42,8 @@ public class GameMaster : MonoBehaviour
 
     //Game Enemies
     public GameObject Zomb;
+    public GameObject Spider;
+    public GameObject fleshmol;
 
     public Vector3[] spawnlocation;
     public Vector3[] Espawnlocation;
@@ -352,30 +354,30 @@ public class GameMaster : MonoBehaviour
     {
         for (int i = 0; i < LoadScene.players; i++)
         {
-            Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
+            //Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
             switch (i)
             {
                 case (0):
                     {
-
+                        Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
                         settype(ref LoadScene.classval1,i);
                         break;
                     }
                 case (1):
                     {
-
+                        Enemies.Add(Instantiate(Spider, Espawnlocation[i], Quaternion.identity));
                         settype(ref LoadScene.classval2,i);
                         break;
                     }
                 case (2):
                     {
-
+                        Enemies.Add(Instantiate(fleshmol, Espawnlocation[i], Quaternion.identity));
                         settype(ref LoadScene.classval3,i);
                         break;
                     }
                 case (3):
                     {
-
+                        Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
                         settype(ref LoadScene.classval4,i);
                         break;
                     }
