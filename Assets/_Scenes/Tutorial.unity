@@ -1042,6 +1042,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114829751556093852, guid: 09828513c41fb06489469434aa98f5dc,
+        type: 2}
+      propertyPath: DeadP
+      value: 
+      objectReference: {fileID: 644199463}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
   m_IsPrefabParent: 0
@@ -2657,6 +2662,7 @@ MonoBehaviour:
   Heroeswins: {fileID: 799247939}
   Enemieswin: {fileID: 1611806341}
   SideMenu: {fileID: 1180562625}
+  deadAllies: 0
 --- !u!4 &644199464
 Transform:
   m_ObjectHideFlags: 0
@@ -4979,6 +4985,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114387037458989136, guid: 7fc8c405c43d7f64186f5ec299f5f8d7,
+        type: 2}
+      propertyPath: DeadP
+      value: 
+      objectReference: {fileID: 644199463}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
   m_IsPrefabParent: 0
@@ -6945,6 +6956,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114515912420972510, guid: c56e2c5bfd2bc9b4899cda8f28c8e875,
+        type: 2}
+      propertyPath: DeadP
+      value: 
+      objectReference: {fileID: 644199463}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: c56e2c5bfd2bc9b4899cda8f28c8e875, type: 2}
   m_IsPrefabParent: 0
@@ -7151,6 +7167,11 @@ Prefab:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114829751556093852, guid: 09828513c41fb06489469434aa98f5dc,
+        type: 2}
+      propertyPath: DeadP
+      value: 
+      objectReference: {fileID: 644199463}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
   m_IsPrefabParent: 0

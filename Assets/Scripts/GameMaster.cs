@@ -60,6 +60,9 @@ public class GameMaster : MonoBehaviour
     public GameObject Enemieswin;
     public GameObject SideMenu;
 
+    //for Number of dead allies
+    public int deadAllies;
+
     /// <summary>
     /// Used to handle the games turn system
     /// Is boss alive?
@@ -414,6 +417,7 @@ public class GameMaster : MonoBehaviour
         //        reader.Close();
         //    }
         //}
+        deadAllies = 0;
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
@@ -545,6 +549,16 @@ public class GameMaster : MonoBehaviour
 
 	void Update ()
     {
+        if(deadAllies == players.Capacity)
+        {
+            Debug.Log("win game");
+            SideMenu.SetActive(false);
+            GameOverText.SetActive(true);
+            Quitbtn.SetActive(true);
+            Restartbtn.SetActive(true);
+            Menubtn.SetActive(true);
+            Enemieswin.SetActive(true);
+        }
         // checks if the enemy has been defeated and will skip thier turn
         if (currentplayer == null)
         {
@@ -750,5 +764,8 @@ public class GameMaster : MonoBehaviour
     //    }
 
     //}
-
+    public void DeadAllies(int add)
+    {
+        deadAllies += add;
+    }
 }

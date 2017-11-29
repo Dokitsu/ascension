@@ -36,6 +36,7 @@ public class UnitInformation : MonoBehaviour {
 
     public bool active;
 
+    public GameMaster DeadP;
     //For methods to create: One method (e.g. void longsword) for a piece of equipment
 
     void Start()
@@ -72,7 +73,7 @@ public class UnitInformation : MonoBehaviour {
         //            currHP = 6;
         //        }
         //    }
-
+        DeadP = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         UpdatePlayerHealthGUI();
         //}
     }
@@ -108,6 +109,14 @@ public class UnitInformation : MonoBehaviour {
     public void healthchange(int forcedvalue)
     {
         currHP -= forcedvalue;
+        if (currHP <= 0)
+        {
+            if (gameObject.tag == "Player")
+            {
+                DeadP.DeadAllies(1);
+                Debug.Log("Gay");
+            }
+        }
     }
 
 	// Update is called once per frame
@@ -117,14 +126,14 @@ public class UnitInformation : MonoBehaviour {
         {
             alive = true;
         }
-            //UpdateHealth();
-            if (currHP <= 0)
+        //UpdateHealth();
+        if (currHP <= 0)
         {
-            if (gameObject.tag == "Player")
+            if(gameObject.tag == "Player")
             {
                 alive = false;
             }
-            else
+            if (gameObject.tag == "Enemy")
             {
                 GameObject gm = GameObject.FindObjectOfType<GameMaster>().gameObject;
                 gm.GetComponent<GameMaster>().removingenemy(this);
@@ -165,7 +174,12 @@ public class UnitInformation : MonoBehaviour {
         healroll = DiceManager.damroll;
         print(healroll);
         playerunit.healthchange(-healroll);
+        if (currHP > 0)
+        {
+            alive = true;
+            DeadP.DeadAllies(-1);
 
+        }
         yield return null;
     }
 
@@ -210,6 +224,8 @@ public class UnitInformation : MonoBehaviour {
         int damroll;
         int dam;
         int range;
+
+        //DeadP.DeadAllies();
 
         UpdatePlayerHealthGUI();
         UpdateEnemyHealthGUI(enemyunit);
