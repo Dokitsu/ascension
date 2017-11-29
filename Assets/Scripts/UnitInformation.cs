@@ -106,6 +106,10 @@ public class UnitInformation : MonoBehaviour {
 	// Update is called once per frame
 	void Update ()
     {
+        if (currHP > maxHP)
+        {
+            currHP = maxHP;
+        }
         if (currHP > 0)
         {
             alive = true;
