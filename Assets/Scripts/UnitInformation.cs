@@ -95,7 +95,14 @@ public class UnitInformation : MonoBehaviour {
     public void heal(int forcedvalue)
     {
         Debug.Log("resting");
-        currHP += forcedvalue;
+        if((currHP + forcedvalue) > maxHP)
+        {
+            currHP = maxHP;
+        }
+        else
+        {
+            currHP += forcedvalue;
+        }
     }
 
     public void healthchange(int forcedvalue)
