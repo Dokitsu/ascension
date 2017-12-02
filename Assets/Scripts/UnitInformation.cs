@@ -20,7 +20,7 @@ public class UnitInformation : MonoBehaviour {
     public int currHP;//lose all your health, you're removed from the game
     public enum equipment {Longsword, Bow, LeatherArmour,Magicstaff} //
     public equipment mygear; //ONLY ONE
-    public byte defense; //Number of die to roll
+    //public byte defense; //Number of die to roll
     public int truemovement;
     public byte movement;
     public bool range;
@@ -37,7 +37,12 @@ public class UnitInformation : MonoBehaviour {
     public bool active;
 
     public GameMaster DeadP;
+
+    public GameObject DeadCross;
     //For methods to create: One method (e.g. void longsword) for a piece of equipment
+
+
+
 
     void Start()
     {
@@ -114,7 +119,8 @@ public class UnitInformation : MonoBehaviour {
             if (gameObject.tag == "Player")
             {
                 DeadP.DeadAllies(1);
-                Debug.Log("Gay");
+                //Debug.Log("Gay");
+                DeadCross.SetActive(true);
             }
         }
     }
@@ -142,10 +148,10 @@ public class UnitInformation : MonoBehaviour {
         }
     }
 
-    public byte defensereturn()
-    {
-        return defense;
-    }
+    //public byte defensereturn()
+    //{
+    //    return defense;
+    //}
 
     public byte movereturn()
     {

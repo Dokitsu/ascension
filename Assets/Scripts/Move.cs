@@ -36,8 +36,7 @@ public class Move : MonoBehaviour
         currentmovement = maxmovement;
         currentpos = transform.position;
         mapPlane.currentpos = currentpos;
-
-}
+   }
 
     // Update is called once per frame
     void Update()
@@ -92,14 +91,32 @@ public class Move : MonoBehaviour
     }
 
 
+    private IEnumerator movingplayer()
+    {
+        float tempfl = 0;
+        Vector3 temppos = transform.position;
+        Vector3 temptargetpos = targetpos;
+        for (tempfl = 0; tempfl <1; tempfl+=0.05f)
+        {
+           transform.position = Vector3.Lerp(temppos, temptargetpos + new Vector3(0,15,0), tempfl);
+            yield return new WaitForSeconds(0.05f);
+            print(tempfl);
+        }
+        currentpos = transform.position;
+        mapPlane.currentpos = currentpos;
+        yield return null;
+    }
+
     //Moves player to slected plane and updates current position
     void MovePlayer()
     {
         if (currentmovement > 0)
         {
-            transform.position = new Vector3(targetpos.x, targetpos.y + 15, targetpos.z);
-            currentpos = transform.position;
-            mapPlane.currentpos = currentpos;
+            StartCoroutine(movingplayer());
+
+           // transform.position = new Vector3(targetpos.x, targetpos.y + 15, targetpos.z);
+           //currentpos = transform.position;
+           
             currentmovement--;
             //print(currentmovement);
         }

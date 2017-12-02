@@ -2771,12 +2771,12 @@ Light:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1819320149101898}
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 8
   m_Type: 2
-  m_Color: {r: 1, g: 0.6074037, b: 0.2794118, a: 1}
-  m_Intensity: 25
-  m_Range: 30
+  m_Color: {r: 0.6544118, g: 0.06769778, b: 0, a: 1}
+  m_Intensity: 250
+  m_Range: 100
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
@@ -2815,6 +2815,7 @@ MonoBehaviour:
   active: 0
   Unit: {fileID: 0}
   Target: {fileID: 0}
+  inrange: 0
 --- !u!114 &114143569387661360
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -2828,10 +2829,17 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Dice: {fileID: 0}
   currHP: 10
+  mygear: 0
+  truemovement: 0
   movement: 0
+  range: 1
+  myname: This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES
   alive: 0
   HPvalue: {fileID: 0}
   EHPvalue: {fileID: 0}
+  maxHP: 0
+  active: 0
+  DeadP: {fileID: 0}
 --- !u!136 &136213822438239970
 CapsuleCollider:
   m_ObjectHideFlags: 1

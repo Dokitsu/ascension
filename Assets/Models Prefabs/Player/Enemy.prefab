@@ -920,6 +920,7 @@ MonoBehaviour:
   active: 0
   Unit: {fileID: 0}
   Target: {fileID: 0}
+  inrange: 0
 --- !u!114 &114406236270048744
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -934,7 +935,7 @@ MonoBehaviour:
   active: 0
   targetpos: {x: 0, y: 0, z: 0}
   maxmovement: 2
-  currentmovement: 0
+  currentmovement: 2
   Target: {fileID: 0}
 --- !u!114 &114778207667990588
 MonoBehaviour:
@@ -948,13 +949,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dice: {fileID: 0}
-  currHP: 2
-  movement: 0
+  currHP: 5
+  mygear: 0
+  truemovement: 2
+  movement: 2
+  range: 0
+  myname: This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES
   alive: 0
   HPvalue: {fileID: 0}
   EHPvalue: {fileID: 0}
-  maxHP: 0
+  maxHP: 5
   active: 0
+  DeadP: {fileID: 0}
 --- !u!136 &136283636734787460
 CapsuleCollider:
   m_ObjectHideFlags: 1

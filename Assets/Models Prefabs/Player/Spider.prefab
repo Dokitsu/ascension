@@ -1245,18 +1245,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Dice: {fileID: 0}
-  currHP: 2
+  currHP: 5
   mygear: 0
-  defense: 0
-  truemovement: 0
-  movement: 0
+  truemovement: 2
+  movement: 2
   range: 0
   myname: This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES
   alive: 0
   HPvalue: {fileID: 0}
   EHPvalue: {fileID: 0}
-  maxHP: 0
+  maxHP: 5
   active: 0
+  DeadP: {fileID: 0}
 --- !u!114 &114890380180837010
 MonoBehaviour:
   m_ObjectHideFlags: 1
