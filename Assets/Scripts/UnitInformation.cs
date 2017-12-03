@@ -51,36 +51,10 @@ public class UnitInformation : MonoBehaviour {
         Dice = GameObject.Find("Dieman").GetComponent<DiceManager>();
     
         GetComponent<Move>().maxmovement = truemovement;
-        //StartCoroutine(HitTaken);
-        // Current HP assignment for debug only
 
-        //Pulls HP stat from assigned class
-        //Player-Tank ,Player-Range, Player-Healer
-
-        //if (gameObject.tag.Contains("Player-Tank"))
-        //{
-        //    currHP = 15;
-        //}
-        //else
-        //{
-        //    if (gameObject.tag.Contains("Player-Range"))
-        //    {
-        //        currHP = 8;
-        //    }
-        //    else
-        //    {
-        //        if (gameObject.tag.Contains("Player-Heal"))
-        //        {
-        //            currHP = 10;
-        //        }
-        //        else
-        //        {
-        //            currHP = 6;
-        //        }
-        //    }
         DeadP = GameObject.Find("GameMaster").GetComponent<GameMaster>();
         UpdatePlayerHealthGUI();
-        //}
+    
     }
 
     public IEnumerator rest()
@@ -119,7 +93,6 @@ public class UnitInformation : MonoBehaviour {
             if (gameObject.tag == "Player")
             {
                 DeadP.DeadAllies(1);
-                //Debug.Log("Gay");
                 DeadCross.SetActive(true);
             }
         }
@@ -132,7 +105,6 @@ public class UnitInformation : MonoBehaviour {
         {
             alive = true;
         }
-        //UpdateHealth();
         if (currHP <= 0)
         {
             if(gameObject.tag == "Player")
@@ -148,10 +120,6 @@ public class UnitInformation : MonoBehaviour {
         }
     }
 
-    //public byte defensereturn()
-    //{
-    //    return defense;
-    //}
 
     public byte movereturn()
     {
@@ -231,7 +199,6 @@ public class UnitInformation : MonoBehaviour {
         int dam;
         int range;
 
-        //DeadP.DeadAllies();
 
         UpdatePlayerHealthGUI();
         UpdateEnemyHealthGUI(enemyunit);
@@ -269,21 +236,17 @@ public class UnitInformation : MonoBehaviour {
 
     public void UpdatePlayerHealthGUI()
     {
-        HPvalue.text = "HP: " + currHP;
+        HPvalue.text = myname + " |||HP: " + currHP;
     }
 
     public void UpdateEnemyHealthGUI(UnitInformation enemy)
     {
-        EHPvalue.text = "Enemy HP: " + enemy.healthreturn();
+        EHPvalue.text = enemy.myname + " |||Enemy HP: " + enemy.healthreturn();
     }
 
 
     void endmove()
     {
         GameObject.FindObjectOfType<GameMaster>().changephase();
-        //GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
-        active = false;
-
-        //Debug.Log("moved");
     }
 }

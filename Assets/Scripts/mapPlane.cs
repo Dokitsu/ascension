@@ -22,10 +22,7 @@ public class mapPlane : MonoBehaviour {
     void OnMouseEnter()
     {
 
-        //Debug.Log(distance);
-        //Debug.Log(transform.position.x + "x");
-        //Debug.Log(transform.position.y + "y");
-        //Debug.Log(transform.position.z + "z");
+
 
 
     }
@@ -40,15 +37,15 @@ public class mapPlane : MonoBehaviour {
         Target = transform.position;
         distance = Vector3.Distance(transform.position, currentpos);
 
-        //if (active)
-        //{
+
+       
             if (Physics.Raycast(currentpos, Raycheck, out hit))
             {
                 thit = hit.transform.gameObject;
-                //Debug.Log(Target);
+
                 if (distance > 80 || thit.tag == "Block")
                 {
-                    //Debug.Log("hitmebby");
+
                     rend.material.color = Color.red;
                 }
                 else
@@ -56,7 +53,7 @@ public class mapPlane : MonoBehaviour {
                     rend.material.color = Color.yellow;
                 }
             }
-        //}
+       
     }
 
     //Reverts colour change when cursor leaves the tile

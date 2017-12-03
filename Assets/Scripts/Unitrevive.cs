@@ -38,7 +38,6 @@ public class Unitrevive : MonoBehaviour
                 if (Physics.Raycast(ray, out hit, Mathf.Infinity))
                 {
                     Target = hit.transform.gameObject;
-                    //Debug.Log(hit.transform.gameObject.name);
                     // Prevents player attack themselves
                     if (Target != gameObject)
                     {
@@ -67,7 +66,6 @@ public class Unitrevive : MonoBehaviour
         // updates current position vector from previous player
         currentpos = transform.position;
         mapPlane.currentpos = currentpos;
-        //Debug.Log(currentpos);
     }
 
     IEnumerator Revive()
@@ -82,10 +80,7 @@ public class Unitrevive : MonoBehaviour
     void endmove()
     {
         GameObject.FindObjectOfType<GameMaster>().changephase();
-        //GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
         active = false;
-
-        //Debug.Log("moved");
     }
 
 

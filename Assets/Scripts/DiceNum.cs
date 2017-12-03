@@ -18,8 +18,10 @@ public class DiceNum : MonoBehaviour {
         RaycastHit hit;
         if (Physics.Raycast(transform.position, Vector3.up, out hit, Mathf.Infinity, diecoll))
         {
-            value = hit.collider.GetComponent<DiceVal>().value;
-            nvalue = hit.collider.GetComponent<DiceVal>().nvalue;
+            //Sets dice number when rolled.
+            DiceVal test = hit.collider.GetComponent<DiceVal>();
+            value = test.value;
+            nvalue = test.nvalue;
         }
     }
 
@@ -27,6 +29,6 @@ public class DiceNum : MonoBehaviour {
 
     void OnGUI()
     {
-        //GUILayout.Label(value.ToString());
+        
     }
 }

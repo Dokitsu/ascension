@@ -99,11 +99,12 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                                 print(reader.GetInt16(3));
                             }
                             database.Close();
@@ -112,14 +113,7 @@ public class GameMaster : MonoBehaviour
 
                     }
 
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 12;
-                    playerset.GetComponent<UnitInformation>().currHP = 12;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = false;
-                    playerset.GetComponent<UnitInformation>().truemovement = 4;
-                    playerset.GetComponent<UnitInformation>().myname = "Syndrael";
-                    */
+
                     break;
 
                 }
@@ -134,11 +128,12 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                                 print(reader.GetInt16(3));
 
                             }
@@ -147,14 +142,7 @@ public class GameMaster : MonoBehaviour
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 8;
-                    playerset.GetComponent<UnitInformation>().currHP = 8;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 5;
-                    playerset.GetComponent<UnitInformation>().myname = "Jain Fairwood";
-                    */
+
                     break;
                 }
             case (2):
@@ -168,11 +156,12 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                                 print(reader.GetInt16(3));
                             }
                             database.Close();
@@ -180,14 +169,7 @@ public class GameMaster : MonoBehaviour
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 12;
-                    playerset.GetComponent<UnitInformation>().currHP = 12;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 4;
-                    playerset.GetComponent<UnitInformation>().myname = "Avril Albright";
-                    */
+
                     break;
                 }
             case (3):
@@ -201,25 +183,19 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 8;
-                    playerset.GetComponent<UnitInformation>().currHP = 8;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 4;
-                    playerset.GetComponent<UnitInformation>().myname = "Tomble Burrowell";
-                    */
+
                     break;
                 }
             case (4):
@@ -233,25 +209,19 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 14;
-                    playerset.GetComponent<UnitInformation>().currHP = 14;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 3;
-                    playerset.GetComponent<UnitInformation>().myname = "Grisban the Thirsty";
-                    */
+
                     break;
                 }
             case (5):
@@ -265,25 +235,19 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 10;
-                    playerset.GetComponent<UnitInformation>().currHP = 10;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 4;
-                    playerset.GetComponent<UnitInformation>().myname = "Widow Tarha";
-                    */
+
                     break;
                 }
             case (6):
@@ -297,25 +261,19 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 8;
-                    playerset.GetComponent<UnitInformation>().currHP = 8;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 4;
-                    playerset.GetComponent<UnitInformation>().myname = "Leoric of the Book";
-                    */
+
                     break;
                 }
             case (7):
@@ -329,25 +287,19 @@ public class GameMaster : MonoBehaviour
                         {
                             while (reader.Read())
                             {
-                                playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-                                playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-                                playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-                                playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
+                                UnitInformation selectedunit = playerset.GetComponent<UnitInformation>();
+                                selectedunit.myname = reader.GetString(0);
+                                selectedunit.maxHP = reader.GetInt16(1);
+                                selectedunit.currHP = reader.GetInt16(1);
+                                selectedunit.range = reader.GetBoolean(2);
+                                selectedunit.truemovement = reader.GetInt16(3);
                             }
                             database.Close();
                             reader.Close();
                         }
 
                     }
-                    /*
-                    playerset.GetComponent<UnitInformation>().maxHP = 10;
-                    playerset.GetComponent<UnitInformation>().currHP = 10;
-                    playerset.GetComponent<UnitInformation>().defense = 1;
-                    playerset.GetComponent<UnitInformation>().range = true;
-                    playerset.GetComponent<UnitInformation>().truemovement = 5;
-                    playerset.GetComponent<UnitInformation>().myname = "Ashrian";
-                    */
+
                     break;
                 }
         }
@@ -397,150 +349,11 @@ public class GameMaster : MonoBehaviour
 
     void Start()
     {
-        //link = "URI=file:" + Application.dataPath + "/Plugins/Descent.sqlite";
-        //Debug.Log(link);
-        //IDbConnection database;
-        //database = (IDbConnection)new SqliteConnection(link);
-        //database.Open();
-
-        //using (IDbCommand read = database.CreateCommand())
-        //{
-        //    string sqlque = "SELECT * FROM Class";
-        //    read.CommandText = sqlque;
-        //    using (IDataReader reader = read.ExecuteReader())
-        //    {
-        //        while (reader.Read())
-        //        {
-        //            //Debug.Log(reader.GetString(0));
-        //        }
-        //        database.Close();
-        //        reader.Close();
-        //    }
-        //}
         deadAllies = 0;
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
         StartCoroutine(setplayer());
-
-
-        //database.Close();
-        //reader.Close();
-
-
-        ///Spawns players and enemies based on selections on the title scene
-        //for (int i = 0; i < LoadScene.players; i++)
-        //{
-        //    GameObject playerset;
-        //    GameObject Eset;
-
-        //    Debug.Log("player in " + (i + 1));
-
-
-        //    GM sets spawn point for enemies
-
-
-        //   Enemies.Add(Instantiate(Eset = Zomb, Espawnlocation[i], Quaternion.identity));
-
-
-        //   players.Add(GameObject.Find("Player" + (i + 1)));
-        //    if (LoadScene.classval1 == 0)
-        //    {
-        //        players.Add(playerset = Instantiate(tank, spawnlocation[i], Quaternion.identity));
-        //        //// copy this
-        //        using (IDbCommand read = database.CreateCommand())
-        //        {
-        //            string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
-        //            read.CommandText = sqlque;
-        //            using (IDataReader reader = read.ExecuteReader())
-        //            {
-        //                while (reader.Read())
-        //                {
-        //                    playerset.GetComponent<UnitInformation>().myname = reader.GetString(0);
-        //                    playerset.GetComponent<UnitInformation>().maxHP = reader.GetInt16(1);
-        //                    playerset.GetComponent<UnitInformation>().currHP = reader.GetInt16(1);
-        //                    playerset.GetComponent<UnitInformation>().range = reader.GetBoolean(2);
-        //                    playerset.GetComponent<UnitInformation>().truemovement = reader.GetInt16(3);
-        //                }
-        //                database.Close();
-        //                reader.Close();
-        //            }
-        //        }
-        //        //// 
-        //    }
-        //    if (LoadScene.classval1 == 1)
-        //    {
-        //        players.Add(playerset = Instantiate(ranger, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 8;
-        //        playerset.GetComponent<UnitInformation>().currHP = 8;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 5;
-        //        playerset.GetComponent<UnitInformation>().myname = "Jain Fairwood";
-        //    }
-        //    if (LoadScene.classval1 == 2)
-        //    {
-        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 12;
-        //        playerset.GetComponent<UnitInformation>().currHP = 12;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
-        //        playerset.GetComponent<UnitInformation>().myname = "Avril Albright";
-        //    }
-        //    if (LoadScene.classval1 == 3)
-        //    {
-        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 8;
-        //        playerset.GetComponent<UnitInformation>().currHP = 8;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
-        //        playerset.GetComponent<UnitInformation>().myname = "Tomble Burrowell";
-        //    }
-        //    if (LoadScene.classval1 == 4)
-        //    {
-        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 14;
-        //        playerset.GetComponent<UnitInformation>().currHP = 14;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 3;
-        //        playerset.GetComponent<UnitInformation>().myname = "Grisban the Thirsty";
-        //    }
-        //    if (LoadScene.classval1 == 5)
-        //    {
-        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 10;
-        //        playerset.GetComponent<UnitInformation>().currHP = 10;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
-        //        playerset.GetComponent<UnitInformation>().myname = "Widow Tarha";
-
-        //    }
-        //    if (LoadScene.classval1 == 6)
-        //    {
-        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 8;
-        //        playerset.GetComponent<UnitInformation>().currHP = 8;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 4;
-        //        playerset.GetComponent<UnitInformation>().myname = "Leoric of the Book";
-        //    }
-        //    if (LoadScene.classval1 == 7)
-        //    {
-        //        players.Add(playerset = Instantiate(healer, spawnlocation[i], Quaternion.identity));
-        //        playerset.GetComponent<UnitInformation>().maxHP = 10;
-        //        playerset.GetComponent<UnitInformation>().currHP = 10;
-        //        playerset.GetComponent<UnitInformation>().defense = 1;
-        //        playerset.GetComponent<UnitInformation>().range = true;
-        //        playerset.GetComponent<UnitInformation>().truemovement = 5;
-        //        playerset.GetComponent<UnitInformation>().myname = "Ashrian";
-        //    }
-        // }
-
 
 
     }
@@ -725,45 +538,7 @@ public class GameMaster : MonoBehaviour
     }
 
 
-
-
-
-    ///Early build of turn progression
-
-    //public void endplayerturn()
-    //{
-    //    turns = 2;
-    //    phasenumber++;
-    //    currentplayer.GetComponent<Light>().enabled = false;
-    //    if (phasenumber > players.Capacity + Enemies.Capacity-1) 
-    //    {
-    //        print("New rotation");
-    //        phasenumber = 0;
-    //        currentplayer = players[phasenumber];
-
-    //        currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-    //    }
-    //    else
-    //    {
-    //        if (phasenumber < players.Capacity)
-    //        {
-    //            print("Player's turn " + phasenumber);
-    //            currentplayer = players[phasenumber];
-
-    //            currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-    //        }
-
-    //            if (phasenumber >= players.Capacity)
-    //            {
-    //                print("Enemy's turn " + phasenumber);
-    //                currentplayer = Enemies[phasenumber - players.Capacity];
-
-    //                currentplayer.GetComponent<UnitInformation>().UpdatePlayerHealthGUI();
-    //            }
-
-    //    }
-
-    //}
+    
     public void DeadAllies(int add)
     {
         deadAllies += add;

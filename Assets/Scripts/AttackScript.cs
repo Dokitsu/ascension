@@ -24,6 +24,7 @@ public class AttackScript : MonoBehaviour {
     
     void Start()
     {
+
         Unit = GetComponent<UnitInformation>();
     }
 
@@ -70,16 +71,16 @@ public class AttackScript : MonoBehaviour {
         // updates current position vector from previous player
         currentpos = transform.position;
         mapPlane.currentpos = currentpos;
-        //Debug.Log(currentpos);
+
     }
 
     void endmove()
     {
         GameObject.FindObjectOfType<GameMaster>().changephase();
-        //GameObject.FindObjectOfType<GameMaster>().menu.SetActive(true);
+
         active = false;
 
-        //Debug.Log("moved");
+     
     }
 
     void DistanceCheck()
@@ -117,7 +118,7 @@ public class AttackScript : MonoBehaviour {
     {
         Debug.Log(Target);
         Unit = GetComponent<UnitInformation>();
-        if (Unit.GetComponent<UnitInformation>().range)
+        if (Unit.range)
         {
             StartCoroutine(Unit.rHitTaken(Target.GetComponent<UnitInformation>()));
         }
@@ -130,107 +131,5 @@ public class AttackScript : MonoBehaviour {
     }
 
 
-
-
-    ///
-    ///Unused code, Initial code for testing functionality
-    ///
-
-    //void Update()
-    //{
-    //if (active == true)
-    //{
-    //    if (Input.GetKeyDown(KeyCode.DownArrow))
-    //    {
-    //        AttackerRange("dwn");
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.UpArrow))
-    //    {
-    //        AttackerRange("fwd");
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.RightArrow))
-    //    {
-    //        AttackerRange("rht");
-    //    }
-    //    else if (Input.GetKeyDown(KeyCode.LeftArrow))
-    //    {
-    //        AttackerRange("lft");
-    //    }
-    //}
-    //}
-    //void AttackerRange(string direction)
-    //{
-    //    Vector3 fwd = Vector3.forward;
-    //    Vector3 dwn = Vector3.back;
-    //    Vector3 lft = Vector3.left;
-    //    Vector3 rht = Vector3.right;
-    //    RaycastHit hit;
-    //    switch (direction)
-    //    {
-    //        case ("fwd"):
-    //            {
-    //                if (Physics.Raycast(transform.position, fwd, out hit, 50f))
-    //                {
-    //                    print(hit.transform.gameObject.name);
-    //                    Target = hit.transform.gameObject;
-    //                    Attack();
-    //                    active = false;
-    //                }
-    //                else
-    //                {
-    //                    Debug.DrawRay(transform.position, fwd * 50f, Color.red, 1f);
-    //                    print("Sorry no hit up");
-    //                }
-    //                return;
-    //            }
-    //        case ("dwn"):
-    //            {
-    //                if (Physics.Raycast(transform.position, dwn, out hit,50f))
-    //                {
-    //                    print(hit.transform.gameObject.name);
-    //                    Target = hit.transform.gameObject;
-    //                    Attack();
-    //                    active = false;
-    //                }
-    //                else
-    //                {
-    //                    Debug.DrawRay(transform.position, dwn * 50f, Color.red, 1f);
-    //                    print("Sorry no hit down");
-    //                }
-    //                return;
-    //            }
-    //        case ("lft"):
-    //            {
-    //                if (Physics.Raycast(transform.position, lft, out hit,50f))
-    //                {
-    //                    print(hit.transform.gameObject.name);
-    //                    Target = hit.transform.gameObject;
-    //                    Attack();
-    //                    active = false;
-    //                }
-    //                else
-    //                {
-    //                    Debug.DrawRay(transform.position, lft * 50f, Color.red, 1f);
-    //                    print("Sorry no hit left");
-    //                }
-    //                return;
-    //            }
-    //        case ("rht"):
-    //            {
-    //                if (Physics.Raycast(transform.position, rht, out hit,50f))
-    //                {
-    //                    print(hit.transform.gameObject.name);
-    //                    Target = hit.transform.gameObject;
-    //                    Attack();
-    //                    active = false;
-    //                }
-    //                else
-    //                {
-    //                    Debug.DrawRay(transform.position, rht * 50f, Color.red, 1f);
-    //                    print("Sorry no hit right OR ALL AROUND");
-    //                }
-    //                return;
-    //            }
-    //    }
-    //}
+    
 }
