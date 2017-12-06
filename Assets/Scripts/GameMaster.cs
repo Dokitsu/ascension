@@ -39,6 +39,11 @@ public class GameMaster : MonoBehaviour
     public GameObject tank;
     public GameObject ranger;
     public GameObject healer;
+    public GameObject Ashrian;
+    public GameObject Avric;
+    public GameObject Grisbane;
+    public GameObject Leoric;
+    public GameObject Tomble;
 
     //Game Enemies
     public GameObject Zomb;
@@ -309,31 +314,42 @@ public class GameMaster : MonoBehaviour
     {
         for (int i = 0; i < LoadScene.players; i++)
         {
+            GameObject enemyname;
+            UnitInformation actualenemy;
             //Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
             switch (i)
             {
                 case (0):
                     {
-                        Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
+                        Enemies.Add(Instantiate(enemyname = Zomb, Espawnlocation[i], Quaternion.identity));
+                        actualenemy = enemyname.GetComponent<UnitInformation>();
+                        actualenemy.myname = "Zombie";
                         settype(ref LoadScene.classval1,i);
                         break;
                     }
                 case (1):
                     {
-                        Enemies.Add(Instantiate(Spider, Espawnlocation[i], Quaternion.identity));
+                        Enemies.Add(Instantiate(enemyname = Spider, Espawnlocation[i], Quaternion.identity));
+                        actualenemy = enemyname.GetComponent<UnitInformation>();
+                        actualenemy.myname = "Cave Spider";
                         settype(ref LoadScene.classval2,i);
                         break;
                     }
                 case (2):
                     {
-                        Enemies.Add(Instantiate(fleshmol, Espawnlocation[i], Quaternion.identity));
+                        Enemies.Add(Instantiate(enemyname = fleshmol, Espawnlocation[i], Quaternion.identity));
+                        actualenemy = enemyname.GetComponent<UnitInformation>();
+                        actualenemy.myname = "Flesh Molder";
                         settype(ref LoadScene.classval3,i);
                         break;
                     }
                 case (3):
                     {
-                        Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
-                        settype(ref LoadScene.classval4,i);
+                      
+                        Enemies.Add(Instantiate(enemyname = Zomb, Espawnlocation[i], Quaternion.identity));
+                        actualenemy = enemyname.GetComponent<UnitInformation>();
+                        actualenemy.myname = "Zombie2";
+                        settype(ref LoadScene.classval4, i);
                         break;
                     }
             }

@@ -954,13 +954,14 @@ MonoBehaviour:
   truemovement: 2
   movement: 2
   range: 0
-  myname: This will lead to a method, MAKE SURE YOU MAKE 0 MISTAKES
+  myname: Zombie
   alive: 0
   HPvalue: {fileID: 0}
   EHPvalue: {fileID: 0}
   maxHP: 5
   active: 0
   DeadP: {fileID: 0}
+  DeadCross: {fileID: 0}
 --- !u!136 &136283636734787460
 CapsuleCollider:
   m_ObjectHideFlags: 1
