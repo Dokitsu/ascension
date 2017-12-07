@@ -16,6 +16,7 @@ public class GameMaster : MonoBehaviour
     [SerializeField]
     public List<GameObject> Enemies;
     [SerializeField]
+    public bool setMonsters;
 
     private int phasenumber = 0;
     private int turns = 2;
@@ -79,7 +80,7 @@ public class GameMaster : MonoBehaviour
     //this will pull the first class
     //SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0;
 
-    private void settype(ref int valuetoset,int num)
+    public void settype(ref int valuetoset,int num)
     {
 
         link = "URI=file:" + Application.dataPath + "/Plugins/Descent.sqlite";
@@ -310,57 +311,58 @@ public class GameMaster : MonoBehaviour
         }
     }
 
-     private IEnumerator setplayer()
+     public IEnumerator setplayer()
     {
-        for (int i = 0; i < LoadScene.players; i++)
-        {
-            GameObject enemyname;
-            UnitInformation actualenemy;
-            //Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
-            switch (i)
-            {
-                case (0):
-                    {
-                        Enemies.Add(Instantiate(enemyname = Zomb, Espawnlocation[i], Quaternion.identity));
-                        actualenemy = enemyname.GetComponent<UnitInformation>();
-                        actualenemy.myname = "Zombie";
-                        settype(ref LoadScene.classval1,i);
-                        break;
-                    }
-                case (1):
-                    {
-                        Enemies.Add(Instantiate(enemyname = Spider, Espawnlocation[i], Quaternion.identity));
-                        actualenemy = enemyname.GetComponent<UnitInformation>();
-                        actualenemy.myname = "Cave Spider";
-                        settype(ref LoadScene.classval2,i);
-                        break;
-                    }
-                case (2):
-                    {
-                        Enemies.Add(Instantiate(enemyname = fleshmol, Espawnlocation[i], Quaternion.identity));
-                        actualenemy = enemyname.GetComponent<UnitInformation>();
-                        actualenemy.myname = "Flesh Molder";
-                        settype(ref LoadScene.classval3,i);
-                        break;
-                    }
-                case (3):
-                    {
-                      
-                        Enemies.Add(Instantiate(enemyname = Zomb, Espawnlocation[i], Quaternion.identity));
-                        actualenemy = enemyname.GetComponent<UnitInformation>();
-                        actualenemy.myname = "Zombie2";
-                        settype(ref LoadScene.classval4, i);
-                        break;
-                    }
-            }
+        //for (int i = 0; i < LoadScene.players; i++)
+        //{
+        //        GameObject enemyname;
+        //        UnitInformation actualenemy;
+        //        //Enemies.Add(Instantiate(Zomb, Espawnlocation[i], Quaternion.identity));
+        //        switch (i)
+        //        {
+        //            case (0):
+        //                {
+        //                    Enemies.Add(Instantiate(enemyname = Zomb, Espawnlocation[i], Quaternion.identity));
+        //                    actualenemy = enemyname.GetComponent<UnitInformation>();
+        //                    actualenemy.myname = "Zombie";
+        //                    settype(ref LoadScene.classval1, i);
+        //                    break;
+        //                }
+        //            case (1):
+        //                {
+        //                    Enemies.Add(Instantiate(enemyname = Spider, Espawnlocation[i], Quaternion.identity));
+        //                    actualenemy = enemyname.GetComponent<UnitInformation>();
+        //                    actualenemy.myname = "Cave Spider";
+        //                    settype(ref LoadScene.classval2, i);
+        //                    break;
+        //                }
+        //            case (2):
+        //                {
+        //                    Enemies.Add(Instantiate(enemyname = fleshmol, Espawnlocation[i], Quaternion.identity));
+        //                    actualenemy = enemyname.GetComponent<UnitInformation>();
+        //                    actualenemy.myname = "Flesh Molder";
+        //                    settype(ref LoadScene.classval3, i);
+        //                    break;
+        //                }
+        //            case (3):
+        //                {
 
+        //                    Enemies.Add(Instantiate(enemyname = Zomb, Espawnlocation[i], Quaternion.identity));
+        //                    actualenemy = enemyname.GetComponent<UnitInformation>();
+        //                    actualenemy.myname = "Zombie2";
+        //                    settype(ref LoadScene.classval4, i);
+        //                    break;
+        //                }
+        //        }
             
-        }
+
+        //}
         Enemies.Add(GameObject.Find("Boss"));
         currentplayer = players[0];
+        menu.SetActive(true);
         playersturn = true;
         yield return null;
-    }
+     }
 
 
     void Start()
@@ -369,7 +371,7 @@ public class GameMaster : MonoBehaviour
 
         players.Capacity = LoadScene.players;
         Enemies.Capacity = LoadScene.players + 1;
-        StartCoroutine(setplayer());
+       // StartCoroutine(setplayer());
 
 
     }
@@ -510,8 +512,7 @@ public class GameMaster : MonoBehaviour
         {
             menu.SetActive(true);
         }
-
-        if (playersturn == false)
+        else if (playersturn == false)
         {
             emenu.SetActive(true);
         }

@@ -899,6 +899,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &251452475
 MeshRenderer:
@@ -1916,6 +1918,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &636671087
 MeshRenderer:
@@ -1982,6 +1986,7 @@ GameObject:
   m_Component:
   - component: {fileID: 644199464}
   - component: {fileID: 644199463}
+  - component: {fileID: 644199465}
   m_Layer: 0
   m_Name: GameMaster
   m_TagString: Untagged
@@ -2003,7 +2008,7 @@ MonoBehaviour:
   currentphase: 0
   players: []
   Enemies: []
-  phasenumber: 0
+  setMonsters: 0
   currentplayer: {fileID: 0}
   menu: {fileID: 1180562625}
   emenu: {fileID: 1081846057}
@@ -2015,6 +2020,11 @@ MonoBehaviour:
   tank: {fileID: 1764482462511020, guid: c56e2c5bfd2bc9b4899cda8f28c8e875, type: 2}
   ranger: {fileID: 1408623756253622, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
   healer: {fileID: 1620534705828094, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
+  Ashrian: {fileID: 0}
+  Avric: {fileID: 0}
+  Grisbane: {fileID: 0}
+  Leoric: {fileID: 0}
+  Tomble: {fileID: 0}
   Zomb: {fileID: 1506182148728066, guid: 90b122db807becb4785f52f1123ba538, type: 2}
   Spider: {fileID: 1572280964903034, guid: 285a995819d04c14381d9245e4056bbd, type: 2}
   fleshmol: {fileID: 1130175201302332, guid: cd844e072723fab4f8e1008355d3bc19, type: 2}
@@ -2049,6 +2059,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 13
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &644199465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 644199462}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51ade5e8ccaedcd4595ff142f0f6edff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  enemyspawn: 1
 --- !u!1001 &647020509
 Prefab:
   m_ObjectHideFlags: 0
@@ -2159,6 +2181,86 @@ Prefab:
     - target: {fileID: 1038423681688536, guid: a01aaf52329ecaf488d2602b28f3e269, type: 2}
       propertyPath: m_Layer
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 114974354606734550, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114553969498205062, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114116391831303172, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114106753749876466, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114334589437447558, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114436454258828402, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114679460808800530, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114056586722235942, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114349115291332982, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114990496161110258, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114892839294343278, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114106326655466624, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114238840125510010, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114332470642512666, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114118878951169800, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114404549072091442, guid: a01aaf52329ecaf488d2602b28f3e269,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a01aaf52329ecaf488d2602b28f3e269, type: 2}
@@ -2589,6 +2691,66 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114624205572995488, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114806439954257198, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114365684780167644, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114482479148927100, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114519192375774800, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114737427535033770, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114408660342587236, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114755206902411868, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114061127229962298, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114099941392964092, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114696086749577668, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114708779074007748, guid: 4e1e0db32fc766b4fbe24f78d5deba16,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 4e1e0db32fc766b4fbe24f78d5deba16, type: 2}
   m_IsPrefabParent: 0
@@ -2811,6 +2973,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &831099067
 MeshRenderer:
@@ -3744,6 +3908,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &1093906746
 MeshRenderer:
@@ -3854,6 +4020,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &1115313349
 MeshRenderer:
@@ -5196,6 +5364,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &1557812587
 MeshRenderer:
@@ -5710,6 +5880,141 @@ Prefab:
       propertyPath: m_Layer
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114286620405730340, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156857156229882, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114285869341892130, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114612259559447036, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114912584713535112, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209017565220296, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114084678006895264, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114070665982256446, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: mytype
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114450599690869982, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114559023996258660, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114483418274487134, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114961307758097408, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114263243439560356, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114070665982256446, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114286620405730340, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114209017565220296, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114637025438493160, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114220122457579350, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114836062068210324, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114251670905022652, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114912584713535112, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114612259559447036, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114627047255856810, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114084678006895264, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114285869341892130, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114976183986452830, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114156857156229882, guid: b0433624218119d4cb3898960ebf1e46,
+        type: 2}
+      propertyPath: canspawn
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: b0433624218119d4cb3898960ebf1e46, type: 2}
   m_IsPrefabParent: 0
@@ -5846,6 +6151,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &1876243020
 MeshRenderer:
@@ -6546,6 +6853,10 @@ Prefab:
       propertyPath: m_SizeDelta.x
       value: 190.2
       objectReference: {fileID: 0}
+    - target: {fileID: 1358926376123242, guid: 9a116efca2660434f823ea4ba468d386, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 9a116efca2660434f823ea4ba468d386, type: 2}
   m_IsPrefabParent: 0
@@ -6803,6 +7114,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
   active: 0
+  canspawn: 0
+  mytype: 0
   thit: {fileID: 0}
 --- !u!23 &2080055467
 MeshRenderer:

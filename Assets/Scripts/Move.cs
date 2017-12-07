@@ -104,6 +104,27 @@ public class Move : MonoBehaviour
         }
         currentpos = transform.position;
         mapPlane.currentpos = currentpos;
+        RaycastHit hitman;
+        Physics.Raycast(transform.position, Vector3.down, out hitman);
+        switch (hitman.transform.gameObject.GetComponent<mapPlane>().mytype)
+        {
+            case 0:
+                {
+                    currentmovement--;
+                    break;
+                }
+            case (mapPlane.tiletype)1:
+                {
+                    currentmovement-=2;
+                    break;
+                }
+            default:
+                {
+                    currentmovement--;
+                    break;
+                }
+        }
+
         yield return null;
     }
 
@@ -117,7 +138,7 @@ public class Move : MonoBehaviour
            // transform.position = new Vector3(targetpos.x, targetpos.y + 15, targetpos.z);
            //currentpos = transform.position;
            
-            currentmovement--;
+           
             //print(currentmovement);
         }
         if (currentmovement == 0)

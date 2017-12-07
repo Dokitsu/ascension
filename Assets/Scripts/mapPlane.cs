@@ -9,7 +9,9 @@ public class mapPlane : MonoBehaviour {
     public static float distance;
     public static Vector3 currentpos;
     public bool active;
-
+    public enum tiletype {normal, water};
+    public bool canspawn;
+    public tiletype mytype;
     public GameObject thit;
 
     Vector3 Raycheck;
@@ -17,6 +19,22 @@ public class mapPlane : MonoBehaviour {
     void Start()
     {
         rend = GetComponent<Renderer>();
+
+        switch (mytype)
+        {
+            case 0:
+                {
+                    rend.material.color = Color.white;
+                    break;
+                }
+
+            case (tiletype)1:
+                {
+                    rend.material.color = Color.blue;
+                    break;
+                }
+            
+        }
     }
 
     void OnMouseEnter()
@@ -59,7 +77,23 @@ public class mapPlane : MonoBehaviour {
     //Reverts colour change when cursor leaves the tile
     void OnMouseExit()
     {
-        rend.material.color = Color.white;
+        switch (mytype)
+        {
+            case 0:
+                {
+                    rend.material.color = Color.white;
+                    break;
+                }
+
+            case (tiletype)1:
+                {
+                    rend.material.color = Color.blue;
+                    break;
+                }
+        }
+        
+
+        
     }
 
    
