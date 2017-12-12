@@ -619,7 +619,7 @@ GameObject:
   - component: {fileID: 178551712}
   - component: {fileID: 178551713}
   m_Layer: 2
-  m_Name: Plane (4)
+  m_Name: multiplanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -665,7 +665,7 @@ BoxCollider:
   m_GameObject: {fileID: 178551711}
   m_Material: {fileID: 13400000, guid: 2d93e2fbb9fe6ac45acf5bc1781a5f49, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -5, z: 0}
@@ -1114,7 +1114,7 @@ GameObject:
   - component: {fileID: 437387167}
   - component: {fileID: 437387168}
   m_Layer: 2
-  m_Name: Plane (3)
+  m_Name: multiplanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1160,7 +1160,7 @@ BoxCollider:
   m_GameObject: {fileID: 437387166}
   m_Material: {fileID: 13400000, guid: 2d93e2fbb9fe6ac45acf5bc1781a5f49, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0.00000023841858, y: -5, z: 0}
@@ -1244,7 +1244,7 @@ Camera:
   far clip plane: 1000
   field of view: 50
   orthographic: 0
-  orthographic size: 5
+  orthographic size: 430.2
   m_Depth: 0
   m_CullingMask:
     serializedVersion: 2
@@ -2017,14 +2017,14 @@ MonoBehaviour:
   playerpos: {x: 0, y: 0, z: 0}
   Key: {fileID: 0}
   Gate: {fileID: 1379545150}
-  tank: {fileID: 1764482462511020, guid: c56e2c5bfd2bc9b4899cda8f28c8e875, type: 2}
-  ranger: {fileID: 1408623756253622, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
-  healer: {fileID: 1620534705828094, guid: 7fc8c405c43d7f64186f5ec299f5f8d7, type: 2}
-  Ashrian: {fileID: 0}
-  Avric: {fileID: 0}
-  Grisbane: {fileID: 0}
-  Leoric: {fileID: 0}
-  Tomble: {fileID: 0}
+  Syndrael: {fileID: 1764482462511020, guid: c56e2c5bfd2bc9b4899cda8f28c8e875, type: 2}
+  Jain: {fileID: 1408623756253622, guid: 09828513c41fb06489469434aa98f5dc, type: 2}
+  Avric: {fileID: 1059159070688014, guid: cd0ad6972d380334bbb91d87889d7584, type: 2}
+  Ashrian: {fileID: 1003951999074146, guid: 1e54b6340a658a741901ce224fc8aacc, type: 2}
+  Grisbane: {fileID: 1967827976468508, guid: 975260f0278d6f149b40e191ed83d697, type: 2}
+  Leoric: {fileID: 1779233247438666, guid: 2e132a40ecb3a4047b21dbd82fd5d668, type: 2}
+  Tomble: {fileID: 1022989328375942, guid: 31428efa2e7e74945a36a4aec913c8f3, type: 2}
+  Widow: {fileID: 1014288716966106, guid: 7638e0c0b3fb83c49914bd17b309f75f, type: 2}
   Zomb: {fileID: 1506182148728066, guid: 90b122db807becb4785f52f1123ba538, type: 2}
   Spider: {fileID: 1572280964903034, guid: 285a995819d04c14381d9245e4056bbd, type: 2}
   fleshmol: {fileID: 1130175201302332, guid: cd844e072723fab4f8e1008355d3bc19, type: 2}
@@ -3158,7 +3158,7 @@ GameObject:
   - component: {fileID: 934583715}
   - component: {fileID: 934583716}
   m_Layer: 2
-  m_Name: Plane (5)
+  m_Name: multiplanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3204,7 +3204,7 @@ BoxCollider:
   m_GameObject: {fileID: 934583714}
   m_Material: {fileID: 13400000, guid: 2d93e2fbb9fe6ac45acf5bc1781a5f49, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -5, z: 0}
@@ -3338,7 +3338,7 @@ GameObject:
   - component: {fileID: 993898222}
   - component: {fileID: 993898223}
   m_Layer: 2
-  m_Name: Plane
+  m_Name: multiplanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3384,7 +3384,7 @@ BoxCollider:
   m_GameObject: {fileID: 993898221}
   m_Material: {fileID: 13400000, guid: 2d93e2fbb9fe6ac45acf5bc1781a5f49, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0.00000023841858, y: -5, z: 0}
@@ -4171,7 +4171,7 @@ GameObject:
   - component: {fileID: 1153661541}
   - component: {fileID: 1153661542}
   m_Layer: 2
-  m_Name: Plane (2)
+  m_Name: multiplanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4217,7 +4217,7 @@ BoxCollider:
   m_GameObject: {fileID: 1153661540}
   m_Material: {fileID: 13400000, guid: 2d93e2fbb9fe6ac45acf5bc1781a5f49, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -5, z: 0}
@@ -5066,7 +5066,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1462477516}
   m_Layer: 2
-  m_Name: Plane
+  m_Name: Terrain
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6346,7 +6346,7 @@ GameObject:
   - component: {fileID: 1943506569}
   - component: {fileID: 1943506570}
   m_Layer: 2
-  m_Name: Plane (1)
+  m_Name: multiplanes
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -6392,7 +6392,7 @@ BoxCollider:
   m_GameObject: {fileID: 1943506568}
   m_Material: {fileID: 13400000, guid: 2d93e2fbb9fe6ac45acf5bc1781a5f49, type: 2}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Size: {x: 10, y: 10, z: 10}
   m_Center: {x: 0, y: -5, z: 0}

@@ -27,28 +27,72 @@ public class enemySpawner : MonoBehaviour {
 		
 	}
 
+    private Transform Planeset()
+    {
+        RaycastHit hit;
+
+        Ray raystart = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(raystart, out hit, Mathf.Infinity);
+
+        return hit.transform;
+    }
+
+    private bool checkpoint()
+    {
+        RaycastHit hit;
+        
+        Ray raystart = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Physics.Raycast(raystart, out hit, Mathf.Infinity);
+        if (hit.transform.GetComponent<mapPlane>() == true)
+        {
+            if (hit.transform.gameObject.GetComponent<mapPlane>().canspawn == true)
+            {
+                print(hit.transform.GetComponent<mapPlane>());
+                Debug.DrawRay(raystart.origin, raystart.direction * hit.distance, Color.green, Mathf.Infinity);
+                return true;
+            }
+            else
+            {
+                print(hit.transform.GetComponent<mapPlane>());
+                Debug.DrawRay(raystart.origin, raystart.direction * hit.distance, Color.red, Mathf.Infinity);
+                return false;
+            }
+        }
+        else
+        {
+            Debug.DrawRay(raystart.origin, raystart.direction * hit.distance, Color.red, Mathf.Infinity);
+            return false;
+        }
+    }
+
     private IEnumerator spawning()
     {
         link = "URI=file:" + Application.dataPath + "/Plugins/Descent.sqlite";
-        Debug.Log(link);
+        //Debug.Log(link);
         IDbConnection database;
         database = (IDbConnection)new SqliteConnection(link);
         database.Open();
+        bool testing = false;
 
         GameMaster gm = gameObject.GetComponent<GameMaster>();
         for (int i = 0; i < LoadScene.players; i++)
         {
-          
+            
             GameObject enemyname;
             UnitInformation actualenemy;
+            yield return new WaitUntil(() => Input.GetMouseButtonDown(0) && checkpoint() == true);
+            Vector3 newinstancepos = Planeset().position + new Vector3(0,15,0);
+            Planeset().GetComponent<mapPlane>().canspawn = false;
+            yield return new WaitForSeconds(0.5f);
 
-            yield return new WaitUntil(() => Input.GetMouseButtonDown(0));
+
+            print("You pressed left click");
 
             switch (i)
             {
                 case (0):
                     {
-                        gm.Enemies.Add(Instantiate(enemyname = gm.Zomb, gm.Espawnlocation[i], Quaternion.identity));
+                        gm.Enemies.Add(Instantiate(enemyname = gm.Zomb, newinstancepos, Quaternion.identity));
                         using (IDbCommand read = database.CreateCommand())
                         {
                             string sqlque = "SELECT * FROM Enemy ORDER BY rowid LIMIT 1 OFFSET 2"; // change the offset for different characters
@@ -74,7 +118,7 @@ public class enemySpawner : MonoBehaviour {
                     }
                 case (1):
                     {
-                        gm.Enemies.Add(Instantiate(enemyname = gm.Spider, gm.Espawnlocation[i], Quaternion.identity));
+                        gm.Enemies.Add(Instantiate(enemyname = gm.Spider, newinstancepos, Quaternion.identity));
                         using (IDbCommand read = database.CreateCommand())
                         {
                             string sqlque = "SELECT * FROM Enemy ORDER BY rowid LIMIT 1 OFFSET 3"; // change the offset for different characters
@@ -100,7 +144,7 @@ public class enemySpawner : MonoBehaviour {
                     }
                 case (2):
                     {
-                        gm.Enemies.Add(Instantiate(enemyname = gm.fleshmol, gm.Espawnlocation[i], Quaternion.identity));
+                        gm.Enemies.Add(Instantiate(enemyname = gm.fleshmol, newinstancepos, Quaternion.identity));
                         using (IDbCommand read = database.CreateCommand())
                         {
                             string sqlque = "SELECT * FROM Enemy ORDER BY rowid LIMIT 1 OFFSET 1"; // change the offset for different characters
@@ -127,7 +171,7 @@ public class enemySpawner : MonoBehaviour {
                 case (3):
                     {
 
-                        gm.Enemies.Add(Instantiate(enemyname = gm.Zomb, gm.Espawnlocation[i], Quaternion.identity));
+                        gm.Enemies.Add(Instantiate(enemyname = gm.Zomb, newinstancepos, Quaternion.identity));
                         using (IDbCommand read = database.CreateCommand())
                         {
                             string sqlque = "SELECT * FROM Enemy ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
@@ -153,6 +197,7 @@ public class enemySpawner : MonoBehaviour {
                     }
             }
         }
+        
         gm.StartCoroutine(gm.setplayer());
         database.Close();
     }

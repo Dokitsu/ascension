@@ -37,14 +37,14 @@ public class GameMaster : MonoBehaviour
 
 
     //Game classes
-    public GameObject tank;
-    public GameObject ranger;
-    public GameObject healer;
-    public GameObject Ashrian;
+    public GameObject Syndrael;
+    public GameObject Jain;
     public GameObject Avric;
+    public GameObject Ashrian;
     public GameObject Grisbane;
     public GameObject Leoric;
     public GameObject Tomble;
+    public GameObject Widow;
 
     //Game Enemies
     public GameObject Zomb;
@@ -84,7 +84,7 @@ public class GameMaster : MonoBehaviour
     {
 
         link = "URI=file:" + Application.dataPath + "/Plugins/Descent.sqlite";
-        Debug.Log(link);
+        //Debug.Log(link);
         IDbConnection database;
         database = (IDbConnection)new SqliteConnection(link);
         database.Open();
@@ -96,7 +96,7 @@ public class GameMaster : MonoBehaviour
 
             case (0):
                 {
-                    players.Add(playerset = Instantiate(tank, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Syndrael, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 0"; // change the offset for different characters
@@ -111,7 +111,7 @@ public class GameMaster : MonoBehaviour
                                 selectedunit.currHP = reader.GetInt16(1);
                                 selectedunit.range = reader.GetBoolean(2);
                                 selectedunit.truemovement = reader.GetInt16(3);
-                                print(reader.GetInt16(3));
+                              //  print(reader.GetInt16(3));
                             }
                             database.Close();
                             reader.Close();
@@ -125,7 +125,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (1):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Jain, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 1"; // change the offset for different characters
@@ -140,7 +140,7 @@ public class GameMaster : MonoBehaviour
                                 selectedunit.currHP = reader.GetInt16(1);
                                 selectedunit.range = reader.GetBoolean(2);
                                 selectedunit.truemovement = reader.GetInt16(3);
-                                print(reader.GetInt16(3));
+                              //  print(reader.GetInt16(3));
 
                             }
                             database.Close();
@@ -153,7 +153,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (2):
                 {
-                    players.Add(playerset = Instantiate(healer, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Avric, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 2"; // change the offset for different characters
@@ -168,7 +168,7 @@ public class GameMaster : MonoBehaviour
                                 selectedunit.currHP = reader.GetInt16(1);
                                 selectedunit.range = reader.GetBoolean(2);
                                 selectedunit.truemovement = reader.GetInt16(3);
-                                print(reader.GetInt16(3));
+                             //   print(reader.GetInt16(3));
                             }
                             database.Close();
                             reader.Close();
@@ -180,7 +180,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (3):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Tomble, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 3"; // change the offset for different characters
@@ -206,7 +206,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (4):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Grisbane, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 4"; // change the offset for different characters
@@ -232,7 +232,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (5):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Widow, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 5"; // change the offset for different characters
@@ -258,7 +258,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (6):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Leoric, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 6"; // change the offset for different characters
@@ -284,7 +284,7 @@ public class GameMaster : MonoBehaviour
                 }
             case (7):
                 {
-                    players.Add(playerset = Instantiate(ranger, spawnlocation[num], Quaternion.identity));
+                    players.Add(playerset = Instantiate(Ashrian, spawnlocation[num], Quaternion.identity));
                     using (IDbCommand read = database.CreateCommand())
                     {
                         string sqlque = "SELECT * FROM Class ORDER BY rowid LIMIT 1 OFFSET 7"; // change the offset for different characters
@@ -395,7 +395,6 @@ public class GameMaster : MonoBehaviour
         {
             phasenumber--;
             endplayerturn();
-            Debug.Log("killed");
         }
 
         currentplayer.GetComponent<Light>().enabled = true;
