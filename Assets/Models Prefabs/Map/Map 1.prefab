@@ -401,8 +401,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1521270480605294}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -150, y: 0, z: -50}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -150, y: 0, z: 350}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4483555041395562}
@@ -1427,6 +1427,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114106326655466624
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1439,6 +1443,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114106753749876466
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1451,6 +1459,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 0
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114116391831303172
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1463,6 +1475,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114118878951169800
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1475,6 +1491,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114238840125510010
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1487,6 +1507,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114332470642512666
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1499,6 +1523,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114334589437447558
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1511,6 +1539,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114349115291332982
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1523,6 +1555,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114404549072091442
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1535,6 +1571,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114436454258828402
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1547,6 +1587,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114553969498205062
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1559,6 +1603,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114679460808800530
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1571,6 +1619,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114892839294343278
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1583,6 +1635,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114974354606734550
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1595,6 +1651,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
 --- !u!114 &114990496161110258
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1607,3 +1667,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rend: {fileID: 0}
+  active: 0
+  canspawn: 1
+  mytype: 0
+  thit: {fileID: 0}
